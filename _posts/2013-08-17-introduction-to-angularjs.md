@@ -5,7 +5,7 @@ category: howto,angularjs
 tags: angularjs, speackerdeck, presentation, introduction, howto
 ---
 
-![AngularJS logo](introduction-to-angularjs/AngularJS.jpg)
+![AngularJS logo]({{ site.url }}/assets/posts/angularjs/AngularJS.jpg)
 
 I discovered recently this exciting framework, and even if I'm still a beginner in it, I presented it to my colleagues to share my enthusiasm.
 Here are the slides i used for the presentation.
