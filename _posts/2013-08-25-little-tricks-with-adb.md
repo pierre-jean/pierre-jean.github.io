@@ -6,16 +6,16 @@ tags: tricks, howto, android
 ---
 
 I wanted to use earlier today my hardware device (a Sony Ericsonn Xperia Pro phone), to test some android developments on it.
-As it's been a long time since my last development on android, i only had blury memories on how things work.
+As it's been a long time since my last development on android, I only had blury memories on how things work.
 
-I bump on an error, here is how i solved it.
+I bumped on an error, here is how I solved it.
 
 Check the device connection
 ---------------------------
 
 To connect your phone through USB cable and be able to debug your app on it, you have to follow the steps described on [the official documentation][1]. Basically, it's 
  * **enable USB debugging** on your device, 
- * on Linux, **adding some udev rules** on `/etc/udev/`: for an Sony Ericsson phone, create a executable file with the following content:
+ * on Linux, **adding some udev rules** on `/etc/udev/`: for an Sony Ericsson phone, create an executable file with the following content:
  ```Shell
     SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", MODE="0666", GROUP="plugdev"
  ```
@@ -34,7 +34,7 @@ List of devices attached
 How to resolve it
 -----------------
 
-If you have a rooted device as i do, you should launch the adb service as root. The service is automatically launch on the first call of adb.
+If you have a rooted device as I do, you should launch the adb service as root. The service is automatically launch on the first call of adb.
 
 You can launch the following command as root, or as the user who launch adb on the first place:
 
