@@ -20,13 +20,13 @@ To connect your phone through USB cable and be able to debug your app on it, you
     SUBSYSTEM=="usb", ATTR{idVendor}=="0fce", MODE="0666", GROUP="plugdev"
  ```
  * finally, **connect your phone and check** if everything works fine with:
- ```shell
+ ```sh
     adb devices
  ```   
  You should have adb in your path to launch the command, otherwise, go to your sdk folder, and launch the `adb` executable from the `platform-tools` subfolder.
 
 Unfortunally, you can get this error when launching the last command:
-```Shell
+```sh
 List of devices attached
 ????????????  no permissions
 ```
@@ -38,7 +38,7 @@ If you have a rooted device as I do, you should launch the adb service as root. 
 
 You can launch the following command as root, or as the user who launch adb on the first place:
 
-```shell
+```sh
 adb kill-server
 ```
 
@@ -51,13 +51,13 @@ killall adb
 
 Than, as root, launch:
 
-```shell
+```bash
 adb start-server
 ```
 
 Finally, when executing again `adb devices`, you should now see your device:
 
-```shell
+```Bash
 List of devices attached
 CBZ2J17V0 device
 ```
