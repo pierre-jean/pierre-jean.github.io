@@ -4,6 +4,7 @@ category: opinion
 tags: opinion mood influence
 title: Be passionate!
 tagline: no matter what!
+youtube_vid_url: http://www.youtube.com/embed/vH0nP4NzS9M
 ---
 
 
@@ -35,7 +36,7 @@ If you don't believe me...believe him!
 
 On a lighter note, I let Schwarzenegger sum up my speech:
 
-<iframe width="420" height="315" src="//www.youtube.com/embed/vH0nP4NzS9M" frameborder="0" ></iframe>
+{% include custom/youtube_vid %}
 
 [1]: http://stackoverflow.com
 [2]: http://www.codinghorror.com/blog/ "Coding Horror Blog"

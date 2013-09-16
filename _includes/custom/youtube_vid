@@ -1,0 +1,17 @@
+{% comment %}<!--
+The youtube_vid include a embedded video from youtube
+Usage:
+1) assign the 'youtube_vid_url' to a valid url
+2) include custom/youtube_vid
+example:
+  <p>
+    {% assign youtube_vid_url = "http//www.youtube.com/embed/vH0nP4NzS9M" %}
+    {% include custom/youtube_vid %}
+  </p>
+-->{% endcomment %}
+
+{% if page.youtube_vid_url %}
+  <div class="embed-vid">
+    <iframe class="frame-video" src="{{ page.youtube_vid_url + "?&rel=0&showinfo=0&autohide=1&wmode=opaque" }}" frameborder="0" allowfullscreen="allowfullscreen">youtube video: {{ page.youtube_vid_url }}</iframe>
+  </div>
+{% endif %}
