@@ -1,0 +1,17 @@
+{% comment %}<!--
+The speackerdeck include a embedded reader for your presentation
+Usage:
+1) assign the 'speackerdeck_id' to a valid url
+2) include custom/speackerdeck
+example:
+  <p>
+    {% assign speackerdeck_id = "7a7a33c0bb5301309b3a023921bdbc68" %}
+    {% include custom/speackerdeck %}
+  </p>
+-->{% endcomment %}
+
+{% if page.speakerdeck_id %}
+  <div class="embed-content">
+    <iframe class="speakerdeck-iframe" frameborder="0" src="//speakerdeck.com/player/{{  page.speakerdeck_id }}?" allowfullscreen="allowfullscreen">speackerdeck presentation</iframe>
+  </div>
+{% endif %}
