@@ -1,7 +1,7 @@
 ---
 layout: post
 category: opinion
-tags: opinion,mood,influence
+tags: opinion mood influence
 title: Be passionate!
 tagline: no matter what!
 ---

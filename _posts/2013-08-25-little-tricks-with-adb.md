@@ -2,7 +2,7 @@
 layout: post
 title: "Little tricks with adb"
 category: howto, android
-tags: tricks, howto, android
+tags: tricks howto android
 ---
 
 I wanted to use earlier today my hardware device (a Sony Ericsonn Xperia Pro phone), to test some android developments on it.

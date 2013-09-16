@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Introduction to AngularJS
-category: howto,angularjs
-tags: angularjs, speackerdeck, presentation, introduction, howto
+category: howto angularjs
+tags: angularjs speackerdeck presentation introduction howto
 ---
 
 ![AngularJS logo]({{ site.url }}/assets/posts/angularjs/AngularJS.jpg)
