@@ -127,4 +127,14 @@ JB :
   # and include your custom code. Your custom file must be defined at:
   #   ./_includes/custom/[HELPER]
   # where [HELPER] is the name of the helper you are overriding.
-  
+  posts_collate :
+    provider : "custom"
+
+  tags_list :
+    provider : "custom"
+
+  #Configuration of the plugin jekyll-tagging
+  #Installed from gem and imported with _plugin/ext.rb
+  #Documentation on https://github.com/pattex/jeklyll-tagging
+  tag_page_layout: tag_page.md
+  tag_page_dir: tag
