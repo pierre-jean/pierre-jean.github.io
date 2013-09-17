@@ -133,6 +133,9 @@ JB :
   tags_list :
     provider : "custom"
 
+  categories_list :
+    provider : "custom"
+
   #Configuration of the plugin jekyll-tagging
   #Installed from gem and imported with _plugin/ext.rb
   #Documentation on https://github.com/pattex/jeklyll-tagging
