@@ -1,0 +1,38 @@
+<div class="row main-content">
+  <div class="offset1 span6 zone-content">
+    <article>
+    <div class="published">{{page.date | date_to_string }}</div>
+    <h1>{{ page.title }} <small>{{ page.tagline }}</small></h1> 
+    <div>
+      {{ content }}
+    </div>
+    <hr>
+    <div class="pagination">
+      <ul>
+      {% if page.previous %}
+        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
+      {% else %}
+        <li class="prev disabled"><a>&larr; Previous</a></li>
+      {% endif %}
+        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+      {% if page.next %}
+        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+      {% else %}
+        <li class="next disabled"><a>Next &rarr;</a>
+      {% endif %}
+      </ul>
+    </div>
+    <hr>
+    {% include JB/comments %}
+  </div>
+  <aside id="aside-right" class="aside-column offset1 span3"> 
+    <article class="widget-tag-cloud widget">
+      <header>
+        <h1>Tag Cloud</h1>
+      </header>
+      <ul class="tagcloud">
+      {% tag_cloud %}
+      </ul>
+    </article>
+  </aside>
+</div>

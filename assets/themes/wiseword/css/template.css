@@ -851,3 +851,40 @@ h2 a, h2 a:hover, h2 a:focus {
     text-decoration:none;
     color: inherit;
 }
+
+.blog-content img{
+  text-align: center;
+  margin: auto;
+  display: block;
+}
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.embed-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.embed-video {
+  border: 0px;
+  background-color: transparent;
+  margin: 0px;
+  padding: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  width: 100%;
+  height: 100%; 
+  background-position: initial initial;
+  background-repeat: initial initial;
+}
+
