@@ -11,7 +11,7 @@ example:
 -->{% endcomment %}
 
 {% if page.speakerdeck_id %}
-  <div class="embed-content">
-    <iframe class="speakerdeck-iframe" frameborder="0" src="//speakerdeck.com/player/{{  page.speakerdeck_id }}?" allowfullscreen="allowfullscreen">speackerdeck presentation</iframe>
+  <div class="embed-container">
+    <iframe class="embed-frame" frameborder="0" src="//speakerdeck.com/player/{{  page.speakerdeck_id }}?" allowfullscreen="allowfullscreen">speackerdeck presentation</iframe>
   </div>
 {% endif %}
