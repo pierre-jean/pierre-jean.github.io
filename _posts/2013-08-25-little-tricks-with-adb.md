@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Little tricks with adb"
-category: howto, android
+categories: ["programming","android"]
 tags: tricks howto android
 ---
 
