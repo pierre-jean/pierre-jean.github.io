@@ -1,6 +1,7 @@
 <script>
-var idcomments_acct = '{{ site.JB.comments.intensedebate.account }}';
+var idcomments_acct = '48afa4b4da501825db3c59a586b26b57';
 var idcomments_post_id;
 var idcomments_post_url;
 </script>
-<script type="text/javascript" src="http://www.intensedebate.com/js/genericLinkWrapperV2.js"></script>
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
