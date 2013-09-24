@@ -2,6 +2,11 @@ require "rubygems"
 require 'rake'
 require 'yaml'
 require 'time'
+require "rubygems"
+require "tmpdir"
+
+require "bundler/setup"
+require "jekyll"
 
 SOURCE = "."
 CONFIG = {
@@ -12,6 +17,9 @@ CONFIG = {
   'post_ext' => "md",
   'theme_package_version' => "0.1.0"
 }
+
+# Change your GitHub reponame
+GITHUB_REPONAME = "pierre-jean/pierre-jean.github.io"
 
 # Path configuration helper
 module JB
@@ -100,6 +108,30 @@ desc "Launch preview environment"
 task :preview do
   system "jekyll --auto --server"
 end # task :preview
+
+#Method to publish static content and commit on source branch
+#Seen on http://ixti.net/software/2013/01/28/using-jekyll-plugins-on-github-pages.html
+desc "Generate blog files"
+task :generate do
+  Jekyll::Site.new(Jekyll.configuration({
+    "source"      => ".",
+    "destination" => "_site"
+  })).process
+end
+
+desc "Generate and publish blog to gh-pages"
+task :publish => [:generate] do
+  Dir.mktmpdir do |tmp|
+    cp_r "_site/.", tmp
+    Dir.chdir tmp
+    system "git init"
+    system "git add ."
+    message = "Site updated at #{Time.now.utc}"
+    system "git commit -m #{message.inspect}"
+    system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
+    system "git push origin master --force"
+  end
+end
 
 # Public: Alias - Maintains backwards compatability for theme switching.
 task :switch_theme => "theme:switch"
