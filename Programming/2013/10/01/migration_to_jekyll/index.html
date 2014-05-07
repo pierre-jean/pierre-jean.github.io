@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>Wise Words - A typographic HTML template</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Poiret+One|PT+Serif|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+	<!-- Stylesheets -->
+	<link href="/assets/themes/wiseword/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/socialicons.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/glyphicons.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/halflings.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/template.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/colors/color-classic.css" rel="stylesheet" id="colorcss">
+
+	<link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+	<!-- Modernizr for Glyphicons (SVG) -->
+	<script src="/assets/themes/wisewordjs/modernizr.js"></script>
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+
+	<div class="masthead clearfix">
+		<a href="/"><img id="logo" src="/assets/themes/wiseword/img/yabage_logo.png" alt="Pierre-Jean's Yabage logo"></a>
+	    <ul id="nav" class="nav ww-nav pull-right hidden-phone">
+	      <li class="active"><a href="/">Blog</a></li>
+          
+          
+          
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/about.html">About Me</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+	    </ul>
+	</div>
+
+	<hr>
+	
+	<div class="row main-content content">
+		
+<div class="row main-content">
+  <div class="offset1 span10 zone-content blog-content">
+    <article>
+    <div class="published">01 Oct 2013</div>
+    <h1>I migrate to Jekyllrb <small>The blog for geeks</small></h1> 
+    <div>
+      <h2 id='from_wordpress_to_jekyll'>From Wordpress to Jekyll</h2>
+
+<p>I started a blog a few month ago with the framework wordpress, but I was not convinced about the user interface. For instance, here are a few drawbacks that annoyed me:</p>
+
+<ul>
+<li>The default templates are a little bit primitive, and you have to download and install new ones for custom layouts (recipies, etc.)</li>
+
+<li>Creating a template is a heavy process, requiring some knowledge in PHP language: I don&#8217;t know very much about PHP, and frankly, I&#8217;m not really interested to learn it for the basic purpose of blogging. I would have prefer some more modern/sexy web technology if I have to dig into it (javascript frameworks, dart, python, ruby &#8230;).</li>
+
+<li>No version-control by default</li>
+</ul>
+
+<p>Wordpress is still a really nice framework, but it didn&#8217;t fit me needs. I started to look for newer blogging framework, and I discover Jekyll.</p>
+
+<h2 id='jekyll_the_revelation'>Jekyll, the revelation</h2>
+
+<p><span>Jekyll</span> is a static blog-aware site generator. It is really simple to setup, and extremely flexible. Here are the main reasons you should be interested in Jekyll:</p>
+
+<ul>
+<li>It uses great tools, already well-known by the developers community.</li>
+
+<li>It is a static web site, so you can drop your site on any service that give you an accessible share from internet. It does <em>not request</em> any special language support (PHP, ruby, python&#8230;).</li>
+
+<li>You can host it for free on the very cool service <span>github.io</span>, and even access it with your own domain name.</li>
+</ul>
+
+<p>I said Jekyll uses well know tools and language loved by developers. Here are they:</p>
+
+<ul>
+<li><strong><span>markdown</span></strong>: If you don&#8217;t know Markdown yet, well, you should! Markdown is a text syntax that can be easily turned into html, but focus on readability in plain text format. It&#8217;s really intuitive, elegant and efficient. You can find the details of the syntax <span>here</span>.</li>
+
+<li><strong><span>textile</span></strong>: If for a any reason you prefered textile, an alternative to markdown, it is also supported by default.</li>
+
+<li><strong><span>YAML front-matter</span></strong>: Setting some YAML front-matter at the beginning of your article allow you to specify a lot of variables (the type, the title, the layout, &#8230;), that can be used to really tune the behaviour of your site.</li>
+
+<li><strong><span>Ruby</span></strong>: Even if I&#8217;m not a ruby developper, I couldn&#8217;t deny that it&#8217;s a exciting language. It is also pretty easy to understand if you have to modify some plugins. Indeed, Jekyll can be extented with ruby scripts, that will add more features when you generate your site.</li>
+
+<li><strong><span>Git</span></strong>: Even if It&#8217;s not mandatory, the framework is really design to integrate easily with the decentralized version control Git, which is one of the more used in recent collaborative project.</li>
+</ul>
+
+<h2 id='ready_to_use_jekyll_bootstrap_octopress'>Ready to use: Jekyll Bootstrap, Octopress</h2>
+
+<p>By default, jekyll comes with really simple theme, and not a lot of feature. Even if setting up new features (comments, themes, templates, &#8230;) is straightforward, I decided to save some time and clone the git repository of <span>Jekyll Bootstrap</span>, which include these features.</p>
+
+<p>I bought on the site <span>wrapbootstrap.com</span> a CSS bootstrap template for blog, that I adapt for jekyll. I spent a little more time than expected to get the exact result I wanted, but it worth it! I also had to fix a minor bug on the comments plugin provider.</p>
+
+<p>I discovered a little bit too late the framework <span>Octopress</span>, which seems exactly what I wanted, and that I would recommand to anyone starting a blog with jekyll.</p>
+
+<h2 id='to_do'>To do</h2>
+
+<p>I still have unfinished tasks for the blog:</p>
+
+<ul>
+<li>
+<p>As I create my own theme for Jekyll, there is some depencies between the theme and my layout, which shouldn&#8217;t exist if I would have create a clean generic template to be deployed for any blog. I don&#8217;t know if Octopress is more obvious in its architecture, but I found on Jekyll Bootstrap that it can sometimes be tricky to choose what should be in the theme and what should be in the blog layout.</p>
+</li>
+
+<li>
+<p>I used some private plugin on Jekyll (to generate a tag cloud for instance), which isn&#8217;t supported on github. I still host my code on github, but I have to publish the generated site and the source code on different git branches to have the blog accessible on <span>http://pierre-jean.github.io</span>. Actually, I host it on my own server, but it could be usefull to really host it on github.</p>
+</li>
+
+<li>
+<p>Publishing the blog require manual step (SSH connection to my server, and run the command to pull/push from git and generate the static content): all of these could be automated.</p>
+</li>
+</ul>
+
+<p>As a conclusion, I&#8217;m very happy to be able to finally write my post on markdown, and simply commit them with git. If you are a developper, you really should enjoy jekyll! If you have any advices/tweak/opinions, feel free to share them with a comment!</p>
+    </div>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/programming/android/2013/08/25/little-tricks-with-adb" title="Little tricks with adb">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/introduction/2014/05/06/docker_introduction" title="Docker">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <script>
+var idcomments_acct = '48afa4b4da501825db3c59a586b26b57';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+
+
+
+
+  </div>
+</div>
+
+
+	</div>
+
+	<hr>
+
+	<div class="row triple-row">
+		<div id="triple-first" class="span4 triple">
+		    <div class="zone zone-triple-first">
+				<article class="widget-triple-first widget-html-widget widget">
+		    		<header>
+		        		<h1>Why this blog?</h1>
+	    			</header>
+				<p>This blog is about is about my personnal tips and opinion on programming topics.<br/>
+				    You can read <a href="/opinion/2013/08/10/be-passionate">my first post</a> for more details</p>
+				</article>
+			</div>
+		</div>
+
+		<div id="triple-second" class="span4 triple">
+		    <div class="zone zone-triple-second">
+				<article class="widget-triple-second widget-html-widget widget">
+		    		<header>
+		        		<h1>Who am I?</h1>
+	    			</header>
+				<p>A passionate about open-source and the web. <br/>See <a href="/about.html">About page</a> for more details</p>
+				</article>
+			</div>
+		</div>
+
+		<div id="triple-third" class="span4 triple">
+		    <div class="zone zone-triple-third">
+				<article class="widget-triple-third widget-html-widget widget">
+		    		<header>
+		        		<h1>Share &amp; Connect</h1>
+	    			</header>
+				    <p>
+						<a href="/atom.xml"><i class="smicon-rss"></i></a>
+						<a href="https://twitter.com/pjbaraud"><i class="smicon-twitter"></i></a>
+						<a href="https://plus.google.com/111301281054800552516"><i class="smicon-google"></i></a>
+						<a href="https://github.com/pierre-jean/"><i class="smicon-github"></i></a>
+						<!-- <a href="#"><i class="smicon-reddit"></i></a> -->
+				    </p>
+				</article>
+			</div>
+		</div>
+	</div>
+	
+    <hr>
+	<div class="row">
+
+		<div class="copyright span12">Copyright 2013 - Made in Switzerland</div>	
+	</div>
+
+</div>  <!-- End Container -->
+
+<!-- Javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/assets/themes/wiseword/js/jquery-1.9.1.js"></script>
+<script src="/assets/themes/wiseword/js/bootstrap.js"></script>
+<script src="/assets/themes/wiseword/js/tinynav.js"></script>
+<script src="/assets/themes/wiseword/js/template.js"></script>
+</body>
+</html>
+

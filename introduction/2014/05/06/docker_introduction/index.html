@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>Wise Words - A typographic HTML template</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- Google Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Poiret+One|PT+Serif|Open+Sans:400,300' rel='stylesheet' type='text/css'>
+
+	<!-- Stylesheets -->
+	<link href="/assets/themes/wiseword/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/bootstrap-responsive.min.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/socialicons.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/glyphicons.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/halflings.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/template.css" rel="stylesheet">
+	<link href="/assets/themes/wiseword/css/colors/color-classic.css" rel="stylesheet" id="colorcss">
+
+	<link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Atom feed">
+
+	<!-- Modernizr for Glyphicons (SVG) -->
+	<script src="/assets/themes/wisewordjs/modernizr.js"></script>
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="container">
+
+	<div class="masthead clearfix">
+		<a href="/"><img id="logo" src="/assets/themes/wiseword/img/yabage_logo.png" alt="Pierre-Jean's Yabage logo"></a>
+	    <ul id="nav" class="nav ww-nav pull-right hidden-phone">
+	      <li class="active"><a href="/">Blog</a></li>
+          
+          
+          
+
+
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/about.html">About Me</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+
+
+
+	    </ul>
+	</div>
+
+	<hr>
+	
+	<div class="row main-content content">
+		
+<div class="row main-content">
+  <div class="offset1 span10 zone-content blog-content">
+    <article>
+    <div class="published">06 May 2014</div>
+    <h1>Docker <small>When Git meets environment managment</small></h1> 
+    <div>
+      <h2 id='what_is_docker'>What is Docker?</h2>
+
+<p>It took me a while to really get what is Docker. Some people will present it as a light-view containers, and compare it to classic virtual machines. Other will present it as a way to deploy easily a software environment, and compare it to Chef. It&#8217;s actually both, and more.</p>
+
+<p>Docker provides features for creating <em>agnostic</em> light-view containers, that can be can be shared, modified, and commit to repositories. You can see it as a git version controller for app environments.</p>
+
+<p>Docker is based on technologies such as LXC, group control, and union file system.</p>
+
+<h3 id='docker_is_lightview'>Docker is light-view</h3>
+
+<p>Docker is light-view as it relies on the host kernel, and only cares about encapsulate the user-space environment that your process depends on. As a consequence, the overhead is minimal compare to a virtual machine, where an hypervisor has to communicate between the virtual machines and the host OS.</p>
+
+<h3 id='docker_is_safe'>Docker is safe</h3>
+
+<p>Once you build your image, you know for sure that you code will have exactly the same behaviour wherever you deploy it. Each container is completely independent of the host, as a virtual machine would be. Even if does not provide as much encapsulation as a VM (it runs on the same kernel), you can be confident about security if you configured it well.</p>
+
+<h3 id='docker_is_social'>Docker is social</h3>
+
+<p>Docker is based on a union file system, that you can see as layers. Each change is done on the top layer, that can be commit and shared with other. Thanks to the docker repository, you can base your own images on images shared by others.</p>
+
+<h2 id='why_use_docker'>Why use Docker?</h2>
+
+<p>I will try to explain a case scenario for a geek particular as me, and in a second part for a company.</p>
+
+<h3 id='for_an_individual_geek_person'>For an individual (geek) person</h3>
+
+<p>I have a few home servers and remote servers. As a geek, I try to install a lot of services on it (mail, project managers, blog frameworks, ans so on&#8230;). And as you can guess, all installations are not as smooth as a simple “apt-get install”.</p>
+
+<p>Have you never spend hours to read several “How To” posts on internet to fix some broken installation? Modify the configurations, add dependency manually, re-compile, create databases to make your product work? And most of the time, many of these services aren’t used after a while, and are just partially uninstalled&#8230;</p>
+
+<p>Well, this situation induces several issues:</p>
+
+<ul>
+<li>
+<p>It will be extremely to re-install the same services in other platform, as it involves a lot of manual steps</p>
+</li>
+
+<li>
+<p>It will also be difficult to clean after removing your service, as you have done a lot of manual actions.</p>
+</li>
+
+<li>
+<p>You may have security breaches. When you install a service to try it for a while, you don’t always focus on configuring it in a secure way. But as the app is hosted on the same system as other services with potential sensitive information, you are at risk.</p>
+</li>
+</ul>
+
+<p>The first two issues can be addressed with tools like Chef or Puppet, that automate environments setup through files called “recipes”. The third issue can be fixed by installing your service inside a dedicated virtual machine.</p>
+
+<p>Using Chef or Puppet will certainly help, but the result won’t be as certain as using Docker. Indeed, Chef/Puppet rely on the host system, and you can bump on some unexpected specificity. And you will have to solve them. Docker is using a container with all the user space image, and as a consequence you have the <strong>guarantee</strong> that you will deploy on the same environment. On the other side, Chef or Puppet will be much more efficient in term of space as they don’t encapsulate anything: they use and share dependencies across the system.</p>
+
+<p>Most of the time, though, people use Chef or Puppet on fresh VM, to address the third problem mentioned: encapsulation and security. And using a virtual machine implies a lot of overhead, maybe too much if the goal is just to have nice encapsulate environments. Docker magic is that it uses light-view containers that rely on the host OS, and just bring what is needed for the service to run independently. It will be really fast to launch, as you don’t have to boot a virtual OS.</p>
+
+<p>A point of attention, though: in Docker, you create a container per service, contrary to a virtual machine which may handle several parallel services (running processes).</p>
+
+<h3 id='for_a_company'>For a company</h3>
+
+<p>When you are a company, you have a specialised dedicated hardware (Solaris servers, embedded or exotic machines) to run your services, and your developers work on more common machines such as laptop or desktop computers.</p>
+
+<p>When the developers code some new features, they test them locally, they may have local unit tests, and maybe a dedicated machine to run integration tests. And then the code is deployed to the production machines.</p>
+
+<p>This situation implies that the environment between the developer machine and the production machine may be really different, and some problems can occurred only in Production, which make them difficult to prevent and/or fix. If you use containers, you have the guarantee that your code will behave the same in your laptop and in your server, and you can setup your prod environment in a few seconds, just by running the corresponding containers.</p>
+
+<p>And it goes the other way, once you created your containers on your laptop, you can send them “as is” to the production.</p>
+
+<h2 id='conclusion'>Conclusion</h2>
+
+<p>Docker is no magic bullet, but it is an elegant and pertinent solution for many use case. It was built upon standard Linux features like cgroups, LXC and AUFS. Note that since version 0.9, the default container engine isn’t LXC but libcontainer, in order to make Docker more portable and be able to run on a wide range of host OS.</p>
+    </div>
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/Programming/2013/10/01/migration_to_jekyll" title="I migrate to Jekyllrb">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next disabled"><a>Next &rarr;</a>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <script>
+var idcomments_acct = '48afa4b4da501825db3c59a586b26b57';
+var idcomments_post_id;
+var idcomments_post_url;
+</script>
+<span id="IDCommentsPostTitle" style="display:none"></span>
+<script type='text/javascript' src='http://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+
+
+
+
+  </div>
+</div>
+
+
+	</div>
+
+	<hr>
+
+	<div class="row triple-row">
+		<div id="triple-first" class="span4 triple">
+		    <div class="zone zone-triple-first">
+				<article class="widget-triple-first widget-html-widget widget">
+		    		<header>
+		        		<h1>Why this blog?</h1>
+	    			</header>
+				<p>This blog is about is about my personnal tips and opinion on programming topics.<br/>
+				    You can read <a href="/opinion/2013/08/10/be-passionate">my first post</a> for more details</p>
+				</article>
+			</div>
+		</div>
+
+		<div id="triple-second" class="span4 triple">
+		    <div class="zone zone-triple-second">
+				<article class="widget-triple-second widget-html-widget widget">
+		    		<header>
+		        		<h1>Who am I?</h1>
+	    			</header>
+				<p>A passionate about open-source and the web. <br/>See <a href="/about.html">About page</a> for more details</p>
+				</article>
+			</div>
+		</div>
+
+		<div id="triple-third" class="span4 triple">
+		    <div class="zone zone-triple-third">
+				<article class="widget-triple-third widget-html-widget widget">
+		    		<header>
+		        		<h1>Share &amp; Connect</h1>
+	    			</header>
+				    <p>
+						<a href="/atom.xml"><i class="smicon-rss"></i></a>
+						<a href="https://twitter.com/pjbaraud"><i class="smicon-twitter"></i></a>
+						<a href="https://plus.google.com/111301281054800552516"><i class="smicon-google"></i></a>
+						<a href="https://github.com/pierre-jean/"><i class="smicon-github"></i></a>
+						<!-- <a href="#"><i class="smicon-reddit"></i></a> -->
+				    </p>
+				</article>
+			</div>
+		</div>
+	</div>
+	
+    <hr>
+	<div class="row">
+
+		<div class="copyright span12">Copyright 2013 - Made in Switzerland</div>	
+	</div>
+
+</div>  <!-- End Container -->
+
+<!-- Javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="/assets/themes/wiseword/js/jquery-1.9.1.js"></script>
+<script src="/assets/themes/wiseword/js/bootstrap.js"></script>
+<script src="/assets/themes/wiseword/js/tinynav.js"></script>
+<script src="/assets/themes/wiseword/js/template.js"></script>
+</body>
+</html>
+

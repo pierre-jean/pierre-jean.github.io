@@ -1,0 +1,15 @@
+
+http://pierre-jean.github.io/categories.html
+http://pierre-jean.github.io/about.html
+http://pierre-jean.github.io/atom.xml
+http://pierre-jean.github.io/sitemap.txt
+http://pierre-jean.github.io/index.html
+http://pierre-jean.github.io/archive.html
+http://pierre-jean.github.io/rss.xml
+http://pierre-jean.github.io/tags.html
+
+http://pierre-jean.github.io/introduction/2014/05/06/docker_introduction
+http://pierre-jean.github.io/Programming/2013/10/01/migration_to_jekyll
+http://pierre-jean.github.io/programming/android/2013/08/25/little-tricks-with-adb
+http://pierre-jean.github.io/programming/angularjs/2013/08/17/introduction-to-angularjs
+http://pierre-jean.github.io/opinion/2013/08/10/be-passionate
