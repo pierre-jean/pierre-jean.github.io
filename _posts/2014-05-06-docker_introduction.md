@@ -1,0 +1,75 @@
+---
+layout: post
+category: introduction
+tags: docker environnement tools
+title: Docker: when Git meets containers
+tagline: Deploy everywhere, safely and easily
+---
+
+What is Docker?
+---------------
+
+It took me a while to really get what is Docker. Some people will present it as a light-view containers, and compare it to classic virtual machines. Other will present it as a way to deploy easily a software environment, and compare it to Chef.
+It's actually both, and more.
+
+Docker provides features for creating *agnostic* light-view containers, that can be can be shared, modified, and commit to repositories.
+You can see it as a git version controller for app environments.
+
+Docker is based on technologies such as LXC, group control, and union file system.
+
+### Docker is light-view
+
+Docker is light-view as it relies on the host kernel, and only cares about encapsulate the user-space environment that your process depends on. As a consequence, the overhead is minimal compare to a virtual machine, where an hypervisor has to communicate between the virtual machines and the host OS.
+
+### Docker is safe
+
+Once you build your image, you know for sure that you code will have exactly the same behaviour wherever you deploy it. Each container is completely independent of the host, as a virtual machine would be. Even if does not provide as much encapsulation as a VM (it runs on the same kernel), you can be confident about security if you configured it well.
+
+### Docker is social
+
+Docker is based on a union file system, that you can see as layers. Each change is done on the top layer, that can be commit and shared with other. Thanks to the docker repository, you can base your own images on images shared by others.
+
+Why use Docker?
+---------------------
+
+I will try to explain a case scenario for a geek particular as me, and in a second part for a company.
+
+### For an individual (geek) person
+
+I have a few home servers and remote servers. As a geek, I try to install a lot of services on it (mail, project managers, blog frameworks, ans so on...). And as you can guess, all installations are not as smooth as a simple “apt-get install”.
+
+Have you never spend hours to read several “How To” posts on internet to fix some broken installation? Modify the configurations, add dependency manually, re-compile, create databases to make your product work? And most of the time, many  of these services aren’t used after a while, and are just partially uninstalled...
+
+Well, this situation induces several issues:
+
+ * It will be extremely to re-install the same services in other platform, as it involves a lot of manual steps
+
+ * It will also be difficult to clean after removing your service, as you have done a lot of manual actions.
+
+ * You may have security breaches. When you install a service to try it for a while, you don’t always focus on configuring it in a secure way. But as the app is hosted on the same system as other services with potential sensitive information, you are at risk.
+
+The first two issues can be addressed with tools like Chef or Puppet, that automate environments setup through files called “recipes”. The third issue can be fixed by installing your service inside a dedicated virtual machine.
+
+Using Chef or  Puppet will certainly help, but the result won’t be as certain as using Docker. Indeed, Chef/Puppet rely on the host system, and you can bump on some unexpected specificity. And you will have to solve them. Docker is using a container with all the user space image, and as a consequence you have the **guarantee **  that you will deploy on the same environment. On the other side, Chef or Puppet will be much more efficient in term of space as they don’t encapsulate anything: they use and share dependencies across the system.
+
+Most of the time, though, people use Chef or Puppet on fresh VM, to address the third problem mentioned: encapsulation and security. And using a virtual machine implies a lot of overhead, maybe too much if the goal is just to have nice encapsulate environments.
+Docker magic is that it uses light-view containers that rely on the host OS, and just bring what is needed for the service to run independently.
+It will be really fast to launch, as you don’t have to boot a virtual OS.
+
+A point of attention, though: in Docker, you create a container per service, contrary to a virtual machine which may handle several parallel services (running processes).
+
+### For  a company
+
+When you are a company, you have a specialised dedicated hardware (Solaris servers, embedded or exotic machines) to run your services, and your developers work on more common machines such as laptop or desktop computers.
+
+When the developers code some new features, they test them locally, they may have local unit tests, and maybe a dedicated machine to run integration tests. And then the code is deployed to the production machines.
+
+This situation implies that the environment between the developer machine and the production machine may be really different, and some problems can occurred only in Production, which make them difficult to prevent and/or fix.
+If you use containers, you have the guarantee that your code will behave the same in your laptop and in your server, and you can setup your prod environment in a few seconds, just by running the corresponding containers.
+
+And it goes the other way, once you created your containers on your laptop, you can send them “as is” to the production.
+
+Conclusion
+--------------
+
+Docker is no magic bullet, but it is an elegant and pertinent solution for many use case. It was built upon standard Linux features like cgroups, LXC and AUFS.  Note that since version 0.9, the default container engine isn’t LXC but libcontainer, in order to make Docker more portable and be able to run on a wide range of host OS.
