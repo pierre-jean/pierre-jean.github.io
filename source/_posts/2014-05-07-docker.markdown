@@ -11,7 +11,7 @@ categories: [Developers tools]
 What is Docker?
 ---------------
 
-It took me a while to really get what Docker is. Some people will present it as a light-view containers manager, and compare it to classic virtual machines. Others will present it as a way to deploy easily a software environment, and compare it to Chef.
+It took me a while to really get what [Docker][docker] is. Some people will present it as a light-view containers manager, and compare it to classic virtual machines. Others will present it as a way to deploy easily a software environment, and compare it to Chef.
 It's actually both, and more.
 
 <!-- more -->
@@ -77,3 +77,5 @@ Conclusion
 --------------
 
 Docker is no magic bullet, but it is an elegant and pertinent solution for many use case. It was built upon standard Linux features like cgroups, LXC and AUFS.  Note that since version 0.9, the default container engine isn’t LXC but libcontainer, in order to make Docker more portable and be able to run on a wide range of host OS.
+
+[docker]: https://www.docker.io
