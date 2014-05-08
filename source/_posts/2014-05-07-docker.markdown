@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Docker"
-date: 2014-05-08 13:28:05 +0200
+date: 2014-05-07 13:28:05 +0200
 comments: true
 categories: [Developers tools]
 ---
@@ -11,7 +11,7 @@ categories: [Developers tools]
 What is Docker?
 ---------------
 
-It took me a while to really get what is Docker. Some people will present it as a light-view containers manager, and compare it to classic virtual machines. Others will present it as a way to deploy easily a software environment, and compare it to Chef.
+It took me a while to really get what Docker is. Some people will present it as a light-view containers manager, and compare it to classic virtual machines. Others will present it as a way to deploy easily a software environment, and compare it to Chef.
 It's actually both, and more.
 
 <!-- more -->
