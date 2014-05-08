@@ -26,6 +26,7 @@ Here are the main reasons you should be interested in Jekyll:
  * You can host it for free on the very cool service [github.io][2], and even access it with your own domain name.
  
 I said Jekyll uses well know tools and language loved by developers. Here are they:
+
  * **[markdown][2]**: If you don't know Markdown yet, well, you should! Markdown is a text syntax that can be easily turned into html, but focus on readability in plain text format. It's really intuitive, elegant and efficient. You can find the details of the syntax [here][3].
  * **[textile][4]**: If for a any reason you prefered textile, an alternative to markdown, it is also supported by default.
  * **[YAML front-matter][5]**: Setting some YAML front-matter at the beginning of your article allow you to specify a lot of variables (the type, the title, the layout, ...), that can be used to really tune the behaviour of your site.
@@ -54,10 +55,13 @@ I still have unfinished tasks for the blog:
  As a conclusion, I'm very happy to be able to finally write my post on markdown, and simply commit them with git. If you are a developper, you really should enjoy jekyll! If you have any advices/tweak/opinions, feel free to share them with a comment!
 
 
-
-
- 
- 
- 
- 
- 
+[1]: http://jekyllrb.com/
+[2]: http://daringfireball.net/projects/markdown/syntax
+[3]: http://daringfireball.net/projects/markdown/syntax
+[4]: http://textile.sitemonks.com/
+[5]: http://yaml.org/
+[6]: http://www.ruby-lang.org/
+[7]: http://git-scm.com/
+[8]: http://jekyllbootstrap.com/
+[9]: http://wrapbootstrap.com/
+[10]: http://octopress.org/
