@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-08T18:05:57+02:00</updated>
+  <updated>2014-05-08T22:11:07+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -12,6 +12,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Code and Play]]></title>
+    <link href="http://pierre-jean.github.io/blog/2014/05/08/code-and-play/"/>
+    <updated>2014-05-08T20:46:08+02:00</updated>
+    <id>http://pierre-jean.github.io/blog/2014/05/08/code-and-play</id>
+    <content type="html"><![CDATA[<p>Feel disconnect from the pleasure of code? Hacking is definitely less fun than what you expected as a teenager when watching Matrix?
+Well, it&rsquo;s time to enjoy the fun of coding again, thanks to one of the projectis I&rsquo;m going to present in this article!</p>
+
+<h2>Untrusted, a meta-JavaScript adventure game</h2>
+
+<p>Untrusted is a project developed by <a href="http://alex.nisnevich.com/portfolio/">Alex Nisnevich</a>, where you play in a ASCII art environment and interact in it with JavaScript code.</p>
+
+<p><img src="http://pierre-jean.github.io/images/gaming/untrusted-screenshot.png"></p>
+
+<p>This project was acclaimed by the community, and it is well deserved! You can try it <a href="https://alexnisnevich.github.io/untrusted/">here</a>, and get the source code on <a href="https://github.com/AlexNisnevich/untrusted/">github</a>. At the time of the writing of this article, the project has received 1518 stars from the github community, and has been forked 197 times!</p>
+
+<!-- More -->
+
+
+<p>As I am speaking of fork, I want to introduce the initiative of my friend <a href="http://www.janosgyerik.com/">Janos Gyerik</a>, <a href="https://github.com/janosgyerik/hangoverx">HangoverX</a>, that will allow you to go on enjoying playing this meta-JavaScript adventure game with a complete re-written storyline.</p>
+
+<h2>CodinGame, game solving challenges</h2>
+
+<p><a href="http://www.codingame.com/cg/">CodinGame</a> is a platform where you can enjoy many different challenges: Kirk&rsquo;s Quest, Skynet Revolution, The Last Crusade&hellip; The only way to win? Code the best solution!</p>
+
+<p>The platform set up challenges during a limited period of time, but I strongly suggest to try they practice multiplayer games, available at anytime, to play with their nice web interface and train your skills! For instance, you can play to Tron battle, and code the best algorithm to be the last one on the ring!</p>
+
+<p><img src="http://pierre-jean.github.io/images/gaming/tron-screenshot.png"></p>
+
+<p>You will be able to choose your prefered language: Bash, C, C#, C++ Clojure, Dart, Go, Groovy, Haskell, Java, Javascript, ObjectiveC, Pascal, Perl, PHP, Python (2 &amp; 3), Ruby and Scala!</p>
+
+<p>You can train your coded bot against the default AI, but the real interesting part is when you put it to the arena and fight against all other player algorithms, and/or choose some selected player to fight with!</p>
+
+<p>Note that many challenges are sponsorized by game or software <a href="http://www.codingame.com/cg/#!contact">companies</a> that use these challenges to detect new talents! So, having fun and practicing your craft can actually benefit your career! what are you waiting for?</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Docker]]></title>
