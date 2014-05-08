@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "I migrate to Jekyllrb"
-date: 2014-05-08 12:55:56 +0200
+date: 2013-10-01 12:55:56 +0200
 comments: true
 categories: [Developers tools]
 ---
