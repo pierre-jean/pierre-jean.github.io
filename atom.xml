@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Yabage]]></title>
+  <link href="http://pierre-jean.baraud.fr/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.baraud.fr/"/>
+  <updated>2014-05-08T14:57:01+02:00</updated>
+  <id>http://pierre-jean.baraud.fr/</id>
+  <author>
+    <name><![CDATA[Pierre-Jean Baraud]]></name>
+    <email><![CDATA[pierre-jean@baraud.fr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Docker]]></title>
+    <link href="http://pierre-jean.baraud.fr/blog/2014/05/07/docker/"/>
+    <updated>2014-05-07T13:28:05+02:00</updated>
+    <id>http://pierre-jean.baraud.fr/blog/2014/05/07/docker</id>
+    <content type="html"><![CDATA[<p><img src="http://pierre-jean.baraud.fr/images/docker/docker-logo.png"></p>
+
+<h2>What is Docker?</h2>
+
+<p>It took me a while to really get what Docker is. Some people will present it as a light-view containers manager, and compare it to classic virtual machines. Others will present it as a way to deploy easily a software environment, and compare it to Chef.
+It&rsquo;s actually both, and more.</p>
+
+<!-- more -->
+
+
+<p>Docker provides features for creating <em>agnostic</em> light-view containers, that can be can be shared, modified, and commit to repositories.
+You can see it as a git version controller for app environments and a way to execute this environments.</p>
+
+<p>Docker is based on technologies such as LXC, group control, and union file system.</p>
+
+<h3>Docker is light-view</h3>
+
+<p>Docker is light-view as it relies on the host kernel, and only cares about encapsulating the user-space environment that your process depends on. As a consequence, the overhead is minimal compare to a virtual machine, where an hypervisor has to communicate between the virtual machines and the host OS.</p>
+
+<h3>Docker is safe</h3>
+
+<p>Once you have built your image, you know for sure that you code will have exactly the same behaviour wherever you deploy it. Each container is completely independent of the host, as a virtual machine would be. Even if does not provide as much encapsulation as a VM (it runs on the same kernel), you can be confident about security if you configured it well.</p>
+
+<h3>Docker is social</h3>
+
+<p>Docker is based on a union file system, that you can see as layers. Each change is done on the top layer, that can be commit and shared with other. Thanks to the docker repository, you can base your own images on images shared by others.</p>
+
+<h2>Why use Docker?</h2>
+
+<p>I will try to explain a case scenario for a geek individual as me, and in a second part for a company.</p>
+
+<h3>For a (geek) individual</h3>
+
+<p>I have a few home servers and remote servers. As a geek, I try to install a lot of services on it (mail, project managers, blog frameworks, ans so on&hellip;). And as you can guess, all installations are not as smooth as a simple “apt-get install”.</p>
+
+<p>Have you never spend hours to read several “How To” posts on internet to fix some broken installation? Modify the configurations, add dependency manually, re-compile, create databases to make your product work? And most of the time, many  of these services aren’t used after a while, and are just partially uninstalled&hellip;</p>
+
+<p>Well, this situation induces several issues:</p>
+
+<ul>
+<li><p>It will be extremely to re-install the same services in other platform, as it involves a lot of manual steps</p></li>
+<li><p>It will also be difficult to clean after removing your service, as you have done a lot of manual actions.</p></li>
+<li><p>You may have security breaches. When you install a service to try it for a while, you don’t always focus on configuring it in a secure way. But as the app may be hosted on the same system as other services with potential sensitive information, you are at risk.</p></li>
+</ul>
+
+
+<p>The first two issues can be addressed with tools like Chef or Puppet, that automate environment setup through files called “recipes”. The third issue can be fixed by installing your service inside a dedicated virtual machine.</p>
+
+<p>Using Chef or  Puppet will certainly help, but the result won’t be as certain as using Docker. Indeed, Chef/Puppet rely on the host system, and you can bump on some unexpected specificity. And you will have to solve them. Docker embed in a container all the user space filesystem, and as a consequence you have the <strong>guarantee </strong> that you will deploy on the same environment. On the other side, Chef or Puppet will be much more efficient in term of space as they don’t encapsulate anything: they use and share dependencies across the system.</p>
+
+<p>Most of the time, though, people use Chef or Puppet on fresh VM, to address the third problem mentioned: encapsulation and security. And using a virtual machine implies a lot of overhead, maybe too much if the goal is just to have nice encapsulated environments.
+The magic of Docker is that it uses light-view containers that rely on the host OS, and just bring what is needed for the service to run independently.
+It will be really fast to launch, as you don’t have to boot a virtual OS, unlike a virtual machine.</p>
+
+<p>A point of attention, though: in Docker, you should create a container per service, contrary to a virtual machine which may handle several parallel services (running processes).</p>
+
+<h3>For  a company</h3>
+
+<p>When you are a company, you may have specialised dedicated hardware (Solaris servers, embedded or exotic machines) to run your services, and your developers certainly code on more common machines such as laptop or desktop computers.</p>
+
+<p>When the developers code some new features, they test them locally, they may have local unit tests, and maybe a dedicated machine to run integration tests. And then the code is deployed to the production machines.</p>
+
+<p>This situation implies that the environment between the developer machine and the production machine may be really different, and some problems can occurred only in production, which make them difficult to prevent and/or fix.
+If you use containers, you have the guarantee that your code will behave the same in your laptop and in your server, and you can setup your prod environment in a few seconds, just by running the corresponding containers.</p>
+
+<p>And it goes the other way around too: once you created your containers on your laptop, you can send them directly to production to be deployed.</p>
+
+<h2>Conclusion</h2>
+
+<p>Docker is no magic bullet, but it is an elegant and pertinent solution for many use case. It was built upon standard Linux features like cgroups, LXC and AUFS.  Note that since version 0.9, the default container engine isn’t LXC but libcontainer, in order to make Docker more portable and be able to run on a wide range of host OS.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[I Migrate to Jekyllrb]]></title>
+    <link href="http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb/"/>
+    <updated>2013-10-01T12:55:56+02:00</updated>
+    <id>http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb</id>
+    <content type="html"><![CDATA[<h2>From Wordpress to Jekyll</h2>
+
+<p>I started a blog a few month ago with the framework wordpress, but I was not convinced about the user interface. For instance, here are a few drawbacks that annoyed me:</p>
+
+<ul>
+<li>The default templates are a little bit primitive, and you have to download and install new ones for custom layouts (recipies, etc.)</li>
+<li>Creating a template is a heavy process, requiring some knowledge in PHP language: I don&rsquo;t know very much about PHP, and frankly, I&rsquo;m not really interested to learn it for the basic purpose of blogging. I would have prefer some more modern/sexy web technology if I have to dig into it (javascript frameworks, dart, python, ruby &hellip;).</li>
+<li>No version-control by default</li>
+</ul>
+
+
+<p>Wordpress is still a really nice framework, but it didn&rsquo;t fit me needs. I started to look for newer blogging framework, and I discover Jekyll.</p>
+
+<!-- more -->
+
+
+<h2>Jekyll, the revelation</h2>
+
+<p><a href="http://jekyllrb.com/">Jekyll</a> is a static blog-aware site generator. It is really simple to setup, and extremely flexible.
+Here are the main reasons you should be interested in Jekyll:</p>
+
+<ul>
+<li>It uses great tools, already well-known by the developers community.</li>
+<li>It is a static web site, so you can drop your site on any service that give you an accessible share from internet. It does <em>not request</em> any special language support (PHP, ruby, python&hellip;).</li>
+<li>You can host it for free on the very cool service <a href="http://daringfireball.net/projects/markdown/syntax">github.io</a>, and even access it with your own domain name.</li>
+</ul>
+
+
+<p>I said Jekyll uses well know tools and language loved by developers. Here are they:</p>
+
+<ul>
+<li><strong><a href="http://daringfireball.net/projects/markdown/syntax">markdown</a></strong>: If you don&rsquo;t know Markdown yet, well, you should! Markdown is a text syntax that can be easily turned into html, but focus on readability in plain text format. It&rsquo;s really intuitive, elegant and efficient. You can find the details of the syntax <a href="http://daringfireball.net/projects/markdown/syntax">here</a>.</li>
+<li><strong><a href="http://textile.sitemonks.com/">textile</a></strong>: If for a any reason you prefered textile, an alternative to markdown, it is also supported by default.</li>
+<li><strong><a href="http://yaml.org/">YAML front-matter</a></strong>: Setting some YAML front-matter at the beginning of your article allow you to specify a lot of variables (the type, the title, the layout, &hellip;), that can be used to really tune the behaviour of your site.</li>
+<li><strong><a href="http://www.ruby-lang.org/">Ruby</a></strong>: Even if I&rsquo;m not a ruby developper, I couldn&rsquo;t deny that it&rsquo;s a exciting language. It is also pretty easy to understand if you have to modify some plugins. Indeed, Jekyll can be extented with ruby scripts, that will add more features when you generate your site.</li>
+<li><strong><a href="http://git-scm.com/">Git</a></strong>: Even if It&rsquo;s not mandatory, the framework is really design to integrate easily with the decentralized version control Git, which is one of the more used in recent collaborative project.</li>
+</ul>
+
+
+<h2>Ready to use: Jekyll Bootstrap, Octopress</h2>
+
+<p>By default, jekyll comes with really simple theme, and not a lot of feature. Even if setting up new features (comments, themes, templates, &hellip;) is straightforward, I decided to save some time and clone the git repository of <a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a>, which include these features.</p>
+
+<p>I bought on the site <a href="http://octopress.org/">wrapbootstrap.com</a> a CSS bootstrap template for blog, that I adapt for jekyll. I spent a little more time than expected to get the exact result I wanted, but it worth it!
+I also had to fix a minor bug on the comments plugin provider.</p>
+
+<p>I discovered a little bit too late the framework [Octopress][11], which seems exactly what I wanted, and that I would recommand to anyone starting a blog with jekyll.</p>
+
+<h2>To do</h2>
+
+<p>I still have unfinished tasks for the blog:</p>
+
+<ul>
+<li><p>As I create my own theme for Jekyll, there is some depencies between the theme and my layout, which shouldn&rsquo;t exist if I would have create a clean generic template to be deployed for any blog. I don&rsquo;t know if Octopress is more obvious in its architecture, but I found on Jekyll Bootstrap that it can sometimes be tricky to choose what should be in the theme and what should be in the blog layout.</p></li>
+<li><p>I used some private plugin on Jekyll (to generate a tag cloud for instance), which isn&rsquo;t supported on github. I still host my code on github, but I have to publish the generated site and the source code on different git branches to have the blog accessible on [<a href="http://pierre-jean.github.io">http://pierre-jean.github.io</a>]. Actually, I host it on my own server, but it could be usefull to really host it on github.</p></li>
+<li><p>Publishing the blog require manual step (SSH connection to my server, and run the command to pull/push from git and generate the static content): all of these could be automated.</p></li>
+</ul>
+
+
+<p> As a conclusion, I&rsquo;m very happy to be able to finally write my post on markdown, and simply commit them with git. If you are a developper, you really should enjoy jekyll! If you have any advices/tweak/opinions, feel free to share them with a comment!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to AngularJS]]></title>
+    <link href="http://pierre-jean.baraud.fr/blog/2013/08/17/introduction-to-angularjs/"/>
+    <updated>2013-08-17T12:13:23+02:00</updated>
+    <id>http://pierre-jean.baraud.fr/blog/2013/08/17/introduction-to-angularjs</id>
+    <content type="html"><![CDATA[<p><img src="http://pierre-jean.baraud.fr/images/angularjs/AngularJS.jpg"></p>
+
+<p>I discovered recently this exciting framework, and even if I&rsquo;m still a beginner in it, I presented it to my colleagues to share my enthusiasm.
+Here are the slides i used for the presentation.</p>
+
+<!-- more -->
+
+
+
+
+<script async="true" class="speakerdeck-embed" data-id="7a7a33c0bb5301309b3a023921bdbc68" src="//speakerdeck.com/assets/embed.js"> </script>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Be Passionate]]></title>
+    <link href="http://pierre-jean.baraud.fr/blog/2013/08/10/be-passionate/"/>
+    <updated>2013-08-10T16:46:47+02:00</updated>
+    <id>http://pierre-jean.baraud.fr/blog/2013/08/10/be-passionate</id>
+    <content type="html"><![CDATA[<h2>Live your passion&hellip;now</h2>
+
+<p>I am a cautious person. I like to weigh pros and cons before making a choice. I always prevailed adaptability over personal beliefs. But if I learned one thing in the last few years, it&rsquo;s that being <strong>good is all about passion</strong>.</p>
+
+<p>There are plenty of average software developers considering development as a job. There is nothing wrong about that. But if you really want to learn and progress, you should focus on people who live their passion.</p>
+
+<!-- more -->
+
+
+<p>Don&rsquo;t be afraid to take the risk of following your dream. If you really do what you believe in, you will be 200% more efficient! I know this might sound naive, but it&rsquo;s not: you only have one life, don&rsquo;t realize too late it&rsquo;s not the one you want.</p>
+
+<h2>You have the potential to improve</h2>
+
+<p>Courage is about trusting yourself. Don&rsquo;t hide your weakness. <strong>Share</strong> what you know. Focus on what you have to learn: there is a world of knowledge waiting for you, and you should be excited about it!</p>
+
+<p>I&rsquo;m a truly bad example on this, but it&rsquo;s never too late to change: open-source projects are a very cool way to become better. It&rsquo;s about taking initiatives, accepting unpleasant remarks, learning and improving!</p>
+
+<h2>Read, read, read and participate!</h2>
+
+<p>There is a looong list of fascinating people out there who inspire me every day. But for this post, I will focus on one: Jeff Atwood, the guy who created the Stack Exchange framework (and the well-known website that use it: <a href="http://stackoverflow.com">stackoverflow.com</a>). <a href="http://www.codinghorror.com/blog/" title="Coding Horror Blog">His blog</a> and <a href="http://www.codinghorror.com/blog/2012/07/coding-horror-the-book.html" title="Books section of coding horror">his books</a> really impacted me on how to become better on what I do. (for French speakers, some articles from <a href="http://vincent.jousse.org/" title="Blog de Vincent Jousse">this blog</a> will have the same spirit of motivation).</p>
+
+<p>Encouraged by some friends, I decided to start a blog, because it&rsquo;s a good exercise for a developer: writing instead of reading, producing instead of consuming. It forces involvement in your passion, and I really hope to learn about this experience.</p>
+
+<h2>If you don&rsquo;t believe me&hellip;believe him!</h2>
+
+<p>On a lighter note, I let Schwarzenegger sum up my speech:</p>
+
+<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/vH0nP4NzS9M "></iframe></div>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>http://pierre-jean.baraud.fr/blog/2013/08/10/be-passionate/</loc>
+        <lastmod>2014-05-08T14:23:50+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pierre-jean.baraud.fr/blog/2013/08/17/introduction-to-angularjs/</loc>
+        <lastmod>2014-05-08T14:24:01+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb/</loc>
+        <lastmod>2014-05-08T14:56:57+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pierre-jean.baraud.fr/blog/2014/05/07/docker/</loc>
+        <lastmod>2014-05-08T14:37:44+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pierre-jean.baraud.fr/blog/archives/</loc>
+        <lastmod>2014-05-08T14:56:57+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pierre-jean.baraud.fr/robots.txt</loc>
+        <lastmod>2014-05-08T11:49:42+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pierre-jean.baraud.fr/</loc>
+        <lastmod>2014-05-08T14:56:57+02:00</lastmod>
+    </url>
+    <url>
+        <loc>http://pierre-jean.baraud.fr/about-me/</loc>
+        <lastmod>2014-05-08T14:20:12+02:00</lastmod>
+    </url>
+</urlset>

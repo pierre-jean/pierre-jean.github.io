@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>I Migrate to Jekyllrb - Yabage</title>
+  <meta name="author" content="Pierre-Jean Baraud">
+
+  
+  <meta name="description" content="From Wordpress to Jekyll I started a blog a few month ago with the framework wordpress, but I was not convinced about the user interface. For &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Yabage" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Yabage</a></h1>
+  
+    <h2>Yet Another Blog About Geek Experiments</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pierre-jean.baraud.fr" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-me/">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">I Migrate to Jekyllrb</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-01T12:55:56+02:00" pubdate data-updated="true">Oct 1<span>st</span>, 2013</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pierre-jean.baraud.fr">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h2>From Wordpress to Jekyll</h2>
+
+<p>I started a blog a few month ago with the framework wordpress, but I was not convinced about the user interface. For instance, here are a few drawbacks that annoyed me:</p>
+
+<ul>
+<li>The default templates are a little bit primitive, and you have to download and install new ones for custom layouts (recipies, etc.)</li>
+<li>Creating a template is a heavy process, requiring some knowledge in PHP language: I don&rsquo;t know very much about PHP, and frankly, I&rsquo;m not really interested to learn it for the basic purpose of blogging. I would have prefer some more modern/sexy web technology if I have to dig into it (javascript frameworks, dart, python, ruby &hellip;).</li>
+<li>No version-control by default</li>
+</ul>
+
+
+<p>Wordpress is still a really nice framework, but it didn&rsquo;t fit me needs. I started to look for newer blogging framework, and I discover Jekyll.</p>
+
+<!-- more -->
+
+
+<h2>Jekyll, the revelation</h2>
+
+<p><a href="http://jekyllrb.com/">Jekyll</a> is a static blog-aware site generator. It is really simple to setup, and extremely flexible.
+Here are the main reasons you should be interested in Jekyll:</p>
+
+<ul>
+<li>It uses great tools, already well-known by the developers community.</li>
+<li>It is a static web site, so you can drop your site on any service that give you an accessible share from internet. It does <em>not request</em> any special language support (PHP, ruby, python&hellip;).</li>
+<li>You can host it for free on the very cool service <a href="http://daringfireball.net/projects/markdown/syntax">github.io</a>, and even access it with your own domain name.</li>
+</ul>
+
+
+<p>I said Jekyll uses well know tools and language loved by developers. Here are they:</p>
+
+<ul>
+<li><strong><a href="http://daringfireball.net/projects/markdown/syntax">markdown</a></strong>: If you don&rsquo;t know Markdown yet, well, you should! Markdown is a text syntax that can be easily turned into html, but focus on readability in plain text format. It&rsquo;s really intuitive, elegant and efficient. You can find the details of the syntax <a href="http://daringfireball.net/projects/markdown/syntax">here</a>.</li>
+<li><strong><a href="http://textile.sitemonks.com/">textile</a></strong>: If for a any reason you prefered textile, an alternative to markdown, it is also supported by default.</li>
+<li><strong><a href="http://yaml.org/">YAML front-matter</a></strong>: Setting some YAML front-matter at the beginning of your article allow you to specify a lot of variables (the type, the title, the layout, &hellip;), that can be used to really tune the behaviour of your site.</li>
+<li><strong><a href="http://www.ruby-lang.org/">Ruby</a></strong>: Even if I&rsquo;m not a ruby developper, I couldn&rsquo;t deny that it&rsquo;s a exciting language. It is also pretty easy to understand if you have to modify some plugins. Indeed, Jekyll can be extented with ruby scripts, that will add more features when you generate your site.</li>
+<li><strong><a href="http://git-scm.com/">Git</a></strong>: Even if It&rsquo;s not mandatory, the framework is really design to integrate easily with the decentralized version control Git, which is one of the more used in recent collaborative project.</li>
+</ul>
+
+
+<h2>Ready to use: Jekyll Bootstrap, Octopress</h2>
+
+<p>By default, jekyll comes with really simple theme, and not a lot of feature. Even if setting up new features (comments, themes, templates, &hellip;) is straightforward, I decided to save some time and clone the git repository of <a href="http://jekyllbootstrap.com/">Jekyll Bootstrap</a>, which include these features.</p>
+
+<p>I bought on the site <a href="http://octopress.org/">wrapbootstrap.com</a> a CSS bootstrap template for blog, that I adapt for jekyll. I spent a little more time than expected to get the exact result I wanted, but it worth it!
+I also had to fix a minor bug on the comments plugin provider.</p>
+
+<p>I discovered a little bit too late the framework [Octopress][11], which seems exactly what I wanted, and that I would recommand to anyone starting a blog with jekyll.</p>
+
+<h2>To do</h2>
+
+<p>I still have unfinished tasks for the blog:</p>
+
+<ul>
+<li><p>As I create my own theme for Jekyll, there is some depencies between the theme and my layout, which shouldn&rsquo;t exist if I would have create a clean generic template to be deployed for any blog. I don&rsquo;t know if Octopress is more obvious in its architecture, but I found on Jekyll Bootstrap that it can sometimes be tricky to choose what should be in the theme and what should be in the blog layout.</p></li>
+<li><p>I used some private plugin on Jekyll (to generate a tag cloud for instance), which isn&rsquo;t supported on github. I still host my code on github, but I have to publish the generated site and the source code on different git branches to have the blog accessible on [<a href="http://pierre-jean.github.io">http://pierre-jean.github.io</a>]. Actually, I host it on my own server, but it could be usefull to really host it on github.</p></li>
+<li><p>Publishing the blog require manual step (SSH connection to my server, and run the command to pull/push from git and generate the static content): all of these could be automated.</p></li>
+</ul>
+
+
+<p> As a conclusion, I&rsquo;m very happy to be able to finally write my post on markdown, and simply commit them with git. If you are a developper, you really should enjoy jekyll! If you have any advices/tweak/opinions, feel free to share them with a comment!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Pierre-Jean Baraud</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-01T12:55:56+02:00" pubdate data-updated="true">Oct 1<span>st</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/developers-tools/'>Developers tools</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb/" data-via="" data-counturl="http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/08/17/introduction-to-angularjs/" title="Previous Post: Introduction to AngularJS">&laquo; Introduction to AngularJS</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/05/07/docker/" title="Next Post: Docker">Docker &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/07/docker/">Docker</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/01/i-migrate-to-jekyllrb/">I Migrate to Jekyllrb</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/17/introduction-to-angularjs/">Introduction to AngularJS</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/10/be-passionate/">Be Passionate</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Pierre-Jean Baraud -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'yabage';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb/';
+        var disqus_url = 'http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

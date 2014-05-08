@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Programming | Yabage]]></title>
+  <link href="http://pierre-jean.baraud.fr/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.baraud.fr/"/>
+  <updated>2014-05-08T14:57:01+02:00</updated>
+  <id>http://pierre-jean.baraud.fr/</id>
+  <author>
+    <name><![CDATA[Pierre-Jean Baraud]]></name>
+    <email><![CDATA[pierre-jean@baraud.fr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to AngularJS]]></title>
+    <link href="http://pierre-jean.baraud.fr/blog/2013/08/17/introduction-to-angularjs/"/>
+    <updated>2013-08-17T12:13:23+02:00</updated>
+    <id>http://pierre-jean.baraud.fr/blog/2013/08/17/introduction-to-angularjs</id>
+    <content type="html"><![CDATA[<p><img src="/images/angularjs/AngularJS.jpg"></p>
+
+<p>I discovered recently this exciting framework, and even if I&rsquo;m still a beginner in it, I presented it to my colleagues to share my enthusiasm.
+Here are the slides i used for the presentation.</p>
+
+<!-- more -->
+
+
+<p><script async="true" class="speakerdeck-embed" data-id="7a7a33c0bb5301309b3a023921bdbc68" src="//speakerdeck.com/assets/embed.js"> </script></p>
+]]></content>
+  </entry>
+  
+</feed>

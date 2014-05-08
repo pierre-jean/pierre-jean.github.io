@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Opinion | Yabage]]></title>
+  <link href="http://pierre-jean.baraud.fr/blog/categories/opinion/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.baraud.fr/"/>
+  <updated>2014-05-08T14:57:01+02:00</updated>
+  <id>http://pierre-jean.baraud.fr/</id>
+  <author>
+    <name><![CDATA[Pierre-Jean Baraud]]></name>
+    <email><![CDATA[pierre-jean@baraud.fr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Be Passionate]]></title>
+    <link href="http://pierre-jean.baraud.fr/blog/2013/08/10/be-passionate/"/>
+    <updated>2013-08-10T16:46:47+02:00</updated>
+    <id>http://pierre-jean.baraud.fr/blog/2013/08/10/be-passionate</id>
+    <content type="html"><![CDATA[<h2>Live your passion&hellip;now</h2>
+
+<p>I am a cautious person. I like to weigh pros and cons before making a choice. I always prevailed adaptability over personal beliefs. But if I learned one thing in the last few years, it&rsquo;s that being <strong>good is all about passion</strong>.</p>
+
+<p>There are plenty of average software developers considering development as a job. There is nothing wrong about that. But if you really want to learn and progress, you should focus on people who live their passion.</p>
+
+<!-- more -->
+
+
+<p>Don&rsquo;t be afraid to take the risk of following your dream. If you really do what you believe in, you will be 200% more efficient! I know this might sound naive, but it&rsquo;s not: you only have one life, don&rsquo;t realize too late it&rsquo;s not the one you want.</p>
+
+<h2>You have the potential to improve</h2>
+
+<p>Courage is about trusting yourself. Don&rsquo;t hide your weakness. <strong>Share</strong> what you know. Focus on what you have to learn: there is a world of knowledge waiting for you, and you should be excited about it!</p>
+
+<p>I&rsquo;m a truly bad example on this, but it&rsquo;s never too late to change: open-source projects are a very cool way to become better. It&rsquo;s about taking initiatives, accepting unpleasant remarks, learning and improving!</p>
+
+<h2>Read, read, read and participate!</h2>
+
+<p>There is a looong list of fascinating people out there who inspire me every day. But for this post, I will focus on one: Jeff Atwood, the guy who created the Stack Exchange framework (and the well-known website that use it: <a href="http://stackoverflow.com">stackoverflow.com</a>). <a href="http://www.codinghorror.com/blog/" title="Coding Horror Blog">His blog</a> and <a href="http://www.codinghorror.com/blog/2012/07/coding-horror-the-book.html" title="Books section of coding horror">his books</a> really impacted me on how to become better on what I do. (for French speakers, some articles from <a href="http://vincent.jousse.org/" title="Blog de Vincent Jousse">this blog</a> will have the same spirit of motivation).</p>
+
+<p>Encouraged by some friends, I decided to start a blog, because it&rsquo;s a good exercise for a developer: writing instead of reading, producing instead of consuming. It forces involvement in your passion, and I really hope to learn about this experience.</p>
+
+<h2>If you don&rsquo;t believe me&hellip;believe him!</h2>
+
+<p>On a lighter note, I let Schwarzenegger sum up my speech:</p>
+
+<p><div class="embed-video-container"><iframe src="http://www.youtube.com/embed/vH0nP4NzS9M "></iframe></div></p>
+]]></content>
+  </entry>
+  
+</feed>
