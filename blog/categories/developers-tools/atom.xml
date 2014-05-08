@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Developers Tools | Yabage]]></title>
   <link href="http://pierre-jean.github.io/blog/categories/developers-tools/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-08T22:17:46+02:00</updated>
+  <updated>2014-05-08T22:36:51+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -22,7 +22,7 @@
 
 <h2>What is Docker?</h2>
 
-<p>It took me a while to really get what Docker is. Some people will present it as a light-view containers manager, and compare it to classic virtual machines. Others will present it as a way to deploy easily a software environment, and compare it to Chef.
+<p>It took me a while to really get what <a href="https://www.docker.io">Docker</a> is. Some people will present it as a light-view containers manager, and compare it to classic virtual machines. Others will present it as a way to deploy easily a software environment, and compare it to Chef.
 It&rsquo;s actually both, and more.</p>
 
 <!-- more -->
