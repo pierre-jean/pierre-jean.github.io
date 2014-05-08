@@ -12,7 +12,7 @@ Well, it's time to enjoy the fun of coding again, thanks to one of the projectis
 Untrusted, a meta-JavaScript adventure game
 --------------------------------------------
 
-Untrusted is a project developed by [Alex Nisnevich][alexnisnevich], where you play in a ASCII art environment and interact in it with JavaScript code.
+Untrusted is a project developed by [Alex Nisnevich][alexnisnevich], where you play in an ASCII art environment and interact in it with JavaScript code.
 
 {% img /images/gaming/untrusted-screenshot.png %}
 
