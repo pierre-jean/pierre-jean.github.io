@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-08T22:15:18+02:00</updated>
+  <updated>2014-05-08T22:17:46+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -23,7 +23,7 @@ Well, it&rsquo;s time to enjoy the fun of coding again, thanks to one of the pro
 
 <h2>Untrusted, a meta-JavaScript adventure game</h2>
 
-<p>Untrusted is a project developed by <a href="http://alex.nisnevich.com/portfolio/">Alex Nisnevich</a>, where you play in a ASCII art environment and interact in it with JavaScript code.</p>
+<p>Untrusted is a project developed by <a href="http://alex.nisnevich.com/portfolio/">Alex Nisnevich</a>, where you play in an ASCII art environment and interact in it with JavaScript code.</p>
 
 <p><img src="http://pierre-jean.github.io/images/gaming/untrusted-screenshot.png"></p>
 
