@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Yabage]]></title>
-  <link href="http://pierre-jean.baraud.fr/atom.xml" rel="self"/>
-  <link href="http://pierre-jean.baraud.fr/"/>
-  <updated>2014-05-08T14:57:01+02:00</updated>
-  <id>http://pierre-jean.baraud.fr/</id>
+  <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.github.io/"/>
+  <updated>2014-05-08T16:53:29+02:00</updated>
+  <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
     <email><![CDATA[pierre-jean@baraud.fr]]></email>
@@ -15,10 +15,10 @@
   
   <entry>
     <title type="html"><![CDATA[Docker]]></title>
-    <link href="http://pierre-jean.baraud.fr/blog/2014/05/07/docker/"/>
+    <link href="http://pierre-jean.github.io/blog/2014/05/07/docker/"/>
     <updated>2014-05-07T13:28:05+02:00</updated>
-    <id>http://pierre-jean.baraud.fr/blog/2014/05/07/docker</id>
-    <content type="html"><![CDATA[<p><img src="http://pierre-jean.baraud.fr/images/docker/docker-logo.png"></p>
+    <id>http://pierre-jean.github.io/blog/2014/05/07/docker</id>
+    <content type="html"><![CDATA[<p><img src="http://pierre-jean.github.io/images/docker/docker-logo.png"></p>
 
 <h2>What is Docker?</h2>
 
@@ -93,9 +93,9 @@ If you use containers, you have the guarantee that your code will behave the sam
   
   <entry>
     <title type="html"><![CDATA[I Migrate to Jekyllrb]]></title>
-    <link href="http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb/"/>
+    <link href="http://pierre-jean.github.io/blog/2013/10/01/i-migrate-to-jekyllrb/"/>
     <updated>2013-10-01T12:55:56+02:00</updated>
-    <id>http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb</id>
+    <id>http://pierre-jean.github.io/blog/2013/10/01/i-migrate-to-jekyllrb</id>
     <content type="html"><![CDATA[<h2>From Wordpress to Jekyll</h2>
 
 <p>I started a blog a few month ago with the framework wordpress, but I was not convinced about the user interface. For instance, here are a few drawbacks that annoyed me:</p>
@@ -161,10 +161,10 @@ I also had to fix a minor bug on the comments plugin provider.</p>
   
   <entry>
     <title type="html"><![CDATA[Introduction to AngularJS]]></title>
-    <link href="http://pierre-jean.baraud.fr/blog/2013/08/17/introduction-to-angularjs/"/>
+    <link href="http://pierre-jean.github.io/blog/2013/08/17/introduction-to-angularjs/"/>
     <updated>2013-08-17T12:13:23+02:00</updated>
-    <id>http://pierre-jean.baraud.fr/blog/2013/08/17/introduction-to-angularjs</id>
-    <content type="html"><![CDATA[<p><img src="http://pierre-jean.baraud.fr/images/angularjs/AngularJS.jpg"></p>
+    <id>http://pierre-jean.github.io/blog/2013/08/17/introduction-to-angularjs</id>
+    <content type="html"><![CDATA[<p><img src="http://pierre-jean.github.io/images/angularjs/AngularJS.jpg"></p>
 
 <p>I discovered recently this exciting framework, and even if I&rsquo;m still a beginner in it, I presented it to my colleagues to share my enthusiasm.
 Here are the slides i used for the presentation.</p>
@@ -181,9 +181,9 @@ Here are the slides i used for the presentation.</p>
   
   <entry>
     <title type="html"><![CDATA[Be Passionate]]></title>
-    <link href="http://pierre-jean.baraud.fr/blog/2013/08/10/be-passionate/"/>
+    <link href="http://pierre-jean.github.io/blog/2013/08/10/be-passionate/"/>
     <updated>2013-08-10T16:46:47+02:00</updated>
-    <id>http://pierre-jean.baraud.fr/blog/2013/08/10/be-passionate</id>
+    <id>http://pierre-jean.github.io/blog/2013/08/10/be-passionate</id>
     <content type="html"><![CDATA[<h2>Live your passion&hellip;now</h2>
 
 <p>I am a cautious person. I like to weigh pros and cons before making a choice. I always prevailed adaptability over personal beliefs. But if I learned one thing in the last few years, it&rsquo;s that being <strong>good is all about passion</strong>.</p>
