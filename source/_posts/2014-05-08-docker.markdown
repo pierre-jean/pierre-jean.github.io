@@ -14,6 +14,8 @@ What is Docker?
 It took me a while to really get what is Docker. Some people will present it as a light-view containers manager, and compare it to classic virtual machines. Others will present it as a way to deploy easily a software environment, and compare it to Chef.
 It's actually both, and more.
 
+<!-- more -->
+
 Docker provides features for creating *agnostic* light-view containers, that can be can be shared, modified, and commit to repositories.
 You can see it as a git version controller for app environments and a way to execute this environments.
 

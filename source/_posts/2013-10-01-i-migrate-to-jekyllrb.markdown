@@ -16,6 +16,8 @@ I started a blog a few month ago with the framework wordpress, but I was not con
 
 Wordpress is still a really nice framework, but it didn't fit me needs. I started to look for newer blogging framework, and I discover Jekyll.
 
+<!-- more -->
+
 ## Jekyll, the revelation
 
 [Jekyll][1] is a static blog-aware site generator. It is really simple to setup, and extremely flexible.

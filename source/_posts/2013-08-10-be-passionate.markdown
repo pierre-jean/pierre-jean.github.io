@@ -8,11 +8,13 @@ categories: [Opinion]
 ---
 
 Live your passion...now
-=======================
+------------------------
 
 I am a cautious person. I like to weigh pros and cons before making a choice. I always prevailed adaptability over personal beliefs. But if I learned one thing in the last few years, it's that being **good is all about passion**.
 
 There are plenty of average software developers considering development as a job. There is nothing wrong about that. But if you really want to learn and progress, you should focus on people who live their passion.
+
+<!-- more -->
 
 Don't be afraid to take the risk of following your dream. If you really do what you believe in, you will be 200% more efficient! I know this might sound naive, but it's not: you only have one life, don't realize too late it's not the one you want.
 
