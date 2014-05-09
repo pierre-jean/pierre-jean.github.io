@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Update OVH DynHost Address From Linux - Yabage</title>
+  <meta name="author" content="Pierre-Jean Baraud">
+
+  
+  <meta name="description" content="I have my domain name registered at OVH. To update a DNS address from a machine behind a dynamic IP, they provide a feature called DynHost. DynHost &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pierre-jean.github.io/blog/2014/05/09/update-ovh-dynhost-address-from-linux">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Yabage" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-50819754-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Yabage</a></h1>
+  
+    <h2>Yet Another Blog About Geek Experiments</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pierre-jean.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-me/">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Update OVH DynHost Address From Linux</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-09T21:45:39+02:00" pubdate data-updated="true">May 9<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pierre-jean.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I have my domain name registered at <a href="http://www.ovh.com">OVH</a>. To update a DNS address from a machine behind a dynamic IP, they provide a feature called <strong>DynHost</strong>. DynHost uses the same protocol as DynDNS for updating their website.</p>
+
+<p>From your DNS Section of the <a href="https://www.ovh.com/managerv3">OVH manager webapp</a>, you can create a DynHost account: you will have to specify the DNS address you want to update, a username and password for this account.</p>
+
+<p><strong>Warning</strong>: The script that update your DynHost address sends your login and password uncrypted! Don&rsquo;t use the same login/password as your main OVH Manager account.</p>
+
+<p>Once created, you can configure your home server to update your DynHost.</p>
+
+<h2>Configure Updatedd</h2>
+
+<p>Updatedd is an utility recommended by OVH to update your address from Linux. You can find it <a href="http://nongnu.askapache.com/updatedd/updatedd_2.6.tar.gz">here</a>.</p>
+
+<!-- More -->
+
+
+<p>Get the sources:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ wget http://nongnu.askapache.com/updatedd/updatedd_2.6.tar.gz</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, you will have to fix an error in a configuration file before compile it.
+Extract and edit the libovh file:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ tar xvf updatedd_2.6.tar.gz</span>
+</span><span class='line'><span class="go">~$ nano updatedd-2.6/src/plugins/libovh.h</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And replace the host <strong>ovh.com</strong> on line 24 by <strong>www.ovh.com</strong>. You should have:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>define DYNDNSHOST "www.ovh.com"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We can now compile updatedd:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ ./configure</span>
+</span><span class='line'><span class="go">~$ make</span>
+</span><span class='line'><span class="go">~$ sudo make install</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can now use updatedd to update your domain name with the command:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">updatedd ovh -- --ipv4 yourIP dynHostUsername:dynHostPassword host</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Automate the DynHost Update</h2>
+
+<p>To update your account, create a script and run it on a daily base with cron.</p>
+
+<p>Create a Script with this content:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c">#!/bin/bash</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">## dynhost parameters</span>
+</span><span class='line'><span class="nv">username</span><span class="o">=</span>dynHostUser
+</span><span class='line'><span class="nv">password</span><span class="o">=</span>dynHostPassword
+</span><span class='line'><span class="nv">host</span><span class="o">=</span>yourmain.com
+</span><span class='line'>
+</span><span class='line'><span class="c">##Log (1=true,0=false)</span>
+</span><span class='line'><span class="nv">log_change</span><span class="o">=</span>1
+</span><span class='line'><span class="nv">log_no_change</span><span class="o">=</span>0
+</span><span class='line'><span class="nv">log_file</span><span class="o">=</span>/var/log/dynhost.log
+</span><span class='line'>
+</span><span class='line'><span class="c">#File with old IP</span>
+</span><span class='line'><span class="nv">old_ip_file</span><span class="o">=</span>/var/cache/ip_old
+</span><span class='line'>
+</span><span class='line'>touch <span class="k">${</span><span class="nv">old_ip_file</span><span class="k">}</span>
+</span><span class='line'>touch <span class="k">${</span><span class="nv">log_file</span><span class="k">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#Get public IP</span>
+</span><span class='line'><span class="nv">ip</span><span class="o">=</span><span class="s2">&quot;`dig +short myip.opendns.com @resolver1.opendns.com`&quot;</span>
+</span><span class='line'><span class="nv">ip_old</span><span class="o">=</span><span class="sb">`</span>cat <span class="k">${</span><span class="nv">old_ip_file</span><span class="k">}</span><span class="sb">`</span>
+</span><span class='line'>
+</span><span class='line'><span class="c">#Compare IP</span>
+</span><span class='line'><span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;${ip}&quot;</span> <span class="o">=</span> <span class="s2">&quot;${ip_old}&quot;</span> <span class="o">]</span>
+</span><span class='line'><span class="k">then </span>
+</span><span class='line'><span class="k">   if</span> <span class="o">[</span> <span class="s2">&quot;${log_no_change}&quot;</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span> <span class="o">]</span>
+</span><span class='line'>   <span class="k">then</span>
+</span><span class='line'><span class="k">      </span><span class="nb">echo</span> <span class="sb">`</span>date<span class="sb">`</span>: No IP change was found &gt;&gt; <span class="k">${</span><span class="nv">log_file</span><span class="k">}</span>
+</span><span class='line'>   <span class="k">fi</span>
+</span><span class='line'><span class="k">else</span>
+</span><span class='line'><span class="k">   </span><span class="nb">echo</span> <span class="k">${</span><span class="nv">ip</span><span class="k">}</span> &gt; <span class="k">${</span><span class="nv">old_ip_file</span><span class="k">}</span>
+</span><span class='line'>   <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;${log_change}&quot;</span> <span class="o">=</span> <span class="s2">&quot;1&quot;</span> <span class="o">]</span>
+</span><span class='line'>   <span class="k">then</span>
+</span><span class='line'><span class="k">      </span><span class="nb">echo</span> <span class="s2">&quot;`date`:IP has changed. (Old : ${ip_old}, New : ${ip})&quot;</span> &gt;&gt; <span class="k">${</span><span class="nv">log_file</span><span class="k">}</span>
+</span><span class='line'>      updatedd ovh -- --ipv4 <span class="k">${</span><span class="nv">ip</span><span class="k">}</span> <span class="k">${</span><span class="nv">username</span><span class="k">}</span>:<span class="k">${</span><span class="nv">password</span><span class="k">}</span> <span class="k">${</span><span class="nv">host</span><span class="k">}</span> &gt;&gt; <span class="k">${</span><span class="nv">log_file</span><span class="k">}</span>
+</span><span class='line'>   <span class="k">else</span>
+</span><span class='line'><span class="k">      </span>updatedd ovh -- --ipv4 <span class="k">${</span><span class="nv">ip</span><span class="k">}</span> <span class="k">${</span><span class="nv">username</span><span class="k">}</span>:<span class="k">${</span><span class="nv">password</span><span class="k">}</span> <span class="k">${</span><span class="nv">host</span><span class="k">}</span>
+</span><span class='line'>   <span class="k">fi</span>
+</span><span class='line'><span class="k">fi</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Don&rsquo;t forget to change DynHost parameters with yours in the script.</p>
+
+<p>Make the script executable and put both updatedd and your script in a folder in your path. For instance:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ chmod +x yourscript </span>
+</span><span class='line'><span class="go">~$ cp updatedd yourscript /usr/local/bin</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Finally, put into your cron so that it is executed on a daily base (here every 30 minutes):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>sudo <span class="nb">echo</span> <span class="s2">&quot;30  *    * * *   root    your-script&quot;</span> &gt;&gt; /etc/crontab
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The steps and scripts described here have been adapted from <a href="http://lermit-informatique.blogspot.de/2009/08/ovh-le-dynhost-de-ovh-et-updatedd.html">this article</a>.
+This steps should work for any provider supporting DynDNS protocol.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Pierre-Jean Baraud</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-09T21:45:39+02:00" pubdate data-updated="true">May 9<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/hack/'>Hack</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pierre-jean.github.io/blog/2014/05/09/update-ovh-dynhost-address-from-linux/" data-via="" data-counturl="http://pierre-jean.github.io/blog/2014/05/09/update-ovh-dynhost-address-from-linux/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/08/code-and-play/" title="Previous Post: Code and play">&laquo; Code and play</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/09/update-ovh-dynhost-address-from-linux/">Update OVH DynHost Address From Linux</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/08/code-and-play/">Code and Play</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/07/docker/">Docker</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/10/01/i-migrate-to-jekyllrb/">I Migrate to Jekyllrb</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/17/introduction-to-angularjs/">Introduction to AngularJS</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Pierre-Jean Baraud -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'yabage';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pierre-jean.github.io/blog/2014/05/09/update-ovh-dynhost-address-from-linux/';
+        var disqus_url = 'http://pierre-jean.github.io/blog/2014/05/09/update-ovh-dynhost-address-from-linux/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
