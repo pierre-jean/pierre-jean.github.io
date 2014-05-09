@@ -7,7 +7,7 @@ categories:
 ---
 
 Feel disconnected from the pleasure of code? Hacking is definitely less fun than what you expected as a teenager when watching Matrix?
-Well, it's time to enjoy the fun of coding again, thanks to one of the projectis I'm going to present in this article!
+Well, it's time to enjoy the fun of coding again, thanks to one of the projects I'm going to present in this article!
 
 Untrusted, a meta-JavaScript adventure game
 --------------------------------------------
