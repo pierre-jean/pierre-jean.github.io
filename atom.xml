@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-09T11:33:42+02:00</updated>
+  <updated>2014-05-09T11:51:57+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -19,7 +19,7 @@
     <updated>2014-05-08T20:46:08+02:00</updated>
     <id>http://pierre-jean.github.io/blog/2014/05/08/code-and-play</id>
     <content type="html"><![CDATA[<p>Feel disconnected from the pleasure of code? Hacking is definitely less fun than what you expected as a teenager when watching Matrix?
-Well, it&rsquo;s time to enjoy the fun of coding again, thanks to one of the projectis I&rsquo;m going to present in this article!</p>
+Well, it&rsquo;s time to enjoy the fun of coding again, thanks to one of the projects I&rsquo;m going to present in this article!</p>
 
 <h2>Untrusted, a meta-JavaScript adventure game</h2>
 
