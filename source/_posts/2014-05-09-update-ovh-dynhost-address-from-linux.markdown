@@ -8,6 +8,7 @@ categories: Hack
 
 I have my domain name registered at [OVH][ovh]. To update a DNS address from a machine behind a dynamic IP, they provide a feature called **DynHost**. DynHost uses the same protocol as DynDNS for updating their website.
 
+<!-- More -->
 From your DNS Section of the [OVH manager webapp][ovh-manager], you can create a DynHost account: you will have to specify the DNS address you want to update, a username and password for this account.
 
 **Warning**: The script that update your DynHost address sends your login and password uncrypted! Don't use the same login/password as your main OVH Manager account.
@@ -18,8 +19,6 @@ Configure Updatedd
 ------------------
 
 Updatedd is an utility recommended by OVH to update your address from Linux. You can find it [here][updatedd].
-
-<!-- More -->
 
 Get the sources:
 
