@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-09T22:59:14+02:00</updated>
+  <updated>2014-05-12T22:11:25+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -14,11 +14,52 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Train Your Java Skills]]></title>
+    <link href="http://pierre-jean.github.io/blog/2014/05/12/train-your-skills/"/>
+    <updated>2014-05-12T21:04:02+02:00</updated>
+    <id>http://pierre-jean.github.io/blog/2014/05/12/train-your-skills</id>
+    <content type="html"><![CDATA[<p>Want to train your Java developer skills? Having an interview to prepare? Just want to refresh your memory on theory or evaluate your current knowledge?</p>
+
+<p>Here are some sites to help you.</p>
+
+<!-- More -->
+
+
+<h2>Questions sets</h2>
+
+<p>You can find on internet many websites with some interview questions. Here are two I personally selected:</p>
+
+<h3>Udemy Top 15 questions article</h3>
+
+<p><a href="https://www.udemy.com/blog">Udemy</a> wrote an <a href="https://www.udemy.com/blog/java-interview-questions/">article about the top 15 questions</a> asked on Java interviews. This article presents really classic questions that you pretty sure to be asked about, or at least for which you should know the answer before going to an interview.</p>
+
+<h3>JavaTpoint 170 core Java questions article</h3>
+
+<p>If you want a more extended set of question than the previous article, you can read <a href="http://www.javatpoint.com/corejava-interview-questions">the 170 core Java questions article</a> by <a href="http://www.javatpoint.com/">JavaTpoint</a>.</p>
+
+<p>This questions cover a large part of core Java (basic) knowledge, and they come with nicely written answers.</p>
+
+<h2>Interactive problems</h2>
+
+<p>Finally, a language knowledge is nothing if you don&rsquo;t master algorithms. <a href="https://codility.com/">Codility</a> is a website that aims to be used by companies to select candidates through coding exercices, but they provide <a href="https://codility.com/programmers/lessons/">a nice training section</a> where you can practices your skills on exercices and problems.</p>
+
+<p><img src="http://pierre-jean.github.io/images/app-screenshots/codility-screenshot.png"></p>
+
+<p>It&rsquo;s free, and really well designed!</p>
+
+<p>If you know any other source of training, feel free to share them!</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Update OVH DynHost Address From Linux]]></title>
     <link href="http://pierre-jean.github.io/blog/2014/05/09/update-ovh-dynhost-address-from-linux/"/>
     <updated>2014-05-09T21:45:39+02:00</updated>
     <id>http://pierre-jean.github.io/blog/2014/05/09/update-ovh-dynhost-address-from-linux</id>
     <content type="html"><![CDATA[<p>I have my domain name registered at <a href="http://www.ovh.com">OVH</a>. To update a DNS address from a machine behind a dynamic IP, they provide a feature called <strong>DynHost</strong>. DynHost uses the same protocol as DynDNS for updating their website.</p>
+
+<!-- More -->
+
 
 <p>From your DNS Section of the <a href="https://www.ovh.com/managerv3">OVH manager webapp</a>, you can create a DynHost account: you will have to specify the DNS address you want to update, a username and password for this account.</p>
 
@@ -29,9 +70,6 @@
 <h2>Configure Updatedd</h2>
 
 <p>Updatedd is an utility recommended by OVH to update your address from Linux. You can find it <a href="http://nongnu.askapache.com/updatedd/updatedd_2.6.tar.gz">here</a>.</p>
-
-<!-- More -->
-
 
 <p>Get the sources:</p>
 
