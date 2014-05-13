@@ -21,19 +21,19 @@ Let's try to create a square in isometric projection.
 
 ### The editor
 
-I will use the great vector graphics editor [Inkscape][inkscape], that I have been found of for years.
+I will use the great vector graphics editor [Inkscape][inkscape], that I have been fond of for years.
 Inkscape is free, open-source, multi-platform (Windows, Mac, Linux) and uses the standard format SVG. Many browser can open directly SVG files.
 
-Vector graphics allows you to draw "shapes" instead of "pixels", so you can zoom infinitely without loosing precision. Another well known vector graphic editor is Adobe Illustrator.
+Vector graphics allows you to draw "shapes" instead of "pixels", so you can zoom infinitely without losing precision. Another well known vector graphic editor is Adobe Illustrator.
 
 My instructions will be for Inkscape, but the principles can be applied in any other vectorial or bitmap editor.
 
 ### Simple square
 
-Let's see how to draw a simple square in isometric projection. Open Inkscape and follow theses instructions:
+Let's see how to draw a simple square in isometric projection. Open Inkscape and follow these instructions:
 
  - Select the **rectangle tool** on the left (**F4** on Linux)
- - Maintain the key **Ctrl** pressed and draw the square. *Ctrl* will maintains proportions to obtain a square.
+ - Maintain the key **Ctrl** pressed and draw the square. *Ctrl* will maintain proportions to obtain a square.
 
  {% img /images/iso/iso-screen-01.png %}
 
@@ -94,7 +94,7 @@ By changing the direction of skew or rotation, you can add shapes on the 2 other
 
 {% img /images/iso/iso-screen-13.png %}
 
-By playing with the colors of the different squares, you can obtain a nice volume impression, without effort or knowledge.
+By playing with the colors of the different squares, you can obtain a nice impression of volume, without effort or knowledge.
 
 ### Be creative
 
@@ -102,6 +102,6 @@ You can apply this to disc shapes as well and create complete world in isometric
 
 {% img /images/iso/iso-example.png %}
 
-Beware, though, that this method isn't an efficient way to create graphs for report. You can found many specialized tools dedicated to this task. But by drawing from scratch you have a total freedom on the result. Your imagination is your only limit!
+Beware, though, that this method isn't an efficient way to create graphs for report. You can find many specialized tools dedicated to this task. But by drawing from scratch you have a total freedom on the result. Your imagination is your only limit!
 
 [inkscape]: http://www.inkscape.org/
