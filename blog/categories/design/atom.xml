@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Design | Yabage]]></title>
   <link href="http://pierre-jean.github.io/blog/categories/design/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-13T18:24:45+02:00</updated>
+  <updated>2014-05-13T19:26:49+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -33,20 +33,20 @@
 
 <h3>The editor</h3>
 
-<p>I will use the great vector graphics editor <a href="http://www.inkscape.org/">Inkscape</a>, that I have been found of for years.
+<p>I will use the great vector graphics editor <a href="http://www.inkscape.org/">Inkscape</a>, that I have been fond of for years.
 Inkscape is free, open-source, multi-platform (Windows, Mac, Linux) and uses the standard format SVG. Many browser can open directly SVG files.</p>
 
-<p>Vector graphics allows you to draw &ldquo;shapes&rdquo; instead of &ldquo;pixels&rdquo;, so you can zoom infinitely without loosing precision. Another well known vector graphic editor is Adobe Illustrator.</p>
+<p>Vector graphics allows you to draw &ldquo;shapes&rdquo; instead of &ldquo;pixels&rdquo;, so you can zoom infinitely without losing precision. Another well known vector graphic editor is Adobe Illustrator.</p>
 
 <p>My instructions will be for Inkscape, but the principles can be applied in any other vectorial or bitmap editor.</p>
 
 <h3>Simple square</h3>
 
-<p>Let&rsquo;s see how to draw a simple square in isometric projection. Open Inkscape and follow theses instructions:</p>
+<p>Let&rsquo;s see how to draw a simple square in isometric projection. Open Inkscape and follow these instructions:</p>
 
 <ul>
 <li>Select the <strong>rectangle tool</strong> on the left (<strong>F4</strong> on Linux)</li>
-<li>Maintain the key <strong>Ctrl</strong> pressed and draw the square. <em>Ctrl</em> will maintains proportions to obtain a square.</li>
+<li>Maintain the key <strong>Ctrl</strong> pressed and draw the square. <em>Ctrl</em> will maintain proportions to obtain a square.</li>
 </ul>
 
 
@@ -139,7 +139,7 @@ Inkscape is free, open-source, multi-platform (Windows, Mac, Linux) and uses the
 
 <p><img src="/images/iso/iso-screen-13.png"></p>
 
-<p>By playing with the colors of the different squares, you can obtain a nice volume impression, without effort or knowledge.</p>
+<p>By playing with the colors of the different squares, you can obtain a nice impression of volume, without effort or knowledge.</p>
 
 <h3>Be creative</h3>
 
@@ -147,7 +147,7 @@ Inkscape is free, open-source, multi-platform (Windows, Mac, Linux) and uses the
 
 <p><img src="/images/iso/iso-example.png"></p>
 
-<p>Beware, though, that this method isn&rsquo;t an efficient way to create graphs for report. You can found many specialized tools dedicated to this task. But by drawing from scratch you have a total freedom on the result. Your imagination is your only limit!</p>
+<p>Beware, though, that this method isn&rsquo;t an efficient way to create graphs for report. You can find many specialized tools dedicated to this task. But by drawing from scratch you have a total freedom on the result. Your imagination is your only limit!</p>
 ]]></content>
   </entry>
   
