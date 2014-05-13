@@ -38,11 +38,11 @@ Let's see how to draw a simple square in isometric projection. Open Inkscape and
  {% img /images/iso/iso-screen-01.png %}
 
  - Then, select the **shape edition tool** (**F2**) or click once in your square to enable the shape modification.
- - Select the upper node and while maintaining **Ctrl** key, skew the square 2 steps on right. Another method is using the Transform dialog (menu **Object/Transform** or **Shift+Ctrll+M**) and skew horizontally by 30°.
+ - Select the upper node and while maintaining **Ctrl** key, skew the square 2 steps to the right. Another method is using the Transform dialog (menu **Object/Transform** or **Shift+Ctrll+M**) and skew horizontally by 30°.
 
  {% img /images/iso/iso-screen-02.png %}
 
- - Finally, Select again the **shape edition tool** (**F2**), and while maintaining the **Ctrl** key, rotate 2 steps on the right. Another method is to use the Transform dialog and rotate by 30°.
+ - Finally, Select again the **shape edition tool** (**F2**), and while maintaining the **Ctrl** key, rotate 2 steps to the right. Another method is to use the Transform dialog and rotate by 30°.
 
  {% img /images/iso/iso-screen-03.png %}
 
@@ -56,11 +56,11 @@ All transformation done to the square can be applied to text too. As a consequen
 
 {% img /images/iso/iso-screen-04.png %}
 
- - Skew on right by 30°.
+ - Skew to the right by 30°.
 
 {% img /images/iso/iso-screen-05.png %}
 
- - Rotate on right by 30°
+ - Rotate to the right by 30°
 
 {% img /images/iso/iso-screen-06.png %}
 
@@ -74,11 +74,11 @@ By changing the direction of skew or rotation, you can add shapes on the 2 other
 
 {% img /images/iso/iso-screen-07.png %}
 
- - Skew it on left this time
+ - Skew it to the left this time
 
 {% img /images/iso/iso-screen-08.png %}
 
- - Rotate it on right
+ - Rotate it to the right
 
 {% img /images/iso/iso-screen-09.png %}
 
@@ -86,7 +86,7 @@ By changing the direction of skew or rotation, you can add shapes on the 2 other
 
 {% img /images/iso/iso-screen-10.png %}
 
- - You do the same with the other rectangle, but by skewing it on the right and rotating it on the left
+ - You do the same with the other rectangle, but by skewing it to the right and rotating it to the left
 
 {% img /images/iso/iso-screen-11.png %}
 
@@ -102,6 +102,6 @@ You can apply this to disc shapes as well and create complete world in isometric
 
 {% img /images/iso/iso-example.png %}
 
-Beware, though, that this method isn't an efficient way to create graphs for report. You can find many specialized tools dedicated to this task. But by drawing from scratch you have a total freedom on the result. Your imagination is your only limit!
+Be aware, though, that this method isn't an efficient way to create graphs for report. You can find many specialized tools dedicated to this task. But by drawing from scratch you have a total freedom on the result. Your imagination is your only limit!
 
 [inkscape]: http://www.inkscape.org/
