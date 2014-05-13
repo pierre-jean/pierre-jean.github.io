@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tools | Yabage]]></title>
   <link href="http://pierre-jean.github.io/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-13T19:26:49+02:00</updated>
+  <updated>2014-05-13T20:50:40+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -54,14 +54,14 @@ Inkscape is free, open-source, multi-platform (Windows, Mac, Linux) and uses the
 
 <ul>
 <li>Then, select the <strong>shape edition tool</strong> (<strong>F2</strong>) or click once in your square to enable the shape modification.</li>
-<li>Select the upper node and while maintaining <strong>Ctrl</strong> key, skew the square 2 steps on right. Another method is using the Transform dialog (menu <strong>Object/Transform</strong> or <strong>Shift+Ctrll+M</strong>) and skew horizontally by 30°.</li>
+<li>Select the upper node and while maintaining <strong>Ctrl</strong> key, skew the square 2 steps to the right. Another method is using the Transform dialog (menu <strong>Object/Transform</strong> or <strong>Shift+Ctrll+M</strong>) and skew horizontally by 30°.</li>
 </ul>
 
 
 <p> <img src="/images/iso/iso-screen-02.png"></p>
 
 <ul>
-<li>Finally, Select again the <strong>shape edition tool</strong> (<strong>F2</strong>), and while maintaining the <strong>Ctrl</strong> key, rotate 2 steps on the right. Another method is to use the Transform dialog and rotate by 30°.</li>
+<li>Finally, Select again the <strong>shape edition tool</strong> (<strong>F2</strong>), and while maintaining the <strong>Ctrl</strong> key, rotate 2 steps to the right. Another method is to use the Transform dialog and rotate by 30°.</li>
 </ul>
 
 
@@ -81,14 +81,14 @@ Inkscape is free, open-source, multi-platform (Windows, Mac, Linux) and uses the
 <p><img src="/images/iso/iso-screen-04.png"></p>
 
 <ul>
-<li>Skew on right by 30°.</li>
+<li>Skew to the right by 30°.</li>
 </ul>
 
 
 <p><img src="/images/iso/iso-screen-05.png"></p>
 
 <ul>
-<li>Rotate on right by 30°</li>
+<li>Rotate to the right by 30°</li>
 </ul>
 
 
@@ -108,14 +108,14 @@ Inkscape is free, open-source, multi-platform (Windows, Mac, Linux) and uses the
 <p><img src="/images/iso/iso-screen-07.png"></p>
 
 <ul>
-<li>Skew it on left this time</li>
+<li>Skew it to the left this time</li>
 </ul>
 
 
 <p><img src="/images/iso/iso-screen-08.png"></p>
 
 <ul>
-<li>Rotate it on right</li>
+<li>Rotate it to the right</li>
 </ul>
 
 
@@ -129,7 +129,7 @@ Inkscape is free, open-source, multi-platform (Windows, Mac, Linux) and uses the
 <p><img src="/images/iso/iso-screen-10.png"></p>
 
 <ul>
-<li>You do the same with the other rectangle, but by skewing it on the right and rotating it on the left</li>
+<li>You do the same with the other rectangle, but by skewing it to the right and rotating it to the left</li>
 </ul>
 
 
@@ -147,7 +147,7 @@ Inkscape is free, open-source, multi-platform (Windows, Mac, Linux) and uses the
 
 <p><img src="/images/iso/iso-example.png"></p>
 
-<p>Beware, though, that this method isn&rsquo;t an efficient way to create graphs for report. You can find many specialized tools dedicated to this task. But by drawing from scratch you have a total freedom on the result. Your imagination is your only limit!</p>
+<p>Be aware, though, that this method isn&rsquo;t an efficient way to create graphs for report. You can find many specialized tools dedicated to this task. But by drawing from scratch you have a total freedom on the result. Your imagination is your only limit!</p>
 ]]></content>
   </entry>
   
