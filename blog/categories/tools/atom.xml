@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Tools | Yabage]]></title>
+  <link href="http://pierre-jean.github.io/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.github.io/"/>
+  <updated>2014-05-13T18:24:45+02:00</updated>
+  <id>http://pierre-jean.github.io/</id>
+  <author>
+    <name><![CDATA[Pierre-Jean Baraud]]></name>
+    <email><![CDATA[pierre-jean@baraud.fr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to Isometric 3D]]></title>
+    <link href="http://pierre-jean.github.io/blog/2014/05/13/3d-iso-introduction/"/>
+    <updated>2014-05-13T17:09:50+02:00</updated>
+    <id>http://pierre-jean.github.io/blog/2014/05/13/3d-iso-introduction</id>
+    <content type="html"><![CDATA[<p><img class="center" src="/images/iso/iso-result-mini.png" title="" ></p>
+
+<p>You want to create a nice graphic presentation, but you don&rsquo;t know anything about design? You need to create some nice game graphic elements, but you&rsquo;re really bad at  drawing?</p>
+
+<p>Isometric 3D allows you to create really nice elements without knowing anything about design or art. In a few steps you can obtain really nice results.</p>
+
+<!-- More -->
+
+
+<h2>A simple square</h2>
+
+<p>Let&rsquo;s try to create a square in isometric projection.</p>
+
+<h3>The editor</h3>
+
+<p>I will use the great vector graphics editor <a href="http://www.inkscape.org/">Inkscape</a>, that I have been found of for years.
+Inkscape is free, open-source, multi-platform (Windows, Mac, Linux) and uses the standard format SVG. Many browser can open directly SVG files.</p>
+
+<p>Vector graphics allows you to draw &ldquo;shapes&rdquo; instead of &ldquo;pixels&rdquo;, so you can zoom infinitely without loosing precision. Another well known vector graphic editor is Adobe Illustrator.</p>
+
+<p>My instructions will be for Inkscape, but the principles can be applied in any other vectorial or bitmap editor.</p>
+
+<h3>Simple square</h3>
+
+<p>Let&rsquo;s see how to draw a simple square in isometric projection. Open Inkscape and follow theses instructions:</p>
+
+<ul>
+<li>Select the <strong>rectangle tool</strong> on the left (<strong>F4</strong> on Linux)</li>
+<li>Maintain the key <strong>Ctrl</strong> pressed and draw the square. <em>Ctrl</em> will maintains proportions to obtain a square.</li>
+</ul>
+
+
+<p> <img src="/images/iso/iso-screen-01.png"></p>
+
+<ul>
+<li>Then, select the <strong>shape edition tool</strong> (<strong>F2</strong>) or click once in your square to enable the shape modification.</li>
+<li>Select the upper node and while maintaining <strong>Ctrl</strong> key, skew the square 2 steps on right. Another method is using the Transform dialog (menu <strong>Object/Transform</strong> or <strong>Shift+Ctrll+M</strong>) and skew horizontally by 30°.</li>
+</ul>
+
+
+<p> <img src="/images/iso/iso-screen-02.png"></p>
+
+<ul>
+<li>Finally, Select again the <strong>shape edition tool</strong> (<strong>F2</strong>), and while maintaining the <strong>Ctrl</strong> key, rotate 2 steps on the right. Another method is to use the Transform dialog and rotate by 30°.</li>
+</ul>
+
+
+<p> <img src="/images/iso/iso-screen-03.png"></p>
+
+<p>You now have a nice square in isometric perspective.</p>
+
+<h3>Add Text</h3>
+
+<p>All transformation done to the square can be applied to text too. As a consequence following previous steps:</p>
+
+<ul>
+<li>Select <strong>Text tool</strong> (<strong>F8</strong>), and write something.</li>
+</ul>
+
+
+<p><img src="/images/iso/iso-screen-04.png"></p>
+
+<ul>
+<li>Skew on right by 30°.</li>
+</ul>
+
+
+<p><img src="/images/iso/iso-screen-05.png"></p>
+
+<ul>
+<li>Rotate on right by 30°</li>
+</ul>
+
+
+<p><img src="/images/iso/iso-screen-06.png"></p>
+
+<p>You now have shapes and text on the same perspective.</p>
+
+<h3>Add other faces</h3>
+
+<p>By changing the direction of skew or rotation, you can add shapes on the 2 others plans of isometric projection.</p>
+
+<ul>
+<li>Create another rectangle</li>
+</ul>
+
+
+<p><img src="/images/iso/iso-screen-07.png"></p>
+
+<ul>
+<li>Skew it on left this time</li>
+</ul>
+
+
+<p><img src="/images/iso/iso-screen-08.png"></p>
+
+<ul>
+<li>Rotate it on right</li>
+</ul>
+
+
+<p><img src="/images/iso/iso-screen-09.png"></p>
+
+<ul>
+<li>Notice that if you want to resize your square once on a isometric plan, you can use the square tool once your square selected (or press <strong>F4</strong>) and you&rsquo;ll be able to resize it in the plan by grabbing the corners.</li>
+</ul>
+
+
+<p><img src="/images/iso/iso-screen-10.png"></p>
+
+<ul>
+<li>You do the same with the other rectangle, but by skewing it on the right and rotating it on the left</li>
+</ul>
+
+
+<p><img src="/images/iso/iso-screen-11.png"></p>
+
+<p><img src="/images/iso/iso-screen-12.png"></p>
+
+<p><img src="/images/iso/iso-screen-13.png"></p>
+
+<p>By playing with the colors of the different squares, you can obtain a nice volume impression, without effort or knowledge.</p>
+
+<h3>Be creative</h3>
+
+<p>You can apply this to disc shapes as well and create complete world in isometric projection!</p>
+
+<p><img src="/images/iso/iso-example.png"></p>
+
+<p>Beware, though, that this method isn&rsquo;t an efficient way to create graphs for report. You can found many specialized tools dedicated to this task. But by drawing from scratch you have a total freedom on the result. Your imagination is your only limit!</p>
+]]></content>
+  </entry>
+  
+</feed>
