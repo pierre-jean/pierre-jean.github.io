@@ -140,7 +140,7 @@ I will introduce today how to create containers interactively and through Docker
 
 <p>This will download an image with the files of Ubuntu Precise distribution (without the Kernel, as it uses the host kernel).</p>
 
-<p><img src="/images/docker/docker-image-creation-00.png"></p>
+<p><img class="center" src="/images/docker/docker-image-creation-00.png"></p>
 
 <p>We will then interact with it by launching a job from this filesystem.</p>
 
@@ -155,7 +155,7 @@ I will introduce today how to create containers interactively and through Docker
 
 <p>When executing this command, we create a container. This container will create a writable layer for its filesystem, and base it upon the image <em>ubuntu</em>. It will then launch the process <code>apt-get</code> with the argument <code>install -y memcached</code></p>
 
-<p><img src="/images/docker/docker-image-creation-01.png"></p>
+<p><img class="center" src="/images/docker/docker-image-creation-01.png"></p>
 
 <p>I didn&rsquo;t affect any name to the container, but the output gave me its id. If I want to save the current state of the filesystem, I can commit it thanks to the id of the container:</p>
 
@@ -164,11 +164,11 @@ I will introduce today how to create containers interactively and through Docker
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="/images/docker/docker-image-creation-02.png"></p>
+<p><img class="center" src="/images/docker/docker-image-creation-02.png"></p>
 
 <p>And the container will automatically create another layer upon your newly created image. Note that you are only saving <strong>the filesystem state</strong>. The <strong>memory state won&rsquo;t be saved</strong> in the image.</p>
 
-<p><img src="/images/docker/docker-image-creation-03.png"></p>
+<p><img class="center" src="/images/docker/docker-image-creation-03.png"></p>
 
 <p>Note also that the status of your container is depending of the status of the job your run. Once the job finished, the container is stopped.</p>
 
@@ -186,7 +186,7 @@ I will introduce today how to create containers interactively and through Docker
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img src="/images/docker/docker-image-creation-04.png"></p>
+<p><img class="center" src="/images/docker/docker-image-creation-04.png"></p>
 
 <h2>The Dockerfile</h2>
 
