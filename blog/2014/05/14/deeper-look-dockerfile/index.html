@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>A First Look Into Dockerfiles - Yabage</title>
+  <meta name="author" content="Pierre-Jean Baraud">
+
+  
+  <meta name="description" content="A week ago, I introduced the framework Docker. Docker is a lightview virtualized environment. It allows to build, managed and run containers to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pierre-jean.github.io/blog/2014/05/14/deeper-look-dockerfile">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Yabage" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-50819754-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Yabage</a></h1>
+  
+    <h2>Yet Another Blog About Geek Experiments</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pierre-jean.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-me/">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">A First Look Into Dockerfiles</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T14:45:54+02:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pierre-jean.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>A <a href="http://pierre-jean.baraud.fr/blog/2014/05/07/docker/">week ago</a>, I introduced the framework <a href="http://docker.io">Docker</a>. Docker is a lightview virtualized environment. It allows to build, managed and run containers to deploy easily an app in an iso environment.
+I will introduce today how to create containers interactively and through Dockerfile.</p>
+
+<!-- More -->
+
+
+<h2>Hands on containers and images</h2>
+
+<p>If you&rsquo;re not familiar with Docker, I strongly recommand you to have a look to their <a href="https://www.docker.io/gettingstarted/#">interactive tutorial</a>. It is well done, efficient, and get you into the swing of things. The <a href="https://www.docker.io/learn/dockerfile/">Dockerfile tutorial</a> will also give you all the basis. I will try here to sum up the more important concepts.</p>
+
+<h3>What is a container?</h3>
+
+<p>A container can be represented by two main components:</p>
+
+<ul>
+<li>A running job</li>
+<li>A filesystem modified by the job</li>
+</ul>
+
+
+<p>The filesystem itself is a multilayered union filesystem, with the top layer saving the current modifications, and the underlying layers read only images. Let&rsquo;s have a deeper look on what is a multilayered union filesystem.</p>
+
+<h3>Images and AUFS</h3>
+
+<p>Let&rsquo;s build our own customized image! First of all, let&rsquo;s pull an image from the docker index.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker pull ubuntu:precise</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This will download an image with the files of Ubuntu Precise distribution (without the Kernel, as it uses the host kernel).</p>
+
+<p><img src="/images/docker/docker-image-creation-00.png"></p>
+
+<p>We will then interact with it by launching a job from this filesystem.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker run ubuntu apt-get install -y memcached</span>
+</span><span class='line'><span class="go">[...]</span>
+</span><span class='line'><span class="go">[=&gt; container id is 9fb69e798e67]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When executing this command, we create a container. This container will create a writable layer for its filesystem, and base it upon the image <em>ubuntu</em>. It will then launch the process <code>apt-get</code> with the argument <code>install -y memcached</code></p>
+
+<p><img src="/images/docker/docker-image-creation-01.png"></p>
+
+<p>I didn&rsquo;t affect any name to the container, but the output gave me its id. If I want to save the current state of the filesystem, I can commit it thanks to the id of the container:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker commit 9fb69e798e67</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/docker/docker-image-creation-02.png"></p>
+
+<p>And the container will automatically create another layer upon your newly created image. Note that you are only saving <strong>the filesystem state</strong>. The <strong>memory state won&rsquo;t be saved</strong> in the image.</p>
+
+<p><img src="/images/docker/docker-image-creation-03.png"></p>
+
+<p>Note also that the status of your container is depending of the status of the job your run. Once the job finished, the container is stopped.</p>
+
+<p>If you want to organize your images, it is better to commit them under your local repository.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker commit 9fb69e798e67 yabage/ubuntu-memcached</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Finally, you can of course run a new container based on your newly created image, and commit other modification upon it.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker run -i -t yabage/ubuntu-memcached /bin/bash</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="/images/docker/docker-image-creation-04.png"></p>
+
+<h2>The Dockerfile</h2>
+
+<p>You have seen how to build an image by interacting direclty with the container. Nevertheless, most of the time you will want to share your images through &ldquo;recipes&rdquo; allowing others to <strong>build</strong> themselves your images.
+This is what <strong>Dockerfiles</strong> are for.</p>
+
+<p>The Dockerfile lists the instruction on how to build your image and what to run on the container.</p>
+
+<p>As you want to obtain the same image in every circonstances, you will have to <strong>avoid</strong> any operation that <strong>doesn&rsquo;t result in a controlled and guaranted state</strong>. For instance, you should not do any <code>apt-get upgrade</code> in a Dockerfile, as you don&rsquo;t controlled the result : indeed, depending the date your launching it, the upgrade could be different. Moreover, for technical reasons, there is a high chance that the upgrade fails. If you want to upgrade your distribution, you should update the base image your Dockerfile rely on.</p>
+
+<p>Now let&rsquo;s see how to build the first container in a Dockerfile:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FROM ubuntu:precise #the base image of this build script
+</span><span class='line'>
+</span><span class='line'>RUN apt-get install -y memcached</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Well&hellip;that&rsquo;s all. You know have a container with memcached installed.</p>
+
+<p>I kept this Dockerfile minimalistic on purpose, put you will want to define the maintainer of the Dockerfile with the tag <code>MAINTAINER</code>, define the default process to launch with <code>CMD</code> and a lot of other usefull instructions.
+For now I will stick to this version.</p>
+
+<p>I would like to focus your attention on a point: each RUN instruction will commit the current layer and create a new one upon it. <strong>The state of the memory is forgotten</strong> between two <code>RUN</code> instructions. Only the filesystem is kept.</p>
+
+<p>To build an image, you put these instructions in a file called <em>Dockerfile</em>, then executes from the same folder:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">sudo docker build .</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It will build the container and return its id. If you want to name the container when building, you can do it with the <code>-t</code> option</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">sudo docker build -t ubuntu-memcached .</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You have seen a very quick introduction to Dockerfile. I will soon write an article about how to write a proper Docker image, following good practices, so that you can share them with your friends and the community!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Pierre-Jean Baraud</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-14T14:45:54+02:00" pubdate data-updated="true">May 14<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/docker/'>docker</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pierre-jean.github.io/blog/2014/05/14/deeper-look-dockerfile/" data-via="" data-counturl="http://pierre-jean.github.io/blog/2014/05/14/deeper-look-dockerfile/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/13/3d-iso-introduction/" title="Previous Post: Introduction to isometric 3D">&laquo; Introduction to isometric 3D</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/deeper-look-dockerfile/">A First Look Into Dockerfiles</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/13/3d-iso-introduction/">Introduction to Isometric 3D</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/12/train-your-skills/">Train Your Java Skills</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/09/update-ovh-dynhost-address-from-linux/">Update OVH DynHost Address From Linux</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/08/code-and-play/">Code and Play</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Pierre-Jean Baraud -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'yabage';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pierre-jean.github.io/blog/2014/05/14/deeper-look-dockerfile/';
+        var disqus_url = 'http://pierre-jean.github.io/blog/2014/05/14/deeper-look-dockerfile/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

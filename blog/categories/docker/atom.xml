@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Docker | Yabage]]></title>
+  <link href="http://pierre-jean.github.io/blog/categories/docker/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.github.io/"/>
+  <updated>2014-05-14T22:01:44+02:00</updated>
+  <id>http://pierre-jean.github.io/</id>
+  <author>
+    <name><![CDATA[Pierre-Jean Baraud]]></name>
+    <email><![CDATA[pierre-jean@baraud.fr]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A First Look Into Dockerfiles]]></title>
+    <link href="http://pierre-jean.github.io/blog/2014/05/14/deeper-look-dockerfile/"/>
+    <updated>2014-05-14T14:45:54+02:00</updated>
+    <id>http://pierre-jean.github.io/blog/2014/05/14/deeper-look-dockerfile</id>
+    <content type="html"><![CDATA[<p>A <a href="http://pierre-jean.baraud.fr/blog/2014/05/07/docker/">week ago</a>, I introduced the framework <a href="http://docker.io">Docker</a>. Docker is a lightview virtualized environment. It allows to build, managed and run containers to deploy easily an app in an iso environment.
+I will introduce today how to create containers interactively and through Dockerfile.</p>
+
+<!-- More -->
+
+
+<h2>Hands on containers and images</h2>
+
+<p>If you&rsquo;re not familiar with Docker, I strongly recommand you to have a look to their <a href="https://www.docker.io/gettingstarted/#">interactive tutorial</a>. It is well done, efficient, and get you into the swing of things. The <a href="https://www.docker.io/learn/dockerfile/">Dockerfile tutorial</a> will also give you all the basis. I will try here to sum up the more important concepts.</p>
+
+<h3>What is a container?</h3>
+
+<p>A container can be represented by two main components:</p>
+
+<ul>
+<li>A running job</li>
+<li>A filesystem modified by the job</li>
+</ul>
+
+
+<p>The filesystem itself is a multilayered union filesystem, with the top layer saving the current modifications, and the underlying layers read only images. Let&rsquo;s have a deeper look on what is a multilayered union filesystem.</p>
+
+<h3>Images and AUFS</h3>
+
+<p>Let&rsquo;s build our own customized image! First of all, let&rsquo;s pull an image from the docker index.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker pull ubuntu:precise</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>This will download an image with the files of Ubuntu Precise distribution (without the Kernel, as it uses the host kernel).</p>
+
+<p><img src="/images/docker/docker-image-creation-00.png"></p>
+
+<p>We will then interact with it by launching a job from this filesystem.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker run ubuntu apt-get install -y memcached</span>
+</span><span class='line'><span class="go">[&amp;hellip;]</span>
+</span><span class='line'><span class="go">[=&gt; container id is 9fb69e798e67]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>When executing this command, we create a container. This container will create a writable layer for its filesystem, and base it upon the image <em>ubuntu</em>. It will then launch the process <code>apt-get</code> with the argument <code>install -y memcached</code></p>
+
+<p><img src="/images/docker/docker-image-creation-01.png"></p>
+
+<p>I didn&rsquo;t affect any name to the container, but the output gave me its id. If I want to save the current state of the filesystem, I can commit it thanks to the id of the container:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker commit 9fb69e798e67</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/docker/docker-image-creation-02.png"></p>
+
+<p>And the container will automatically create another layer upon your newly created image. Note that you are only saving <strong>the filesystem state</strong>. The <strong>memory state won&rsquo;t be saved</strong> in the image.</p>
+
+<p><img src="/images/docker/docker-image-creation-03.png"></p>
+
+<p>Note also that the status of your container is depending of the status of the job your run. Once the job finished, the container is stopped.</p>
+
+<p>If you want to organize your images, it is better to commit them under your local repository.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker commit 9fb69e798e67 yabage/ubuntu-memcached</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Finally, you can of course run a new container based on your newly created image, and commit other modification upon it.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker run -i -t yabage/ubuntu-memcached /bin/bash</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><img src="/images/docker/docker-image-creation-04.png"></p>
+
+<h2>The Dockerfile</h2>
+
+<p>You have seen how to build an image by interacting direclty with the container. Nevertheless, most of the time you will want to share your images through &ldquo;recipes&rdquo; allowing others to <strong>build</strong> themselves your images.
+This is what <strong>Dockerfiles</strong> are for.</p>
+
+<p>The Dockerfile lists the instruction on how to build your image and what to run on the container.</p>
+
+<p>As you want to obtain the same image in every circonstances, you will have to <strong>avoid</strong> any operation that <strong>doesn&rsquo;t result in a controlled and guaranted state</strong>. For instance, you should not do any <code>apt-get upgrade</code> in a Dockerfile, as you don&rsquo;t controlled the result : indeed, depending the date your launching it, the upgrade could be different. Moreover, for technical reasons, there is a high chance that the upgrade fails. If you want to upgrade your distribution, you should update the base image your Dockerfile rely on.</p>
+
+<p>Now let&rsquo;s see how to build the first container in a Dockerfile:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>FROM ubuntu:precise #the base image of this build script&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>RUN apt-get install -y memcached&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Well&hellip;that&rsquo;s all. You know have a container with memcached installed.</p>
+
+<p>I kept this Dockerfile minimalistic on purpose, put you will want to define the maintainer of the Dockerfile with the tag <code>MAINTAINER</code>, define the default process to launch with <code>CMD</code> and a lot of other usefull instructions.
+For now I will stick to this version.</p>
+
+<p>I would like to focus your attention on a point: each RUN instruction will commit the current layer and create a new one upon it. <strong>The state of the memory is forgotten</strong> between two <code>RUN</code> instructions. Only the filesystem is kept.</p>
+
+<p>To build an image, you put these instructions in a file called <em>Dockerfile</em>, then executes from the same folder:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">sudo docker build .</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>It will build the container and return its id. If you want to name the container when building, you can do it with the <code>-t</code> option</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">sudo docker build -t ubuntu-memcached .</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>You have seen a very quick introduction to Dockerfile. I will soon write an article about how to write a proper Docker image, following good practices, so that you can share them with your friends and the community!</p>
+]]></content>
+  </entry>
+  
+</feed>
