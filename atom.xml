@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-14T22:09:58+02:00</updated>
+  <updated>2014-05-14T22:38:07+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -18,7 +18,7 @@
     <link href="http://pierre-jean.github.io/blog/2014/05/14/deeper-look-dockerfile/"/>
     <updated>2014-05-14T14:45:54+02:00</updated>
     <id>http://pierre-jean.github.io/blog/2014/05/14/deeper-look-dockerfile</id>
-    <content type="html"><![CDATA[<p>A <a href="http://pierre-jean.baraud.fr/blog/2014/05/07/docker/">week ago</a>, I introduced the framework <a href="http://docker.io">Docker</a>. Docker is a lightview virtualized environment. It allows to build, managed and run containers to deploy easily an app in an iso environment.
+    <content type="html"><![CDATA[<p>A <a href="http://pierre-jean.baraud.fr/blog/2014/05/07/docker/">week ago</a>, I introduced the framework <a href="http://docker.io">Docker</a>. Docker is a lightview virtualized environment. It allows to build, manage and run containers to easily deploy an app in an iso environment.
 I will introduce today how to create containers interactively and through Dockerfile.</p>
 
 <!-- More -->
@@ -26,7 +26,7 @@ I will introduce today how to create containers interactively and through Docker
 
 <h2>Hands on containers and images</h2>
 
-<p>If you&rsquo;re not familiar with Docker, I strongly recommand you to have a look to their <a href="https://www.docker.io/gettingstarted/#">interactive tutorial</a>. It is well done, efficient, and get you into the swing of things. The <a href="https://www.docker.io/learn/dockerfile/">Dockerfile tutorial</a> will also give you all the basis. I will try here to sum up the more important concepts.</p>
+<p>If you&rsquo;re not familiar with Docker, I strongly recommend you to have a look to their <a href="https://www.docker.io/gettingstarted/#">interactive tutorial</a>. It is well done, efficient, and get you into the swing of things. The <a href="https://www.docker.io/learn/dockerfile/">Dockerfile tutorial</a> will also give you all the basis. I will try here to sum up the more important concepts.</p>
 
 <h3>What is a container?</h3>
 
@@ -81,7 +81,7 @@ I will introduce today how to create containers interactively and through Docker
 
 <p><img class="center" src="http://pierre-jean.github.io/images/docker/docker-image-creation-03.png"></p>
 
-<p>Note also that the status of your container is depending of the status of the job your run. Once the job finished, the container is stopped.</p>
+<p>Note also that the status of your container is depending on the status of the job your run. Once the job finished, the container is stopped.</p>
 
 <p>If you want to organize your images, it is better to commit them under your local repository.</p>
 
@@ -101,12 +101,12 @@ I will introduce today how to create containers interactively and through Docker
 
 <h2>The Dockerfile</h2>
 
-<p>You have seen how to build an image by interacting direclty with the container. Nevertheless, most of the time you will want to share your images through &ldquo;recipes&rdquo; allowing others to <strong>build</strong> themselves your images.
+<p>You have seen how to build an image by interacting directly with the container. Nevertheless, most of the time you will want to share your images through &ldquo;recipes&rdquo; allowing others to <strong>build</strong> themselves your images.
 This is what <strong>Dockerfiles</strong> are for.</p>
 
 <p>The Dockerfile lists the instruction on how to build your image and what to run on the container.</p>
 
-<p>As you want to obtain the same image in every circonstances, you will have to <strong>avoid</strong> any operation that <strong>doesn&rsquo;t result in a controlled and guaranted state</strong>. For instance, you should not do any <code>apt-get upgrade</code> in a Dockerfile, as you don&rsquo;t controlled the result : indeed, depending the date your launching it, the upgrade could be different. Moreover, for technical reasons, there is a high chance that the upgrade fails. If you want to upgrade your distribution, you should update the base image your Dockerfile rely on.</p>
+<p>As you want to obtain the same image in every circumstances, you will have to <strong>avoid</strong> any operation that <strong>doesn&rsquo;t result in a controlled and guaranted state</strong>. For instance, you should not do any <code>apt-get upgrade</code> in a Dockerfile, as you don&rsquo;t controlled the result : indeed, depending the date your launching it, the upgrade could be different. Moreover, for technical reasons, there is a high chance that the upgrade fails. If you want to upgrade your distribution, you should update the base image your Dockerfile rely on.</p>
 
 <p>Now let&rsquo;s see how to build the first container in a Dockerfile:</p>
 
@@ -120,7 +120,7 @@ This is what <strong>Dockerfiles</strong> are for.</p>
 
 <p>Well&hellip;that&rsquo;s all. You know have a container with memcached installed.</p>
 
-<p>I kept this Dockerfile minimalistic on purpose, put you will want to define the maintainer of the Dockerfile with the tag <code>MAINTAINER</code>, define the default process to launch with <code>CMD</code> and a lot of other usefull instructions.
+<p>I kept this Dockerfile minimalistic on purpose, put you will want to define the maintainer of the Dockerfile with the tag <code>MAINTAINER</code>, define the default process to launch with <code>CMD</code> and a lot of other useful instructions.
 For now I will stick to this version.</p>
 
 <p>I would like to focus your attention on a point: each RUN instruction will commit the current layer and create a new one upon it. <strong>The state of the memory is forgotten</strong> between two <code>RUN</code> instructions. Only the filesystem is kept.</p>
