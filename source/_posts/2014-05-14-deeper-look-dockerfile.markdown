@@ -37,45 +37,82 @@ This will download an image with the files of Ubuntu Precise distribution (witho
 
 {% img center /images/docker/docker-image-creation-00.png %}
 
+You can have information about downloaded images with the command `docker images`:
+
+{% codeblock lang:console %}
+$ sudo docker images
+REPOSITORY           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+ubuntu               precise             74fe38d11401        3 weeks ago         209.6 MB
+{% endcodeblock %}
+
 We will then interact with it by launching a job from this filesystem.
 
 {% codeblock lang:console %}
-~$ sudo docker run ubuntu apt-get install -y memcached
+~$ sudo docker run ubuntu:precise apt-get install -y memcached
 [...]
-[=> container id is 9fb69e798e67]
 {% endcodeblock %}
 
-When executing this command, we create a container. This container will create a writable layer for its filesystem, and base it upon the image *ubuntu*. It will then launch the process `apt-get` with the argument `install -y memcached`
+When executing this command, we create a container. This container will create a writable layer for its filesystem, and base it upon the image *ubuntu:precise*. It will then launch the process `apt-get` with the argument `install -y memcached`
 
 {% img center /images/docker/docker-image-creation-01.png %}
 
-I didn't affect any name to the container, but the output gave me its id. If I want to save the current state of the filesystem, I can commit it thanks to the id of the container:
+I didn't affect any name to the container in the previous command. To find the id of a running container, you can type the command `docker ps`:
 
 {% codeblock lang:console %}
-~$ sudo docker commit 9fb69e798e67
+~$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                CREATED              STATUS              PORTS               NAMES
 {% endcodeblock %}
 
-{% img center /images/docker/docker-image-creation-02.png %}
+Here, I don't have any running container. Indeed, the status of the container is related to the status of its running job. As a consequence, once `apt-get install -y memcached` returned, the container is stopped.
 
-And the container will automatically create another layer upon your newly created image. Note that you are only saving **the filesystem state**. The **memory state won't be saved** in the image.
+To display all containers currently on your machine, you can type `docker ps -a`:
+
+{% codeblock lang:console %}
+~$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND                CREATED              STATUS              PORTS               NAMES
+cab24787db86        ubuntu:12.04        apt-get install -y m   About a minute ago   Exit 0                                  clever_curie  
+{% endcodeblock %}
+
+I can now commit the content of the filesystem of this container into a new image:
+
+{% codeblock lang:console %}
+~$ sudo docker commit cab24
+9f97edd4e9ee794eca4c40db3122b5c635f0e2f92c3b0e62deaac9e28af1a868
+{% endcodeblock %}
+
+You will note that typing just the first digits of the id is enough to find it, as in git.
+
+You image is now visible when you display your docker images:
+
+{% codeblock lang:console %}
+~$ sudo docker images
+REPOSITORY           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+<none>               <none>              9f97edd4e9ee        3 minutes ago       246.2 MB
+ubuntu               precise             74fe38d11401        3 weeks ago         209.6 MB
+{% endcodeblock %}
+
+You can run a new container based on this new image:
+{% codeblock lang:console %}
+~$ sudo docker run --name "bash-on-mysql-image" -i -t 9f97ed /bin/bash
+root@1ddbe7cefb87:/#
+{% endcodeblock %}
+
+You will now run a new container, with the process `/bin/bash`, `-i` and `-t` options for respectively running it interactively and attaching a pseudo  tty, `--name` to name our container, that will put a writable layer upon our image 9f97edd, which is itself based on our images ubuntu:precise.
 
 {% img center /images/docker/docker-image-creation-03.png %}
 
-Note also that the status of your container is depending on the status of the job your run. Once the job finished, the container is stopped.
+You may have understand now that referencing the images by their id won't be handy, That's why you will prefer to organize your images under 
 
 If you want to organize your images, it is better to commit them under your local repository.
-
+You could have run this command to commit from the container:
 {% codeblock lang:console %}
-~$ sudo docker commit 9fb69e798e67 yabage/ubuntu-memcached
+~$ sudo docker commit 9f97e yabage/ubuntu-memcached
 {% endcodeblock %}
 
-Finally, you can of course run a new container based on your newly created image, and commit other modification upon it.
-
+Or you can tag the current image directly
 {% codeblock lang:console %}
-~$ sudo docker run -i -t yabage/ubuntu-memcached /bin/bash
+~$ sudo docker tag 9f97e yabage/ubuntu-memcached
 {% endcodeblock %}
-
-{% img center /images/docker/docker-image-creation-04.png %}
 
 The Dockerfile
 --------------
