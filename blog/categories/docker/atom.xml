@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Docker | Yabage]]></title>
   <link href="http://pierre-jean.github.io/blog/categories/docker/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-18T16:18:59+02:00</updated>
+  <updated>2014-05-18T21:25:01+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[A First Look Into Dockerfiles]]></title>
-    <link href="http://pierre-jean.github.io/blog/2014/05/14/deeper-look-dockerfile/"/>
+    <link href="http://pierre-jean.github.io/blog/2014/05/14/fist-look-dockerfile/"/>
     <updated>2014-05-14T14:45:54+02:00</updated>
-    <id>http://pierre-jean.github.io/blog/2014/05/14/deeper-look-dockerfile</id>
+    <id>http://pierre-jean.github.io/blog/2014/05/14/fist-look-dockerfile</id>
     <content type="html"><![CDATA[<p>A <a href="http://pierre-jean.baraud.fr/blog/2014/05/07/docker/">week ago</a>, I introduced the framework <a href="http://docker.io">Docker</a>. Docker is a lightview virtualized environment. It allows to build, manage and run containers to easily deploy an app in an iso environment.
 I will introduce today how to create containers interactively and through Dockerfile.</p>
 
