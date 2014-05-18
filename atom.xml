@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-14T22:38:07+02:00</updated>
+  <updated>2014-05-18T16:18:59+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -53,51 +53,105 @@ I will introduce today how to create containers interactively and through Docker
 
 <p><img class="center" src="http://pierre-jean.github.io/images/docker/docker-image-creation-00.png"></p>
 
-<p>We will then interact with it by launching a job from this filesystem.</p>
+<p>You can have information about downloaded images with the command <code>docker images</code>:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker run ubuntu apt-get install -y memcached</span>
-</span><span class='line'><span class="go">[...]</span>
-</span><span class='line'><span class="go">[=&gt; container id is 9fb69e798e67]</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="gp">$</span> sudo docker images
+</span><span class='line'><span class="go">REPOSITORY           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE</span>
+</span><span class='line'><span class="go">ubuntu               precise             74fe38d11401        3 weeks ago         209.6 MB</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>When executing this command, we create a container. This container will create a writable layer for its filesystem, and base it upon the image <em>ubuntu</em>. It will then launch the process <code>apt-get</code> with the argument <code>install -y memcached</code></p>
+<p>We will then interact with it by launching a job from this filesystem.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker run ubuntu:precise apt-get install -y memcached</span>
+</span><span class='line'><span class="go">[...]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>When executing this command, we create a container. This container will create a writable layer for its filesystem, and base it upon the image <em>ubuntu:precise</em>. It will then launch the process <code>apt-get</code> with the argument <code>install -y memcached</code></p>
 
 <p><img class="center" src="http://pierre-jean.github.io/images/docker/docker-image-creation-01.png"></p>
 
-<p>I didn&rsquo;t affect any name to the container, but the output gave me its id. If I want to save the current state of the filesystem, I can commit it thanks to the id of the container:</p>
+<p>I didn&rsquo;t affect any name to the container in the previous command. To find the id of a running container, you can type the command <code>docker ps</code>:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker commit 9fb69e798e67</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker ps</span>
+</span><span class='line'><span class="go">CONTAINER ID        IMAGE               COMMAND                CREATED              STATUS              PORTS               NAMES</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><img class="center" src="http://pierre-jean.github.io/images/docker/docker-image-creation-02.png"></p>
+<p>Here, I don&rsquo;t have any running container. Indeed, the status of the container is related to the status of its running job. As a consequence, once <code>apt-get install -y memcached</code> returned, the container is stopped.</p>
 
-<p>And the container will automatically create another layer upon your newly created image. Note that you are only saving <strong>the filesystem state</strong>. The <strong>memory state won&rsquo;t be saved</strong> in the image.</p>
+<p>To display all containers currently on your machine, you can type <code>docker ps -a</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker ps -a</span>
+</span><span class='line'><span class="go">CONTAINER ID        IMAGE               COMMAND                CREATED              STATUS              PORTS               NAMES</span>
+</span><span class='line'><span class="go">cab24787db86        ubuntu:12.04        apt-get install -y m   About a minute ago   Exit 0                                  clever_curie  </span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I can now commit the content of the filesystem of this container into a new image:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker commit cab24</span>
+</span><span class='line'><span class="go">9f97edd4e9ee794eca4c40db3122b5c635f0e2f92c3b0e62deaac9e28af1a868</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You will note that typing just the first digits of the id is enough to find it, as in git.</p>
+
+<p>You image is now visible when you display your docker images:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker images</span>
+</span><span class='line'><span class="go">REPOSITORY           TAG                 IMAGE ID            CREATED             VIRTUAL SIZE</span>
+</span><span class='line'><span class="go">&lt;none&gt;               &lt;none&gt;              9f97edd4e9ee        3 minutes ago       246.2 MB</span>
+</span><span class='line'><span class="go">ubuntu               precise             74fe38d11401        3 weeks ago         209.6 MB</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can run a new container based on this new image:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker run --name &quot;bash-on-mysql-image&quot; -i -t 9f97ed /bin/bash</span>
+</span><span class='line'><span class="gp">root@1ddbe7cefb87:/#</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You will now run a new container, with the process <code>/bin/bash</code>, <code>-i</code> and <code>-t</code> options for respectively running it interactively and attaching a pseudo  tty, <code>--name</code> to name our container, that will put a writable layer upon our image 9f97edd, which is itself based on our images ubuntu:precise.</p>
 
 <p><img class="center" src="http://pierre-jean.github.io/images/docker/docker-image-creation-03.png"></p>
 
-<p>Note also that the status of your container is depending on the status of the job your run. Once the job finished, the container is stopped.</p>
+<p>You may have understand now that referencing the images by their id won&rsquo;t be handy, That&rsquo;s why you will prefer to organize your images under</p>
 
-<p>If you want to organize your images, it is better to commit them under your local repository.</p>
+<p>If you want to organize your images, it is better to commit them under your local repository.
+You could have run this command to commit from the container:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker commit 9fb69e798e67 yabage/ubuntu-memcached</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker commit 9f97e yabage/ubuntu-memcached</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Finally, you can of course run a new container based on your newly created image, and commit other modification upon it.</p>
+<p>Or you can tag the current image directly</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker run -i -t yabage/ubuntu-memcached /bin/bash</span>
+</pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">~$ sudo docker tag 9f97e yabage/ubuntu-memcached</span>
 </span></code></pre></td></tr></table></div></figure>
 
-
-<p><img class="center" src="http://pierre-jean.github.io/images/docker/docker-image-creation-04.png"></p>
 
 <h2>The Dockerfile</h2>
 
