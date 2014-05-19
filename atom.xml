@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-18T21:25:01+02:00</updated>
+  <updated>2014-05-19T09:54:40+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -174,12 +174,12 @@ This is what <strong>Dockerfiles</strong> are for.</p>
 
 <p>Well&hellip;that&rsquo;s all. You know have a container with memcached installed.</p>
 
-<p>I kept this Dockerfile minimalistic on purpose, put you will want to define the maintainer of the Dockerfile with the tag <code>MAINTAINER</code>, define the default process to launch with <code>CMD</code> and a lot of other useful instructions.
+<p>I kept this Dockerfile minimalistic on purpose, but you will want to define the maintainer of the Dockerfile with the tag <code>MAINTAINER</code>, define the default process to launch with <code>CMD</code> and a lot of other useful instructions.
 For now I will stick to this version.</p>
 
 <p>I would like to focus your attention on a point: each RUN instruction will commit the current layer and create a new one upon it. <strong>The state of the memory is forgotten</strong> between two <code>RUN</code> instructions. Only the filesystem is kept.</p>
 
-<p>To build an image, you put these instructions in a file called <em>Dockerfile</em>, then executes from the same folder:</p>
+<p>To build an image, you put these instructions in a file called <em>Dockerfile</em>, then execute the <code>build</code> command from the same folder:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='console'><span class='line'><span class="go">sudo docker build .</span>
