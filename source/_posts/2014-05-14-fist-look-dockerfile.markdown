@@ -136,12 +136,12 @@ RUN apt-get install -y memcached
 
 Well...that's all. You know have a container with memcached installed.
 
-I kept this Dockerfile minimalistic on purpose, put you will want to define the maintainer of the Dockerfile with the tag `MAINTAINER`, define the default process to launch with `CMD` and a lot of other useful instructions.
+I kept this Dockerfile minimalistic on purpose, but you will want to define the maintainer of the Dockerfile with the tag `MAINTAINER`, define the default process to launch with `CMD` and a lot of other useful instructions.
 For now I will stick to this version.
 
 I would like to focus your attention on a point: each RUN instruction will commit the current layer and create a new one upon it. **The state of the memory is forgotten** between two `RUN` instructions. Only the filesystem is kept.
 
-To build an image, you put these instructions in a file called *Dockerfile*, then executes from the same folder:
+To build an image, you put these instructions in a file called *Dockerfile*, then execute the `build` command from the same folder:
 
 {% codeblock lang:console %}
 sudo docker build .
