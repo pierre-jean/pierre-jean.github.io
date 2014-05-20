@@ -1,24 +1,113 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Docker | Yabage]]></title>
-  <link href="http://pierre-jean.github.io/blog/categories/docker/atom.xml" rel="self"/>
-  <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-20T12:03:40+02:00</updated>
-  <id>http://pierre-jean.github.io/</id>
-  <author>
-    <name><![CDATA[Pierre-Jean Baraud]]></name>
-    <email><![CDATA[pierre-jean@baraud.fr]]></email>
-  </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>A Deeper Look Into Dockerfiles - Yabage</title>
+  <meta name="author" content="Pierre-Jean Baraud">
 
   
-  <entry>
-    <title type="html"><![CDATA[A Deeper Look Into Dockerfiles]]></title>
-    <link href="http://pierre-jean.github.io/blog/2014/05/19/deeper-look-dockerfile/"/>
-    <updated>2014-05-19T17:18:54+02:00</updated>
-    <id>http://pierre-jean.github.io/blog/2014/05/19/deeper-look-dockerfile</id>
-    <content type="html"><![CDATA[<p>I introduced in <a href="http://pierre-jean.baraud.fr/blog/2014/05/14/fist-look-dockerfile/">a previous post</a> how to create <a href="https://www.docker.io/">Docker</a> images interactively and with a <em>Dockerfile</em>.</p>
+  <meta name="description" content="I introduced in a previous post how to create Docker images interactively and with a Dockerfile. In this post, I will focus on good practices and see &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pierre-jean.github.io/blog/2014/05/19/deeper-look-dockerfile">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Yabage" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-50819754-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Yabage</a></h1>
+  
+    <h2>Yet Another Blog About Geek Experiments</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pierre-jean.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-me/">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">A Deeper Look Into Dockerfiles</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-19T17:18:54+02:00" pubdate data-updated="true">May 19<span>th</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pierre-jean.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I introduced in <a href="http://pierre-jean.baraud.fr/blog/2014/05/14/fist-look-dockerfile/">a previous post</a> how to create <a href="https://www.docker.io/">Docker</a> images interactively and with a <em>Dockerfile</em>.</p>
 
 <p>In this post, I will focus on good practices and see how a proper repository is realized. Indeed, in my previous post, my example was a little bit trivial, and if you want to create your own images through a Dockerfile, you will surely bump into difficulties: how do I manage interactive installation that ask a user input during install? How should I configure my application after installation? And many others&hellip;</p>
 
@@ -38,7 +127,7 @@ Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum<
 
 <p>Let&rsquo;s have a look the docker file, and the good practices it includes.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -57,36 +146,34 @@ Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum<
 <span class='line-number'>17</span>
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>FROM ubuntu:trusty
-</span><span class='line'>MAINTAINER Fernando Mayo &lt;a href="&#109;&#97;&#x69;&#108;&#116;&#111;&#58;&#102;&#x65;&#x72;&#x6e;&#97;&#x6e;&#x64;&#111;&#x40;&#116;&#117;&#x74;&#117;&#x6d;&#46;&#x63;&#111;">&#x66;&#x65;&#x72;&#x6e;&#97;&#110;&#100;&#x6f;&#64;&#116;&#x75;&#x74;&#117;&#x6d;&#x2e;&#x63;&#111;&lt;/a>&lt;/p>
+</span><span class='line'>MAINTAINER Fernando Mayo &lt;fernando@tutum.co>
 </span><span class='line'>
-</span><span class='line'>&lt;h1>Install packages&lt;/h1>
+</span><span class='line'># Install packages
+</span><span class='line'>RUN apt-get update
+</span><span class='line'>RUN DEBIAN_FRONTEND=noninteractive apt-get -y install supervisor mysql-server pwgen
 </span><span class='line'>
-</span><span class='line'>&lt;p>RUN apt-get update
-</span><span class='line'>RUN DEBIAN_FRONTEND=noninteractive apt-get -y install supervisor mysql-server pwgen&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Add image configuration and scripts&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>ADD start.sh /start.sh
+</span><span class='line'># Add image configuration and scripts
+</span><span class='line'>ADD start.sh /start.sh
 </span><span class='line'>ADD run.sh /run.sh
 </span><span class='line'>ADD supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
 </span><span class='line'>ADD my.cnf /etc/mysql/conf.d/my.cnf
 </span><span class='line'>ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
 </span><span class='line'>ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
 </span><span class='line'>ADD import_sql.sh /import_sql.sh
-</span><span class='line'>RUN chmod 755 /*.sh&lt;/p>
+</span><span class='line'>RUN chmod 755 /\*.sh
 </span><span class='line'>
-</span><span class='line'>&lt;p>EXPOSE 3306
-</span><span class='line'>CMD [&ldquo;/run.sh&rdquo;]</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'>EXPOSE 3306
+</span><span class='line'>CMD ["/run.sh"]</span></code></pre></td></tr></table></div></figure>
+
 
 <h3>FROM command</h3>
 
 <p>The FROM command defines the base image for this image.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>FROM ubuntu:trusty</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FROM ubuntu:trusty</span></code></pre></td></tr></table></div></figure>
+
 
 <p>You can see that the maintainer used a tag to define precisely which version of Ubuntu to use. <strong>You should always define a tagged version of your base image</strong> to precisely define which release of the distribution your image relies on.</p>
 
@@ -94,8 +181,9 @@ Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum<
 
 <p>The maintainer is vital tag, to define the author of the image and a way to contact it.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>MAINTAINER Fernando Mayo &lt;a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#x66;&#101;&#114;&#110;&#97;&#x6e;&#100;&#111;&#64;&#x74;&#x75;&#x74;&#117;&#x6d;&#46;&#99;&#x6f;">&#x66;&#x65;&#x72;&#110;&#97;&#110;&#100;&#111;&#x40;&#116;&#x75;&#116;&#117;&#x6d;&#x2e;&#99;&#x6f;&lt;/a></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>MAINTAINER Fernando Mayo &lt;fernando@tutum.co></span></code></pre></td></tr></table></div></figure>
+
 
 <h3>COMMENTS</h3>
 
@@ -105,18 +193,13 @@ Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum<
 
 <p>After each <code>RUN</code> instruction, the image is committed, and the following RUN instruction is executed on the newly committed image.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Install packages&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>RUN apt-get update
-</span><span class='line'>RUN DEBIAN_FRONTEND=noninteractive apt-get -y install supervisor mysql-server pwgen</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Install packages
+</span><span class='line'>RUN apt-get update
+</span><span class='line'>RUN DEBIAN_FRONTEND=noninteractive apt-get -y install supervisor mysql-server pwgen</span></code></pre></td></tr></table></div></figure>
+
 
 <p>We can notice several practices here:</p>
 
@@ -129,7 +212,7 @@ Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum<
 
 <h3>ADD command</h3>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -137,20 +220,15 @@ Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum<
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>Add image configuration and scripts&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>ADD start.sh /start.sh
+</pre></td><td class='code'><pre><code class=''><span class='line'># Add image configuration and scripts
+</span><span class='line'>ADD start.sh /start.sh
 </span><span class='line'>ADD run.sh /run.sh
 </span><span class='line'>ADD supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
 </span><span class='line'>ADD my.cnf /etc/mysql/conf.d/my.cnf
 </span><span class='line'>ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
 </span><span class='line'>ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
-</span><span class='line'>ADD import_sql.sh /import_sql.sh</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'>ADD import_sql.sh /import_sql.sh</span></code></pre></td></tr></table></div></figure>
+
 
 <p>The maintainer has added two types of external files here:</p>
 
@@ -164,8 +242,9 @@ Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum<
 
 <p>The Dockerfile defines the ports you want to expose to the host system to access the service you will run on the container, with the instruction <code>EXPOSE</code>.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>EXPOSE 3306</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>EXPOSE 3306</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Even if you can tell on which host port you want to map the local port, this is good practice to let Docker framework dynamically map the port to the host. Indeed, if you map yourself the port, you won&rsquo;t be able to launch several containers from the same Dockerfile, as the first one will lock the port for itself.</p>
 
@@ -173,8 +252,9 @@ Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum<
 
 <p>Finally, you can tell Docker which process it should execute by default when launching a container.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>CMD [&ldquo;/run.sh&rdquo;]</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CMD ["/run.sh"]</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Here, as the maintainer wrapped the process into a script to automate account creation, it launches the script instead of the process.</p>
 
@@ -195,7 +275,148 @@ Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum<
 <p>You have seen how is built a popular docker image. If you want to create your own Docker image, you should search for similar images in the Docker index and analyze their Dockerfiles. All trusted build are available through their github page, so it&rsquo;s a really easy task.</p>
 
 <p>I hope this post will help you to create great images for yourself and the community!</p>
-]]></content>
-  </entry>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
   
-</feed>
+
+<span class="byline author vcard">Posted by <span class="fn">Pierre-Jean Baraud</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-05-19T17:18:54+02:00" pubdate data-updated="true">May 19<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/docker/'>Docker</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pierre-jean.github.io/blog/2014/05/19/deeper-look-dockerfile/" data-via="" data-counturl="http://pierre-jean.github.io/blog/2014/05/19/deeper-look-dockerfile/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/14/fist-look-dockerfile/" title="Previous Post: A first look into Dockerfiles">&laquo; A first look into Dockerfiles</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/05/19/deeper-look-dockerfile/">A Deeper Look Into Dockerfiles</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/fist-look-dockerfile/">A First Look Into Dockerfiles</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/13/3d-iso-introduction/">Introduction to Isometric 3D</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/12/train-your-skills/">Train Your Java Skills</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/09/update-ovh-dynhost-address-from-linux/">Update OVH DynHost Address From Linux</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Pierre-Jean Baraud -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'yabage';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pierre-jean.github.io/blog/2014/05/19/deeper-look-dockerfile/';
+        var disqus_url = 'http://pierre-jean.github.io/blog/2014/05/19/deeper-look-dockerfile/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

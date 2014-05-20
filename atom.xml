@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-05-19T09:54:40+02:00</updated>
+  <updated>2014-05-20T12:03:40+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -12,6 +12,182 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A Deeper Look Into Dockerfiles]]></title>
+    <link href="http://pierre-jean.github.io/blog/2014/05/19/deeper-look-dockerfile/"/>
+    <updated>2014-05-19T17:18:54+02:00</updated>
+    <id>http://pierre-jean.github.io/blog/2014/05/19/deeper-look-dockerfile</id>
+    <content type="html"><![CDATA[<p>I introduced in <a href="http://pierre-jean.baraud.fr/blog/2014/05/14/fist-look-dockerfile/">a previous post</a> how to create <a href="https://www.docker.io/">Docker</a> images interactively and with a <em>Dockerfile</em>.</p>
+
+<p>In this post, I will focus on good practices and see how a proper repository is realized. Indeed, in my previous post, my example was a little bit trivial, and if you want to create your own images through a Dockerfile, you will surely bump into difficulties: how do I manage interactive installation that ask a user input during install? How should I configure my application after installation? And many others&hellip;</p>
+
+<!-- More -->
+
+
+<h2>Trusted Builds: a good way to learn</h2>
+
+<p>When you commit your image in a local repository, or push it into a remote repository, you only push the built image, as a file.
+Trusted build is a mechanism to build automatically an image from its sources: the docker index will built the image each time a commit is done on the public github repository corresponding to the docker image.
+This is a great way to study popular images and see how their maintainers manage difficulties you can have with the settings of some application.</p>
+
+<p>You can browse and search into the official Docker index of repositories from the <a href="https://index.docker.io/">website</a>, or interact with it in command line with <code>docker search</code>, <code>docker pull</code> and <code>docker push</code>.
+Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum</em>, available <a href="https://index.docker.io/u/tutum/mysql/">here</a>. As it is a trusted build, you have access to the <a href="https://github.com/tutumcloud/tutum-docker-mysql">github page</a> from where the image is built.</p>
+
+<h2>Dockerfile</h2>
+
+<p>Let&rsquo;s have a look the docker file, and the good practices it includes.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FROM ubuntu:trusty
+</span><span class='line'>MAINTAINER Fernando Mayo &lt;fernando@tutum.co>
+</span><span class='line'>
+</span><span class='line'># Install packages
+</span><span class='line'>RUN apt-get update
+</span><span class='line'>RUN DEBIAN_FRONTEND=noninteractive apt-get -y install supervisor mysql-server pwgen
+</span><span class='line'>
+</span><span class='line'># Add image configuration and scripts
+</span><span class='line'>ADD start.sh /start.sh
+</span><span class='line'>ADD run.sh /run.sh
+</span><span class='line'>ADD supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
+</span><span class='line'>ADD my.cnf /etc/mysql/conf.d/my.cnf
+</span><span class='line'>ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
+</span><span class='line'>ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
+</span><span class='line'>ADD import_sql.sh /import_sql.sh
+</span><span class='line'>RUN chmod 755 /\*.sh
+</span><span class='line'>
+</span><span class='line'>EXPOSE 3306
+</span><span class='line'>CMD ["/run.sh"]</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>FROM command</h3>
+
+<p>The FROM command defines the base image for this image.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FROM ubuntu:trusty</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can see that the maintainer used a tag to define precisely which version of Ubuntu to use. <strong>You should always define a tagged version of your base image</strong> to precisely define which release of the distribution your image relies on.</p>
+
+<h3>MAINTAINER</h3>
+
+<p>The maintainer is vital tag, to define the author of the image and a way to contact it.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>MAINTAINER Fernando Mayo &lt;fernando@tutum.co></span></code></pre></td></tr></table></div></figure>
+
+
+<h3>COMMENTS</h3>
+
+<p>You can add comments with the character <code>#</code>. You should always add comments to explain the goal of each block of instructions.</p>
+
+<h3>RUN command</h3>
+
+<p>After each <code>RUN</code> instruction, the image is committed, and the following RUN instruction is executed on the newly committed image.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Install packages
+</span><span class='line'>RUN apt-get update
+</span><span class='line'>RUN DEBIAN_FRONTEND=noninteractive apt-get -y install supervisor mysql-server pwgen</span></code></pre></td></tr></table></div></figure>
+
+
+<p>We can notice several practices here:</p>
+
+<ul>
+<li><p>No usage of <code>apt-get upgrade</code>: Indeed, you just want to add on this layer what is needed for the container. If you want to upgrade the system, you should <strong>upgrade the base image</strong>, as it is its role to offer the system environment.</p></li>
+<li><p>Avoid interaction: the <code>RUN</code> command is <strong>executed in a non-interactive way</strong>. As a consequence, you don&rsquo;t want to been ask for confirmation when installing package: you must use the <code>-y</code> option in <code>apt-get install -y &lt;packages&gt;</code>. Moreover some packages ask questions during installation about account creation, default configuration, etc. It is the case for mysql-server for instance. That&rsquo;s why the author put the variable <code>DEBIAN_FRONTEND</code> to <code>noninteractive</code>, in order to inform that there won&rsquo;t be any interaction during installation.</p></li>
+<li><p>Finally, there is the <code>apt-get update</code>. It is the most litigious command. If you install your packages via <code>apt-get</code>, you have no choice but to update the index of packages before the install: you don&rsquo;t want to have an outdated cache and broken links during installation. Nevertheless, it also means that the Dockerfile can create slightly different images depending of the date of build. Indeed, the version of a package or a dependency of a package you want to install can have change in the repository. The only work around is to install your packages via a direct link to a binary package or from source. Anyway, the consequence can be neglected as you don&rsquo;t want to rebuild your image every day, and you should build it once and use it / share it as long as you want to use the same environment.</p></li>
+</ul>
+
+
+<h3>ADD command</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># Add image configuration and scripts
+</span><span class='line'>ADD start.sh /start.sh
+</span><span class='line'>ADD run.sh /run.sh
+</span><span class='line'>ADD supervisord-mysqld.conf /etc/supervisor/conf.d/supervisord-mysqld.conf
+</span><span class='line'>ADD my.cnf /etc/mysql/conf.d/my.cnf
+</span><span class='line'>ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
+</span><span class='line'>ADD create_mysql_admin_user.sh /create_mysql_admin_user.sh
+</span><span class='line'>ADD import_sql.sh /import_sql.sh</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The maintainer has added two types of external files here:</p>
+
+<ul>
+<li><p><strong>Configuration files</strong>: you want your image to be operational immediately after the build. You have to provide working default configurations that allow to use the package in rational conditions. You must of course allow the user to override the configuration settings (by adding its own configuration files, or with environment variables).</p></li>
+<li><p><strong>Scripts files</strong>: As you want to automate all setup steps, it is a good idea to wrap your launcher inside scripts that could executes some  checking and actions for you (<em>Database creation</em>, <em>Account creation</em>, etc.).</p></li>
+</ul>
+
+
+<h3>EXPOSE command</h3>
+
+<p>The Dockerfile defines the ports you want to expose to the host system to access the service you will run on the container, with the instruction <code>EXPOSE</code>.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>EXPOSE 3306</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Even if you can tell on which host port you want to map the local port, this is good practice to let Docker framework dynamically map the port to the host. Indeed, if you map yourself the port, you won&rsquo;t be able to launch several containers from the same Dockerfile, as the first one will lock the port for itself.</p>
+
+<h3>CMD command</h3>
+
+<p>Finally, you can tell Docker which process it should execute by default when launching a container.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>CMD ["/run.sh"]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here, as the maintainer wrapped the process into a script to automate account creation, it launches the script instead of the process.</p>
+
+<h2>Supervisor</h2>
+
+<p>If you study the scripts, you may have noticed that the maintainer doesn&rsquo;t launch the mysql server directly, but launch instead a process called <strong>Supervisord</strong>. <a href="http://supervisord.org/">Supervisor</a> is a process control system, a little bit like <code>init</code>, that allow you to manage the execution of several processes.</p>
+
+<p>Indeed, I told you in my previous article that a Docker container can only run one job: there isn&rsquo;t any <code>init</code> running instance to manage the lifecycle of several process executions in a Docker container. Nevertheless, you will certainly want to be able to manage several processes or job in a same container: for example, running a SSH server and at the same time another kind of server. You can use Supervisor to do that.</p>
+
+<p>Better, as explained in this <a href="http://blog.trifork.com/2014/03/11/using-supervisor-with-docker-to-manage-processes-supporting-image-inheritance/">article</a>, you can use inheritance to include the Supervisor configuration files from you base image, to launch the services the base image already provide in parallel with the jobs you define in your own configuration.</p>
+
+<h2>README.md</h2>
+
+<p>Finally, the author of the image included a README.md explaining how to build, launch and configure the container. It is really handy and you always should include it if you create your own trusted build. The README is displayed on the<a href="https://index.docker.io/u/tutum/mysql/"> Docker index website</a> when you look for the image.</p>
+
+<h2>What&rsquo;s next?</h2>
+
+<p>You have seen how is built a popular docker image. If you want to create your own Docker image, you should search for similar images in the Docker index and analyze their Dockerfiles. All trusted build are available through their github page, so it&rsquo;s a really easy task.</p>
+
+<p>I hope this post will help you to create great images for yourself and the community!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A First Look Into Dockerfiles]]></title>
