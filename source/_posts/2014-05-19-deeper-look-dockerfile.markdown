@@ -17,7 +17,7 @@ Trusted Builds: a good way to learn
 
 When you commit your image in a local repository, or push it into a remote repository, you only push the built image, as a file.
 Trusted build is a mechanism to build automatically an image from its sources: the docker index will built the image each time a commit is done on the public github repository corresponding to the docker image.
-This is a great way to study popular images and see how their maintainers manage difficulties you can have with the settings of some application.
+This is a great way to study popular images and see how their maintainers manage difficulties you can have with the settings of some images.
 
 You can browse and search into the official Docker index of repositories from the [website][docker-index], or interact with it in command line with `docker search`, `docker pull` and `docker push`.
 Let's have a look to the *mysql* image of the repository *tutum*, available [here][tutum-mysql-docker]. As it is a trusted build, you have access to the [github page][tutum-mysql-github] from where the image is built.
