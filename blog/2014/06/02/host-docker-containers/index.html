@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Host Docker Containers - Yabage</title>
+  <meta name="author" content="Pierre-Jean Baraud">
+
+  
+  <meta name="description" content="I already wrote about Docker, and today I will present different solutions to host your lovely docker containers. If you want to know more about &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://pierre-jean.github.io/blog/2014/06/02/host-docker-containers">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Yabage" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-50819754-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Yabage</a></h1>
+  
+    <h2>Yet Another Blog About Geek Experiments</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:pierre-jean.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about-me/">About Me</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Host Docker Containers</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-02T10:52:40+02:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://pierre-jean.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img class="center" src="/images/docker/host-solutions.png"></p>
+
+<p>I already wrote about Docker, and today I will present different solutions to host your lovely docker containers. If you  want to know more about Docker, you can read <a href="http://pierre-jean.baraud.fr/blog/categories/docker/">my previous post on this subject</a>.</p>
+
+<!-- More -->
+
+
+<h1>Dedicated servers</h1>
+
+<p>If you already have a dedicated server (hosted in a data center or just a home server), you can just install docker on it, and setup a proxy (nginx, apache, etc.) to redirect the requests to the right local port according to the domain.</p>
+
+<p>You can do this in a static way or use the <a href="http://docs.docker.io/use/ambassador_pattern_linking/">ambassador pattern as presented here</a>. The static method is the simplest if you only manage a few containers, but if you want a robust environment to deploy a large amount of containers, you should have a look on how to deploy ambassador containers.</p>
+
+<p>Instructions for installing Docker on several distributions are available in the <a href="http://docs.docker.io/installation/">official documentation</a>. For instance, on Ubuntu 14.04, you can install it directly from the package manager:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo apt-get update
+</span><span class='line'>$ sudo apt-get install docker.io
+</span><span class='line'>$ sudo ln -sf /usr/bin/docker.io /usr/local/bin/docker</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then, you can build and run your containers, as explained in my previous posts. If you don&rsquo;t have any firewall blocking the port, your containers should already be accessible from the net.</p>
+
+<p><img class="center" src="/images/docker/docker-host-direct.png"></p>
+
+<p>Nevertheless, you may want to access your containers and their service by the default port. You can do this with a simple HTTP reverse proxy, or if you have only one container running for a specified service, you can map them directly to the host default port for this service.
+The command:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo  docker run -p 22:22 ssh-image /usr/sbin/sshd -D</span></code></pre></td></tr></table></div></figure>
+
+
+<p>will launch the container based on image <em>ssh-image</em> and will map the port 22 of the container to the port 22 of the host.</p>
+
+<p><img class="center" src="/images/docker/docker-host-proxy.png"></p>
+
+<p>I won&rsquo;t enter into technical details in this post, but you can find a lot of resources on the net about how to setup a reverse proxy..</p>
+
+<p>This solution is maybe the first one you will try, at least for experiencing with docker.</p>
+
+<p><strong> Pros and cons:</strong></p>
+
+<ul>
+<li><p><em>Difficulty:</em> Even if installing Docker isn&rsquo;t difficult, maintaining a dedicated server could really end up in many headaches. You will have to manage upgrades, security issues, problems and configurations by yourself. Don&rsquo;t underestimate this part, especially if it&rsquo;s not your specialty.</p></li>
+<li><p><em>Scalability:</em> You&rsquo;re on your own. If you already thinked this through and designed a nice solution to scale your services, it can work pretty good. Or fail terribly.</p></li>
+<li><p><em>Price:</em> If you use your server 100% of its capacity, this may be the cheapest solution. Dedicated server are quite expensive, but you will also have a large amount of power to manage several services on the same machines.</p></li>
+</ul>
+
+
+<h1>Virtual Machines and VPS</h1>
+
+<p>This is exactly the same principle than before, except that you are running on a virtual machine. If you don&rsquo;t need the power of a dedicated machine, this solution gives you (more or less) the same freedom as the previous one but for a really cheaper price. This is also true with any IAAS solution (<em>Infrastructure as a Service</em>, for instance: Amazon EC2, Google Compute Engine, etc.). If you use a PAAS (Platform as a service) solution, you have to check if you can run docker containers on it, which, for the moment, is unlikely.</p>
+
+<p><strong>Pros and cons:</strong></p>
+
+<ul>
+<li><em>Difficulty:</em> The same as the dedicated server; you will have to setup the platform by yourself.</li>
+<li><em>Scalability:</em> You may be able to find it a little bit easier to scale with VM, but you will have to think your scalabitlity solution by yourself, just like with dedicated.</li>
+<li><em>Price:</em> Cheaper than a dedicated server, as you only use the power you need. You may even find IAAS solution that let you pay according to the cpu power used or the time your server is up (per minutes).</li>
+</ul>
+
+
+<h1>DigitalOcean</h1>
+
+<p><a href="https://www.digitalocean.com">DigitalOcean</a> is a hosting company, that offers virtual machines with preinstalled environments designed for developers.</p>
+
+<p>You can setup really easily what they call a <em>droplet</em>, which is a KVM instance running on SSD hard drive with more or less CPU and storage depending on the pricing solution.</p>
+
+<p>What is cool is that they offer to setup machines with docker already installed. The design of the website is clear and nice, and the pricing policy flexible.</p>
+
+<p>Let&rsquo;s see how to create a droplet with Docker installed.</p>
+
+<p>First of all <strong><a href="https://cloud.digitalocean.com/registrations/new">Sign up</a></strong>. They will ask you your credit card information, so that you can create droplet as soon as the process is finished.</p>
+
+<p>Then <strong><a href="https://cloud.digitalocean.com/login">log in</a></strong>, and clic on <strong>Create Droplet</strong>.</p>
+
+<p><img class="center" src="/images/docker/digitalocean-screen01.png"></p>
+
+<p>You give a name to the droplet (the name doesn&rsquo;t really matter, it&rsquo;s just for you):</p>
+
+<p><img class="center" src="/images/docker/digitalocean-screen02.png"></p>
+
+<p>And select the type of droplet you need. As you can see, prices start at 5$/month or 0.007$/hour for a basic configuration (1 CPU/512GB RAM/20GB SSD) to 640$/month or 0.952$/hour for the most powerfull configuration (20 CPU/64GB RAM/640GB SSD). Let&rsquo;s select the basic configuration: you can delete it whenever you want after this test, and it will just cost a few cents.</p>
+
+<p><img class="center" src="/images/docker/digitalocean-screen03.png"></p>
+
+<p>You select the region of your droplet. For the moment are available: New York, San Francisco, Amsterdam and Singapore.</p>
+
+<p><img class="center" src="/images/docker/digitalocean-screen04.png"></p>
+
+<p>You can install an OS distribution but also an image with applications already installed. Let&rsquo;s click on Applications and select Docker. They provide the latest Docker release available, which is nice.</p>
+
+<p><img class="center" src="/images/docker/digitalocean-screen05.png"></p>
+
+<p>Finally, you can choose to add a previously saved SSH Key, if you have one.</p>
+
+<p>Once everything is selected, click <strong>Create Droplet</strong>.</p>
+
+<p><img class="center" src="/images/docker/digitalocean-screen06.png"></p>
+
+<p><img class="center" src="/images/docker/digitalocean-screen07.png"></p>
+
+<p>The Droplet is set up in less than a minute. The root password will be emailed to you if you don&rsquo;t have associate any SSH Key with the droplet.
+The IP of the machine is displayed just after its creation.</p>
+
+<p><img class="center" src="/images/docker/digitalocean-screen08.png"></p>
+
+<p>You can ssh into the machine and launch directly your docker containers!</p>
+
+<p>DigitalOcean provide a nice and clear interface, you can interact with it through <a href="https://developers.digitalocean.com/">their REST API</a>, the prices are cheap and flexible.</p>
+
+<h1>Tutum</h1>
+
+<p>If you are really looking for a platform dedicated to Docker, there is <a href="http://www.tutum.co/">Tutum</a>.
+Tutum is a &ldquo;Container-as-a-service&rdquo;, and is the simplest solution to run docker containers that I&rsquo;ve seen.</p>
+
+<p>Let&rsquo;s see how to setup and run a container in Tutum.</p>
+
+<p>First of all, <strong><a href="https://app.tutum.co/accounts/register/">sign up</a></strong>, you will notice that no credit card information will be asked. Indeed, you can create your first container for free for a month, which is a great way to test the platform. You&rsquo;ll see some warnings alerting that Tutum is still in beta, but Docker is also still in beta, so it shouldn&rsquo;t be an issue, as you shouldn&rsquo;t use Docker in production for the moment.</p>
+
+<p>Once you are <a href="https://app.tutum.co/">logged in</a>, click on <strong>Launch your first application</strong>.</p>
+
+<p><img class="center" src="/images/docker/tutum-screen01.png"></p>
+
+<p>You can choose one of the preset docker images to start with&hellip;</p>
+
+<p><img class="center" src="/images/docker/tutum-screen02.png"></p>
+
+<p>or choose from the official docker index or any other registry.</p>
+
+<p><img class="center" src="/images/docker/tutum-screen03.png"></p>
+
+<p>And if you want to keep your images private, Tutum provide a <a href="http://docs.tutum.co/features/registry/">private registry</a> where you can push your docker images!</p>
+
+<p>Let&rsquo;s try the wordpress default image!</p>
+
+<p><img class="center" src="/images/docker/tutum-screen04.png"></p>
+
+<p>Once selected, you can choose a name for your container, the tag (version) of the image, and the resources allocated to the container. It goes from $4/month (0.25 CPU ECU/256MB) to $64/month (4 CPU ECU/4GB Memory). Let&rsquo;s try the XS Solution (free for a month).
+Click on <strong>Launch</strong>.</p>
+
+<p><img class="center" src="/images/docker/tutum-screen05.png"></p>
+
+<p>In just a few seconds, the container is setup and ready to use.</p>
+
+<p><img class="center" src="/images/docker/tutum-screen06.png"></p>
+
+<p>When you click on your container, you find directly the exposed port, and a link to the application.</p>
+
+<p><img src="/images/docker/tutum-screen07.png"></p>
+
+<p>If you click on it, <em>tadaaam</em>, your site is ready and waiting for you.</p>
+
+<p><img class="center" src="/images/docker/tutum-screen08.png"></p>
+
+<p>With Tutum, you manage directly your docker containers, without worrying about any infrastructure issue. It provides dedicated screen for Logs, Environment variables and monitoring. It also provides a <a href="http://docs.tutum.co/reference/api/">REST API</a> to interact with your containers. And if you want to use a custom domain, You can also setup it when you create your container.</p>
+
+<p>The interface is neat and clear, and you can scale your services really easily. The prices are fair regarding the services they provide (scaling, load balancing, web proxies). It is really enjoyable to deploy so easily any docker images in the cloud in a few seconds.</p>
+
+<p>And you, how do you deploy your docker containers?</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Pierre-Jean Baraud</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-02T10:52:40+02:00" pubdate data-updated="true">Jun 2<span>nd</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/docker/'>Docker</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pierre-jean.github.io/blog/2014/06/02/host-docker-containers/" data-via="" data-counturl="http://pierre-jean.github.io/blog/2014/06/02/host-docker-containers/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/05/19/deeper-look-dockerfile/" title="Previous Post: A deeper look into Dockerfiles">&laquo; A deeper look into Dockerfiles</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/06/02/host-docker-containers/">Host Docker Containers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/19/deeper-look-dockerfile/">A Deeper Look Into Dockerfiles</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/14/fist-look-dockerfile/">A First Look Into Dockerfiles</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/13/3d-iso-introduction/">Introduction to Isometric 3D</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/05/12/train-your-skills/">Train Your Java Skills</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Pierre-Jean Baraud -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'yabage';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://pierre-jean.github.io/blog/2014/06/02/host-docker-containers/';
+        var disqus_url = 'http://pierre-jean.github.io/blog/2014/06/02/host-docker-containers/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
