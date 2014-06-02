@@ -20,7 +20,9 @@ Trusted build is a mechanism to build automatically an image from its sources: t
 This is a great way to study popular images and see how their maintainers manage difficulties you can have with the settings of some images.
 
 You can browse and search into the official Docker index of repositories from the [website][docker-index], or interact with it in command line with `docker search`, `docker pull` and `docker push`.
-Let's have a look to the *mysql* image of the repository *tutum*, available [here][tutum-mysql-docker]. As it is a trusted build, you have access to the [github page][tutum-mysql-github] from where the image is built.
+Let's have a look to the *mysql* image of the repository *tutum* (provided by [tutum.co](http://tutum.co)), available [here][tutum-mysql-docker]. As it is a trusted build, you have access to the [github page][tutum-mysql-github] from where the image is built.
+
+**Erratum: the repository has changed since the date of this post, I let the information available here, but you may find differences with the sources hosted on Github.**
 
 Dockerfile
 ----------
