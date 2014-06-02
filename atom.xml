@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-06-02T22:44:28+02:00</updated>
+  <updated>2014-06-02T23:01:27+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -94,7 +94,7 @@ The command:</p>
 
 <p>First of all <strong><a href="https://cloud.digitalocean.com/registrations/new">Sign up</a></strong>. They will ask you your credit card information, so that you can create droplet as soon as the process is finished.</p>
 
-<p>Then <strong><a href="https://cloud.digitalocean.com/login">log in</a></strong>, and clic on <strong>Create Droplet</strong>.</p>
+<p>Then <strong><a href="https://cloud.digitalocean.com/login">log in</a></strong>, and click on <strong>Create Droplet</strong>.</p>
 
 <p><img class="center" src="http://pierre-jean.github.io/images/docker/digitalocean-screen01.png"></p>
 
