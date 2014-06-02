@@ -3,7 +3,7 @@ layout: post
 title: "A deeper look into Dockerfiles"
 date: 2014-05-19 17:18:54 +0200
 comments: true
-categories: Docker
+categories: [Docker]
 ---
 
 I introduced in [a previous post][first-look-dockerfiles] how to create [Docker][docker-site] images interactively and with a *Dockerfile*.

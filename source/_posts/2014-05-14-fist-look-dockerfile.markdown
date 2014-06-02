@@ -3,7 +3,7 @@ layout: post
 title: "A first look into Dockerfiles"
 date: 2014-05-14 14:45:54 +0200
 comments: true
-categories: docker
+categories: [Docker]
 ---
 
 A [week ago][docker-yabage-post], I introduced the framework [Docker][docker-site]. Docker is a lightview virtualized environment. It allows to build, manage and run containers to easily deploy an app in an iso environment.
