@@ -78,7 +78,7 @@ Let's see how to create a droplet with Docker installed.
 
 First of all **[Sign up][digitalocean-signup]**. They will ask you your credit card information, so that you can create droplet as soon as the process is finished.
 
-Then **[log in][digitalocean-login]**, and clic on **Create Droplet**.
+Then **[log in][digitalocean-login]**, and click on **Create Droplet**.
 
 {% img center /images/docker/digitalocean-screen01.png %}
 
