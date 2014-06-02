@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Docker | Yabage]]></title>
   <link href="http://pierre-jean.github.io/blog/categories/docker/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-06-02T18:50:33+02:00</updated>
+  <updated>2014-06-02T18:56:33+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Host Docker Containers]]></title>
+    <title type="html"><![CDATA[Hosting Docker Containers]]></title>
     <link href="http://pierre-jean.github.io/blog/2014/06/02/host-docker-containers/"/>
     <updated>2014-06-02T10:52:40+02:00</updated>
     <id>http://pierre-jean.github.io/blog/2014/06/02/host-docker-containers</id>
@@ -25,7 +25,7 @@
 <!-- More -->
 
 
-<h1>Dedicated servers</h1>
+<h2>Dedicated servers</h2>
 
 <p>If you already have a dedicated server (hosted in a data center or just a home server), you can just install docker on it, and setup a proxy (nginx, apache, etc.) to redirect the requests to the right local port according to the domain.</p>
 
@@ -67,7 +67,7 @@ The command:</p>
 </ul>
 
 
-<h1>Virtual Machines and VPS</h1>
+<h2>Virtual Machines and VPS</h2>
 
 <p>This is exactly the same principle than before, except that you are running on a virtual machine. If you don&rsquo;t need the power of a dedicated machine, this solution gives you (more or less) the same freedom as the previous one but for a really cheaper price. This is also true with any IAAS solution (<em>Infrastructure as a Service</em>, for instance: Amazon EC2, Google Compute Engine, etc.). If you use a PAAS (Platform as a service) solution, you have to check if you can run docker containers on it, which, for the moment, is unlikely.</p>
 
@@ -80,7 +80,7 @@ The command:</p>
 </ul>
 
 
-<h1>DigitalOcean</h1>
+<h2>DigitalOcean</h2>
 
 <p><a href="https://www.digitalocean.com">DigitalOcean</a> is a hosting company, that offers virtual machines with preinstalled environments designed for developers.</p>
 
@@ -129,7 +129,7 @@ The IP of the machine is displayed just after its creation.</p>
 
 <p>DigitalOcean provide a nice and clear interface, you can interact with it through <a href="https://developers.digitalocean.com/">their REST API</a>, the prices are cheap and flexible.</p>
 
-<h1>Tutum</h1>
+<h2>Tutum</h2>
 
 <p>If you are really looking for a platform dedicated to Docker, there is <a href="http://www.tutum.co/">Tutum</a>.
 Tutum is a &ldquo;Container-as-a-service&rdquo;, and is the simplest solution to run docker containers that I&rsquo;ve seen.</p>
@@ -228,7 +228,7 @@ Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum<
 <span class='line-number'>20</span>
 <span class='line-number'>21</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>FROM ubuntu:trusty
-</span><span class='line'>MAINTAINER Fernando Mayo &lt;a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#111;&#x3a;&#102;&#101;&#114;&#x6e;&#97;&#110;&#100;&#x6f;&#x40;&#x74;&#x75;&#116;&#117;&#109;&#x2e;&#99;&#x6f;">&#x66;&#x65;&#x72;&#x6e;&#x61;&#x6e;&#x64;&#x6f;&#64;&#116;&#117;&#x74;&#117;&#x6d;&#x2e;&#99;&#111;&lt;/a>&lt;/p>
+</span><span class='line'>MAINTAINER Fernando Mayo &lt;a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x66;&#101;&#x72;&#x6e;&#97;&#110;&#x64;&#x6f;&#x40;&#116;&#x75;&#116;&#x75;&#109;&#46;&#x63;&#x6f;">&#102;&#101;&#114;&#x6e;&#97;&#110;&#x64;&#111;&#x40;&#x74;&#x75;&#x74;&#117;&#109;&#46;&#99;&#x6f;&lt;/a>&lt;/p>
 </span><span class='line'>
 </span><span class='line'>&lt;h1>Install packages&lt;/h1>
 </span><span class='line'>
@@ -263,7 +263,7 @@ Let&rsquo;s have a look to the <em>mysql</em> image of the repository <em>tutum<
 <p>The maintainer is vital tag, to define the author of the image and a way to contact it.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>MAINTAINER Fernando Mayo &lt;a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#58;&#x66;&#101;&#114;&#110;&#97;&#110;&#x64;&#x6f;&#x40;&#x74;&#117;&#116;&#117;&#x6d;&#46;&#99;&#x6f;">&#102;&#101;&#x72;&#110;&#x61;&#x6e;&#100;&#111;&#64;&#116;&#x75;&#116;&#117;&#x6d;&#46;&#x63;&#x6f;&lt;/a></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</pre></td><td class='code'><pre><code class=''><span class='line'>MAINTAINER Fernando Mayo &lt;a href="&#x6d;&#97;&#105;&#x6c;&#116;&#x6f;&#x3a;&#x66;&#x65;&#114;&#110;&#97;&#x6e;&#x64;&#111;&#64;&#x74;&#x75;&#116;&#x75;&#109;&#46;&#x63;&#111;">&#102;&#101;&#114;&#110;&#97;&#110;&#x64;&#x6f;&#64;&#x74;&#117;&#116;&#117;&#109;&#46;&#99;&#111;&lt;/a></span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <h3>COMMENTS</h3>
 
