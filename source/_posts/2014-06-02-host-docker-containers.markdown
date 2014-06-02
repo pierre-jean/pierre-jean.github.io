@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Host docker containers"
+title: "Hosting docker containers"
 date: 2014-06-02 10:52:40 +0200
 comments: true
 categories: [Docker]
@@ -13,7 +13,7 @@ I already wrote about Docker, and today I will present different solutions to ho
 <!-- More -->
 
 Dedicated servers
-=================
+-----------------
 
 If you already have a dedicated server (hosted in a data center or just a home server), you can just install docker on it, and setup a proxy (nginx, apache, etc.) to redirect the requests to the right local port according to the domain.
 
@@ -55,7 +55,7 @@ This solution is maybe the first one you will try, at least for experiencing wit
  - *Price:* If you use your server 100% of its capacity, this may be the cheapest solution. Dedicated server are quite expensive, but you will also have a large amount of power to manage several services on the same machines.
 
 Virtual Machines and VPS
-========================
+------------------------
 
 This is exactly the same principle than before, except that you are running on a virtual machine. If you don't need the power of a dedicated machine, this solution gives you (more or less) the same freedom as the previous one but for a really cheaper price. This is also true with any IAAS solution (*Infrastructure as a Service*, for instance: Amazon EC2, Google Compute Engine, etc.). If you use a PAAS (Platform as a service) solution, you have to check if you can run docker containers on it, which, for the moment, is unlikely.
 
@@ -66,7 +66,7 @@ This is exactly the same principle than before, except that you are running on a
  - *Price:* Cheaper than a dedicated server, as you only use the power you need. You may even find IAAS solution that let you pay according to the cpu power used or the time your server is up (per minutes).
 
 DigitalOcean
-============
+------------
 
 [DigitalOcean][digitalocean-site] is a hosting company, that offers virtual machines with preinstalled environments designed for developers.
 
@@ -116,7 +116,7 @@ You can ssh into the machine and launch directly your docker containers!
 DigitalOcean provide a nice and clear interface, you can interact with it through [their REST API][digitalocean-api], the prices are cheap and flexible.
 
 Tutum
-=====
+-----
 
 If you are really looking for a platform dedicated to Docker, there is [Tutum][tutum-site].
 Tutum is a "Container-as-a-service", and is the simplest solution to run docker containers that I've seen.
