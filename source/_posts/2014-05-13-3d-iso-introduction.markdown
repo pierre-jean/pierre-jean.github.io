@@ -8,9 +8,9 @@ categories: [tools, design]
 
 {% img center /images/iso/iso-result-mini.png  %}
 
-You want to create a nice graphic presentation, but you don't know anything about design? You need to create some nice game graphic elements, but you're really bad at  drawing?
+You want to create a nice graphic presentation, but you don't know anything about design? You need to create some game graphic elements, but you're really bad at drawing?
 
-Isometric 3D allows you to create really nice elements without knowing anything about design or art. In a few steps you can obtain really nice results.
+Isometric 3D allows you to create really neat and fun elements without knowing anything about design or art. In a few steps you can obtain really nice results.
 
 <!-- More -->
 
