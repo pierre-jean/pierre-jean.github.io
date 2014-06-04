@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Yabage]]></title>
   <link href="http://pierre-jean.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-06-04T23:48:17+02:00</updated>
+  <updated>2014-06-04T23:55:20+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -18,7 +18,7 @@
     <link href="http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process/"/>
     <updated>2014-06-04T20:41:30+02:00</updated>
     <id>http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process</id>
-    <content type="html"><![CDATA[<p>I get more and more interested at understanding how my system works &ldquo;under the hood&rdquo; lately. It&rsquo;s somehow essential to understand some behaviors / technical choices in higher technology (such as <a href="http://docker.io">Docker</a>).</p>
+    <content type="html"><![CDATA[<p>I&rsquo;m getting more and more interested in how my system works &ldquo;under the hood&rdquo; lately. These fundations are essential to understand some behaviors / technical choices in technologies oriented for end users (such as <a href="http://docker.io">Docker</a>).</p>
 
 <p>That&rsquo;s why I decided to write, mostly as a reminder for myself, a series of articles about some important Linux mechanisms. As I have to start somewhere, I&rsquo;ll start with the boot process.</p>
 
