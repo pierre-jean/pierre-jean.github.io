@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-06-02T23:01:27+02:00</updated>
+  <updated>2014-06-04T23:48:17+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -12,6 +12,115 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Linux Boot Process in a Nutshell]]></title>
+    <link href="http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process/"/>
+    <updated>2014-06-04T20:41:30+02:00</updated>
+    <id>http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process</id>
+    <content type="html"><![CDATA[<p>I get more and more interested at understanding how my system works &ldquo;under the hood&rdquo; lately. It&rsquo;s somehow essential to understand some behaviors / technical choices in higher technology (such as <a href="http://docker.io">Docker</a>).</p>
+
+<p>That&rsquo;s why I decided to write, mostly as a reminder for myself, a series of articles about some important Linux mechanisms. As I have to start somewhere, I&rsquo;ll start with the boot process.</p>
+
+<!-- More -->
+
+
+<p><strong>Disclaimer: I will assume the machine is running with BIOS and Grub as bootloader. If you would like to have explanation for other type of configuration, with UEFI for instance, please let a comment to request such article.</strong></p>
+
+<h2>Power on : BIOS POST execution</h2>
+
+<p>When you switch on your computer, the processor doesn&rsquo;t know anything about its environment. So it will executes the instruction located in a predefined memory location (<code>FFFF:0000h</code> in X86 based computers).</p>
+
+<p>The instructions will redirect to another memory location, which is mapped to the <strong><a href="https://en.wikipedia.org/wiki/BIOS">BIOS</a> memory</strong>.</p>
+
+<p>Indeed, when booting, the processor runs in a mode called <strong>real mode</strong>. In this mode, the processor access directly the memory via addresses starting from 0 to 1MB (<code>0xFFFFF</code>). But this memory is not mapped entirely to the <em><a href="https://en.wikipedia.org/wiki/RAM">RAM</a></em> memory. Some addresses are mapped to the <em>BIOS memory</em>, and other to the <em>legacy video card memory</em>.</p>
+
+<p>The BIOS instructions will then be executed.</p>
+
+<p><img src="http://pierre-jean.github.io/images/linux/boot_00.png"></p>
+
+<p>The first BIOS action is the <strong>POST (Power On Self Test)</strong>. The POST will check the presence and integrity of a set of important hardware devices, and inform you if it detect defects (with a series of <em>bip</em> sound).</p>
+
+<h2>Reading the CMOS and choose the bootable device</h2>
+
+<p>You cannot modify the BIOS instructions by yourself (without flashing it), but in order to save some information (time, user preferences), the motherboard is shipped with a memory called <em>CMOS</em>.</p>
+
+<p>The CMOS will contains for instance an ordered list for the bootable devices.
+The BIOS will check the presence of each device of this list, and also if it contains a bootable media.</p>
+
+<p><img src="http://pierre-jean.github.io/images/linux/boot_01.png"></p>
+
+<p>Let&rsquo;s say that the bootable media is a hard drive for the rest of the explanation.</p>
+
+<h2>Grub stage 1</h2>
+
+<p>A hard drive contains a limited space in their first sector called <strong>Master Boot Record (MBR)</strong>. This MBR contains only 512 Bytes. And in theses 512 Bytes must enter:</p>
+
+<ul>
+<li>The instructions to boot the system (446 Bytes)</li>
+<li>The informations about the partitions of the hard drive (64 Bytes)</li>
+<li>A checksum to verify the integrity of the MBR, called <em>Magic Number</em> (2 Bytes)</li>
+</ul>
+
+
+<p>The fact that the MBR is so small will lead to many difficulties: will the code to load the Linux kernel fit in this 446 Bytes? This limited size is also the reason why you can only have 4 primary partitions (4 descriptions of 16 Bytes), limited to 8GB or 2TB depending on the method they are described (<em>CHS</em> vs <em>LBA</em>).</p>
+
+<p><img src="http://pierre-jean.github.io/images/linux/boot_02.png"></p>
+
+<p>To solve that, the boot process is done in several steps. The first step will load the instructions from the 446 Bytes length <strong>primary boot loader code</strong> and execute it. This is called the Grub Stage 1. <strong><a href="https://www.gnu.org/software/grub/">GRUB</a></strong> is what we called a <em>boot loader</em>.</p>
+
+<h2>Grub stage 1.5</h2>
+
+<p>The partitions start at sector 63. The MBR is written in sector 0. This area between the MBR and the beginning of partitions is called <strong>MBR GAP</strong>. GRUB uses this space to put some extra code in it.</p>
+
+<p>The code in <em>GRUB stage 1</em>, doesn&rsquo;t know how to read a Linux partition, and as a consequence load the kernel image that is inside. That&rsquo;s why the <em>GRUB stage 1</em> load the content of the <em>MBR GAP</em>, which contains code to open Linux partition.</p>
+
+<p><img src="http://pierre-jean.github.io/images/linux/boot_03.png"></p>
+
+<p>The execution of the code of the <em>MBR GAP</em> is called <strong>Grub stage 1.5</strong>.</p>
+
+<h2>Grub stage 2</h2>
+
+<p>But a part of the Grub configuration is modified by the user in configuration files located inside the Linux partition. That&rsquo;s why <em>Grub stage 1.5</em> needs to open the partition (the one that is called <em>active</em>) and read the file <code>/boot/grub/grub.cnf</code>.</p>
+
+<p><img src="http://pierre-jean.github.io/images/linux/boot_04.png"></p>
+
+<p>When this is done, the Grub is in <em>stage 2</em>, and can prompt an interface to let the user make choices (such as choosing which kernel to load or add boot options parameters).</p>
+
+<h2>Kernel Boot execution</h2>
+
+<p>The Linux kernels are located in the <code>/boot</code> folder, and have name such as <code>vmlinuz-x.xx.x-xx-[...]</code>. These kernels are compressed files, that contains a <em>generic</em> core Linux kernel (if you didn&rsquo;t build it yourself). As this kernels have been generated by other people, who don&rsquo;t know the specificity of your configuration, some modules (as drivers) can be missing.</p>
+
+<p>That&rsquo;s why you can also find in the <code>/boot</code> folder image called <code>initrd.img-x.xx.x-xx-[...]</code>. An <em>initrd</em> file is a temporary file-system that will be mounted during the boot process, and that will load the missing modules in the kernel. It allows to keep the kernel images small and to load dynamically only what is needed.</p>
+
+<p><img src="http://pierre-jean.github.io/images/linux/boot_05.png"></p>
+
+<p>The vmlinuz files are executables files, that are actually composed of different chunks (<code>bootsect.o</code> + <code>setup.o</code> + <code>misc.o</code> + <code>piggy.o</code>). The <code>piggy.o</code> contains the gzipped vmlinux file. The processor is still in <em>real mode</em> which mean it can only address a memory area of 1 MB. The problem is that the compressed image is bigger than 1 MB. That&rsquo;s why the property of <em>bzImage</em> that allows to split the image in discontinuous area is convenient here. The <code>piggy.o</code> chunk is loaded outside the 1MB area zone (by switching the processor to protected mode), and the <code>bootsect.o</code>, <code>setup.o</code>, and <code>misc.o</code> will be load in the <em>real mode</em> map area.</p>
+
+<p>The <code>bootsect.o</code> contains a legacy code that is now ignored (used to be the bootloader code for the <em>MBR</em>), and <code>setup.o</code> and <code>misc.o</code> initialize some variables and configuration (memory, video). After that the CPU pass into <strong>protected mode</strong>.</p>
+
+<p>In <em>protected mode</em>, the CPU can address up to 4GB of memory, and can finally execute the <code>decompress_kernel()</code> instruction, that will uncompress the kernel image and mount the system layout, for finally launch the <strong>init process</strong>.</p>
+
+<p>The <strong>init</strong> process is the first process launched in user space, and has the responsibility to launch all other needed services.</p>
+
+<p>Historically, it was the <strong><a href="https://en.wikipedia.org/wiki/Sysvinit">SysVinit</a></strong> that did this job, but some distribution use <strong><a href="https://en.wikipedia.org/wiki/Upstart">Upstart</a></strong>, or the new <strong><a href="https://en.wikipedia.org/wiki/Systemd">Systemd</a></strong>. All these solutions work really differently (and would deserve a dedicated article), but they all get the same job done: launching all other needed user processes to start the system.</p>
+
+<h2>Sources</h2>
+
+<p>I based my understanding of the boot process from these great articles:</p>
+
+<ul>
+<li><a href="http://www.dewassoc.com/kbase/hard_drives/master_boot_record.htm">The Master Boot Record by Dewassoc</a></li>
+<li><a href="http://www.slashroot.in/linux-booting-process-step-step-tutorial-understanding-linux-boot-sequence">Linux Booting Process by Slashroot</a></li>
+<li><a href="http://duartes.org/gustavo/blog/post/kernel-boot-process/">Kernel Boot Process by Gustavo Duarte</a></li>
+</ul>
+
+
+<p>And also thanks to many articles of <a href="https://en.wikipedia.org">Wikipedia</a> and answers of the <a href="https://unix.stackexchange.com/">Unix and Linux StackExchange</a> community.</p>
+
+<p>For any opinion, correction or question, feel free to comment!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hosting Docker Containers]]></title>
