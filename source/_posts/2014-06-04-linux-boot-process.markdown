@@ -8,7 +8,7 @@ categories: Linux
 
 I'm getting more and more interested in how my system works "under the hood" lately. These fundations are essential to understand some behaviors / technical choices in technologies oriented for end users (such as [Docker][docker-site]).
 
-That's why I decided to write, mostly as a reminder for myself, a series of articles about some important Linux mechanisms. As I have to start somewhere, I'll start with the boot process.
+That's why I decided to write, mostly as a reminder for myself, a serie of articles explaining some fundamental Linux mechanisms. As I have to start somewhere, I'll start with the boot process.
 
 <!-- More -->
 
@@ -35,7 +35,7 @@ Reading the CMOS and choose the bootable device
 You cannot modify the BIOS instructions by yourself (without flashing it), but in order to save some information (time, user preferences), the motherboard is shipped with a memory called *CMOS*.
 
 The CMOS will contains for instance an ordered list for the bootable devices.
-The BIOS will check the presence of each device of this list, and also if it contains a bootable media.
+The BIOS will check the presence of each device from this list, and also if it contains a bootable media.
 
 {% img /images/linux/boot_01.png %}
 
@@ -47,7 +47,7 @@ Grub stage 1
 A hard drive contains a limited space in their first sector called **Master Boot Record (MBR)**. This MBR contains only 512 Bytes. And in theses 512 Bytes must enter:
 
  * The instructions to boot the system (446 Bytes)
- * The informations about the partitions of the hard drive (64 Bytes)
+ * The information about the partitions of the hard drive (64 Bytes)
  * A checksum to verify the integrity of the MBR, called *Magic Number* (2 Bytes)
 
 The fact that the MBR is so small will lead to many difficulties: will the code to load the Linux kernel fit in this 446 Bytes? This limited size is also the reason why you can only have 4 primary partitions (4 descriptions of 16 Bytes), limited to 8GB or 2TB depending on the method they are described (*CHS* vs *LBA*).
@@ -61,7 +61,7 @@ Grub stage 1.5
 
 The partitions start at sector 63. The MBR is written in sector 0. This area between the MBR and the beginning of partitions is called **MBR GAP**. GRUB uses this space to put some extra code in it.
 
-The code in *GRUB stage 1*, doesn't know how to read a Linux partition, and as a consequence load the kernel image that is inside. That's why the *GRUB stage 1* load the content of the *MBR GAP*, which contains code to open Linux partition. 
+The code in *GRUB stage 1*, doesn't know how to read a Linux partition, and as a consequence load the kernel image that is inside. That's why the *GRUB stage 1* load the content of the *MBR GAP*, which contains instructions for opening a Linux partition. 
 
 {% img /images/linux/boot_03.png %}
 
