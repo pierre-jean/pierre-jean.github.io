@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-06-04T23:55:20+02:00</updated>
+  <updated>2014-06-05T00:06:32+02:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -20,7 +20,7 @@
     <id>http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process</id>
     <content type="html"><![CDATA[<p>I&rsquo;m getting more and more interested in how my system works &ldquo;under the hood&rdquo; lately. These fundations are essential to understand some behaviors / technical choices in technologies oriented for end users (such as <a href="http://docker.io">Docker</a>).</p>
 
-<p>That&rsquo;s why I decided to write, mostly as a reminder for myself, a series of articles about some important Linux mechanisms. As I have to start somewhere, I&rsquo;ll start with the boot process.</p>
+<p>That&rsquo;s why I decided to write, mostly as a reminder for myself, a serie of articles explaining some fundamental Linux mechanisms. As I have to start somewhere, I&rsquo;ll start with the boot process.</p>
 
 <!-- More -->
 
@@ -46,7 +46,7 @@
 <p>You cannot modify the BIOS instructions by yourself (without flashing it), but in order to save some information (time, user preferences), the motherboard is shipped with a memory called <em>CMOS</em>.</p>
 
 <p>The CMOS will contains for instance an ordered list for the bootable devices.
-The BIOS will check the presence of each device of this list, and also if it contains a bootable media.</p>
+The BIOS will check the presence of each device from this list, and also if it contains a bootable media.</p>
 
 <p><img src="http://pierre-jean.github.io/images/linux/boot_01.png"></p>
 
@@ -58,7 +58,7 @@ The BIOS will check the presence of each device of this list, and also if it con
 
 <ul>
 <li>The instructions to boot the system (446 Bytes)</li>
-<li>The informations about the partitions of the hard drive (64 Bytes)</li>
+<li>The information about the partitions of the hard drive (64 Bytes)</li>
 <li>A checksum to verify the integrity of the MBR, called <em>Magic Number</em> (2 Bytes)</li>
 </ul>
 
@@ -73,7 +73,7 @@ The BIOS will check the presence of each device of this list, and also if it con
 
 <p>The partitions start at sector 63. The MBR is written in sector 0. This area between the MBR and the beginning of partitions is called <strong>MBR GAP</strong>. GRUB uses this space to put some extra code in it.</p>
 
-<p>The code in <em>GRUB stage 1</em>, doesn&rsquo;t know how to read a Linux partition, and as a consequence load the kernel image that is inside. That&rsquo;s why the <em>GRUB stage 1</em> load the content of the <em>MBR GAP</em>, which contains code to open Linux partition.</p>
+<p>The code in <em>GRUB stage 1</em>, doesn&rsquo;t know how to read a Linux partition, and as a consequence load the kernel image that is inside. That&rsquo;s why the <em>GRUB stage 1</em> load the content of the <em>MBR GAP</em>, which contains instructions for opening a Linux partition.</p>
 
 <p><img src="http://pierre-jean.github.io/images/linux/boot_03.png"></p>
 
