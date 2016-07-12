@@ -19,11 +19,11 @@ When you act as Neo from Matrix by popping up a fancy green terminal to impress 
 
 ## The lengendary object
 
-{% img/linux/WACsOperateTeletype %}
+{% img/linux/teletype.jpg %}
 
-Do you see this beauty in the picture? That's a Teletype. A model 15, if I'm not wrong. And it's easy to be, as there are countless models of Teletype, built by different companies. The history of Teletype finds its roots in first experimentations late 19th century, but truly begans in the 20s and find an end in the 70s, when Fax where good enough to replace them.
+Do you see this beauty in the picture? That's a Teletype. A Creed & company model 7. And speaking about Teletype models, I can tell you that there are countless, built by different companies. The history of Teletype finds its roots in first experimentations late 19th century, but truly began in the 20s and find an end in the 70s, when Fax where good enough to replace them.
 
-A teletype is basically a machine that sends the letters you typed to the keyboard through electric signal to another machine or network, and prints (litteraly prints, on a paper!) letters received through the reception cable. Obviously, the differents models evolved with time to offer more features and performances:
+A teletype is basically a machine that sends the letters you typed to the keyboard through electric signal to another machine or network, and prints (literally prints, on a paper!) letters received through the reception cable. Obviously, the different models evolved with time to offer more features and performances:
 
  * Usage of _Multiplex signal_, in order to allow the usage of one physical cable to send and receive messages
  * Support of _punched card_ to send prepared messages at full speed without the need of typing them
@@ -45,7 +45,17 @@ Anyway, you must now realize a few things: it would be nice for instance when us
 
 ## Under the hood
 
+Here is a diagram of how how a Teletype was interacting with a computer:
+
 //TODO
+
+ 1- Each machine is (conceptually or physically) connected to two cables: one to send instruction to the computer and one to receive output from the computer.
+ 2- These cable are connected to the computer through an Universal Asynchronous Receiver and Transmitter (_UART_) that transform the asynchronous flow of data into bytes words.
+ 3- The computer has a UART driver to read for the hardware device
+ 4- The sequence of characters are passed to the line discipline.The line discipline will be in charge of converting special characters (end of line, backspace), and echoing (reprinting) what has been received back to the teletype, so that the user can visual what he/she types.
+ 5- The flow of instruction is passed to the TTY driver, that pass them to the *foreground* processes for the *session* associated with this TTY. Indeed, as a user, you can execute several process in parallel, but only interact with one at a time, letting the others working (or waiting) in the background.
+
+The whole stack define below can be called a TTY device, and several can exist at the same time for a computer. So different line discipline can be set for different devices, each TTY has its own foreground job, etc.
 
 From the Teletype to the Terminal
 ---------------------------------
@@ -54,11 +64,21 @@ From the Teletype to the Terminal
 
 {% img/linux/terminal.png %}
 
-They started to *look like* your current PC desktop. Beware, though, they are in no way comparable. They are still dummy stuff, despite their name. They do not compute things on their own: managing fancy colors and having a good screen refresh is far from being smart ass.
+They started to *look like* your current PC desktop. Beware, though, they are in no way comparable! They are still dummy stuff, despite their name. They do not compute things on their own: managing fancy colors and having a good screen refresh is far from being even close to a computer.
 
-Nevertheless, as you can imagine, these newly sophisticated device will inherit part of the Teletype mechanism.
+Nevertheless, as you can imagine, these newly sophisticated devices will inherit part of the Teletype mechanism.
+
+Here is a graph of how it works:
 
 //TODO
+
+Master and slave: how the world works today
+-------------------------------------------
+
+## The virtual TTY
+
+
+
 
 
 
