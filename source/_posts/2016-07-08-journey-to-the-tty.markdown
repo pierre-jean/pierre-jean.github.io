@@ -15,13 +15,13 @@ Beware my friend, cause this article will lead you into the depths of forgotten 
 The origin of the myth: the Teletype
 ------------------------------------
 
-When you act as Neo from Matrix by popping up a fancy green terminal to impress your friends around (what do you mean, "nobody does that"?), you are actually playing with the legacy of a very old device, that surely not much of you have even seen in your life: the Teletype.
+When you act as Neo from Matrix by popping up a fancy green terminal to impress your friends around (what do you mean, _"nobody does that"_?), you are actually playing with the legacy of a very old device, that surely not much of you have even seen in your life: the Teletype.
 
-## The lengendary object
+## The legendary object
 
 {% img/linux/teletype.jpg %}
 
-Do you see this beauty in the picture? That's a Teletype. A Creed & company model 7. And speaking about Teletype models, I can tell you that there are countless, built by different companies. The history of Teletype finds its roots in first experimentations late 19th century, but truly began in the 20s and find an end in the 70s, when Fax where good enough to replace them.
+Do you see this beauty in the picture? That's a Teletype. A Creed & company model 7. And speaking about Teletype models, I can tell you that there are countless of them, built by many different companies. The history of Teletype finds its roots in first experimentations in the late 19th century, but truly began in the 20s and find an end in the 70s, when Fax where good enough to replace them.
 
 A teletype is basically a machine that sends the letters you typed to the keyboard through electric signal to another machine or network, and prints (literally prints, on a paper!) letters received through the reception cable. Obviously, the different models evolved with time to offer more features and performances:
 
@@ -30,16 +30,16 @@ A teletype is basically a machine that sends the letters you typed to the keyboa
  * Usage of video screen (you're welcome, trees!)
  * Increase of speed (from 50 baud to 150000 baud)
 
-This machine was at the time the best way to transmit data on a reliable and fast way.
+This machine was at the time the best way to transmit data in a reliable and fast way.
 
 ## Stop your boring oldish gibberish... Why the heck are you telling me about this?
 
-Because instead of building new devices to interact with computers, pragmatic people at the time decided to reuse the Teletype to connect to them.
-Hear me well, I'm not talking here about the _Personal Computer_ (PC) you are familiar with, I'm talking about a big massive machine in its own dedicated room where you had no access if you were not cool enough, and where you had to send command from the teletype and read the output through the teletype remotely.
+Because instead of building new devices to interact with computers, pragmatic people at the time decided to reuse existing Teletypes to connect to them.
+Hear me well, I'm not talking here about the _Personal Computer_ (PC) you are familiar with, I'm talking about a big massive machine in its own dedicated room where you had no access if you were not cool enough, and where you had to send command from the teletype and read the output printed back.
 
 {% img/linux/mainframe.jpg }
 
-Actually, one terminal was directly connected connected to the machine within the same room : _the console_. Man, I can't tell you about the hype on being the lucky one behind the console. Well, I can't because I'm not that old, but I'm sure that should have been a big thing back then.
+Actually, one terminal was directly connected to the machine within the same room : _the console_. Man, I can't tell you about the hype on being the lucky one behind the console. Well, I can't because I'm not that old, but I'm sure that should have been a big thing back then.
 
 Anyway, you must now realize a few things: it would be nice for instance when using a terminal to see what you are typing. So what about asking the computer to echo back to the terminal what it received, so that it is printed? And what about erasing with backspace what have been typed? Yep, the OS should take care of that for us, we only use a dummy Teletype after all.
 
@@ -53,9 +53,9 @@ Here is a diagram of how how a Teletype was interacting with a computer:
  2- These cable are connected to the computer through an Universal Asynchronous Receiver and Transmitter (_UART_) that transform the asynchronous flow of data into bytes words.
  3- The computer has a UART driver to read for the hardware device
  4- The sequence of characters are passed to the line discipline.The line discipline will be in charge of converting special characters (end of line, backspace), and echoing (reprinting) what has been received back to the teletype, so that the user can visual what he/she types.
- 5- The flow of instruction is passed to the TTY driver, that pass them to the *foreground* processes for the *session* associated with this TTY. Indeed, as a user, you can execute several process in parallel, but only interact with one at a time, letting the others working (or waiting) in the background.
+ 5- The flow of instruction is passed to the TTY driver, that pass them to the *foreground* processes for the *session* associated with this TTY. Indeed, as a user, you can execute several processes in parallel, but only interact with one at a time, letting the others working (or waiting) in the background.
 
-The whole stack define below can be called a TTY device, and several can exist at the same time for a computer. So different line discipline can be set for different devices, each TTY has its own foreground job, etc.
+The whole stack define below is called a TTY device, and several can exist at the same time for a computer. So different line discipline can be set for different devices, each TTY having its own foreground job, etc.
 
 From the Teletype to the Terminal
 ---------------------------------
@@ -64,54 +64,40 @@ From the Teletype to the Terminal
 
 {% img/linux/terminal.png %}
 
-They started to *look like* your current PC desktop. Beware, though, they are in no way comparable! They are still dummy stuff, despite their name. They do not compute things on their own: managing fancy colors and having a good screen refresh is far from being even close to a computer.
+They started to *look like* your current PC desktop. Beware, though, they are in no way comparable! They are still dummy stuff, despite their name. They do not compute things on their own: managing fancy colors and having a fast refresh of the screen is far from being even close to a computer.
 
-These devices work the same way as Teletype, but also introduced some new special features that had to be supported by the software to be used (colors, mouvements, etc).
+These devices work the same way as Teletype, but also introduced some new special features that had to be supported by the software to be enabled (colors,special movements, etc).
 
 Wake up Neo, it is all virtual
 ------------------------------
 
-The massive set of wardrobes that used to constitued a computer gradually turns down to a nice little box that you could fit under your desk. And there was no more douzens of terminal connected to it, but only one monitor and one keyboard. Nevertheless, your current Linux machine keeps emulating several (usually 7 by default) terminals connected to your hardware. But instead of having to get up and switch from a seat to another, you can switch from one terminal to another by a press of keys (`Ctrl`+`Alt`+`F1` to `Ctrl`+`Alt`+`F7`). This feature is called _virtual terminals_, and is represented by the files `/dev/tty1` to `/dev/tty7`. You can see any of this file as a duplex cable connected to a terminal. If you write to it, you send the information to be print to the terminal, if you read from it, you receive what is typed from the terminal (try it, it works).
+The massive set of wardrobes that used to constitute a computer gradually turns down to a nice little box that you could fit under your desk. And there was no more dozens of terminal connected to it, but only one monitor and one keyboard. Nevertheless, your current Linux machine keeps emulating several (usually 7 by default) terminals connected to your hardware. But to protect you from the effort of getting up and going physically to another chair, the OS allows you to switch from one terminal to another by a press of keys (`Ctrl`+`Alt`+`F1` to `Ctrl`+`Alt`+`F7`). This feature is called _virtual terminals_, and is represented by the files `/dev/tty1` to `/dev/tty7`. You can see any of this file as a duplex cable connected to a terminal. If you write to it, you send the information to be print to the terminal, if you read from it, you receive what is typed from the terminal (try it, it works).
 
-When you switch from one virtual terminal to another, the OS detach your _seat_ (a set of input and output devices like monitor, keyboard, mouse, etc. representating the interaction interface with the user) from the virtual terminal, preventing this one to write on the hardware devices, but letting the running processes to read and write to the files (that will buffer the information until you reattach your seat to this terminal).
+When you switch from one virtual terminal to another, the OS detach your _seat_ (a set of input and output devices like monitor, keyboard, mouse, etc. representing the interactive interface with the user) from the virtual terminal, preventing this one to write on the hardware devices, but letting the running processes to read and write to the files (that will buffer the information until you reattach your seat to this terminal).
 
 I know no master
 ----------------
 
-But even few of you are using the virtual tty defines before. You are usually using a terminal console launched from a graphic environment that is itself launched from a virtual terminal.
+But I imagine few of yours are using the virtual tty just mentioned. You are usually using a terminal console launched from a graphic environment that is itself launched from a virtual terminal (Yep, breathe and read again).
 
-So when you launch your favorite terminal emulator like _xterm_ or _gnome-terminal_, how do the processes know where to write the output, and where get the input from?
+So when you launch your favorite terminal emulator like _xterm_ or _gnome-terminal_, how do the processes know where to write the output, and where to get the input from?
 
-Basically, when you launch a terminal within a graphic environment like this, it will spawn its own equivalent of /dev/ttyX. The terminal will open a special file located in `/dev/ptmx` called the master side of the pts, doing some magic with `ioctl` function, that will create a slave side of the pts in `/dev/pts/X`. 
+Basically, when you launch a terminal within a graphic environment like this, it will spawn its own equivalent of /dev/ttyX: the terminal emulator will open a special file located in `/dev/ptmx`, called the master side of the pts, will do some magic with `ioctl` function, which will create a slave side of the pts in `/dev/pts/X`. 
 
-The processes running in the session will be attached to this file, that will behave like any file from the virtual terminal, except that there is no attachement to a seat, you can open several windows at the same time and display the output of the processes running in each session together.
+The processes running in the session will be attached to this file, that will behave like any file from the virtual terminal, except that there is no attachment to a seat: you can open several terminal emulator windows at the same time and display them side by side, having different session running.
 
-Sources
--------
+Conclusion
+----------
 
-I based my understanding of the boot process from these great articles:
+We could dig the topic further, speaking about about the function `ioctl`, detailing how the kernel handle the session, admiring the great great 70s look of the [DEC VT05][vt05] terminal...
+But we should keep a bit for further article, and there are plenty of great resources already available if you are interested. To share a few:
 
- * [The Master Boot Record by Dewassoc][mbr-knowledge-center]
- * [Linux Booting Process by Slashroot][linux-boot-process-slashroot]
- * [Kernel Boot Process by Gustavo Duarte][kernel-boot-process-duarte]
+ * [the TTY demystified, by Linus Åkesson][linusakesson]: Simply _the_ reference on the topic, that will also explain signals, processes, etc.
+ * [Ponyhof's session management][ponyhof1] and [vt-switching][ponyhof2] articles: Great to understand the session and seats concepts.
+ * [Unix StackExchange][unix-stackexchange] answer by Stéphane Chazelas, that put a lot of effort to makes things clear when they where a lot confusing for me.
 
-And also thanks to many articles of [Wikipedia][wikipedia] and answers of the [Unix and Linux StackExchange][unix-stackexchange] community.
-
-For any opinion, correction or question, feel free to comment!
-
-[mbr-knowledge-center]: http://www.dewassoc.com/kbase/hard_drives/master_boot_record.htm
-[linux-boot-process-slashroot]: http://www.slashroot.in/linux-booting-process-step-step-tutorial-understanding-linux-boot-sequence
-[kernel-boot-process-duarte]: http://duartes.org/gustavo/blog/post/kernel-boot-process/
-
-[wikipedia]: https://en.wikipedia.org
-[unix-stackexchange]: https://unix.stackexchange.com/
-
-
-[docker-site]: http://docker.io
-[bios-article]: https://en.wikipedia.org/wiki/BIOS
-[ram-article]: https://en.wikipedia.org/wiki/RAM
-[grub-article]: https://www.gnu.org/software/grub/
-
-[sysvinit-article]: https://en.wikipedia.org/wiki/Sysvinit
-[upstart-article]: https://en.wikipedia.org/wiki/Upstart
-[systemd-article]: https://en.wikipedia.org/wiki/Systemd
+[vt05]: http://terminals.classiccmp.org/wiki/images/f/fb/DEC_VT05_121708587772-2.jpg
+[linusakesson]: http://www.linusakesson.net/programming/tty/
+[ponyhof1]: https://dvdhrm.wordpress.com/2013/08/24/session-management-on-linux/
+[ponyhof2]: https://dvdhrm.wordpress.com/2013/08/24/how-vt-switching-works/
+[unix-stackexchange]: http://unix.stackexchange.com/questions/117981/what-are-the-responsibilities-of-each-pseudo-terminal-pty-component-software
