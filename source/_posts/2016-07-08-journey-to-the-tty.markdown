@@ -19,9 +19,9 @@ When you act as Neo from Matrix by popping up a fancy green terminal to impress 
 
 ## The legendary object
 
-{% img/linux/teletype.jpg %}
+{% img/linux/teletype-model-28.jpg %}
 
-Do you see this beauty in the picture? That's a Teletype. A Creed & company model 7. And speaking about Teletype models, I can tell you that there are countless of them, built by many different companies. The history of Teletype finds its roots in first experimentations in the late 19th century, but truly began in the 20s and find an end in the 70s, when Fax where good enough to replace them.
+Do you see this beauty in the picture? That's a Teletype. A _model 28_ by _Teletype Corporation_ to be precise. And precise should I not be, as there are countless of models, built by many different companies. The history of Teletype finds its roots in first experimentations in the late 19th century, but truly began in the 20s and find an end in the 70s, when Fax where good enough to replace them.
 
 A teletype is basically a machine that sends the letters you typed to the keyboard through electric signal to another machine or network, and prints (literally prints, on a paper!) letters received through the reception cable. Obviously, the different models evolved with time to offer more features and performances:
 
@@ -47,7 +47,7 @@ Anyway, you must now realize a few things: it would be nice for instance when us
 
 Here is a diagram of how how a Teletype was interacting with a computer:
 
-//TODO
+{% img/linux/teletype-mainframe-worflow.png %}
 
  1- Each machine is (conceptually or physically) connected to two cables: one to send instruction to the computer and one to receive output from the computer.
  2- These cable are connected to the computer through an Universal Asynchronous Receiver and Transmitter (_UART_) that transform the asynchronous flow of data into bytes words.
@@ -62,7 +62,7 @@ From the Teletype to the Terminal
 
 80s has brought many things, among them: not so intelligent movies and intelligent terminals. The first is debatable but the second is fact. Slowly, terminals evolved to badass devices, with screen, memory, and even small processors to manage specific features on their side.
 
-{% img/linux/terminal.png %}
+{% img/linux/terminal_vt100.jpg %}
 
 They started to *look like* your current PC desktop. Beware, though, they are in no way comparable! They are still dummy stuff, despite their name. They do not compute things on their own: managing fancy colors and having a fast refresh of the screen is far from being even close to a computer.
 
