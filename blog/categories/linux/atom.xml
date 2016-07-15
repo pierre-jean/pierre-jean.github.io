@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Yabage]]></title>
   <link href="http://pierre-jean.baraud.fr/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://pierre-jean.baraud.fr/"/>
-  <updated>2016-07-15T15:16:01+01:00</updated>
+  <updated>2016-07-15T16:08:50+01:00</updated>
   <id>http://pierre-jean.baraud.fr/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -19,6 +19,8 @@
     <updated>2016-07-08T12:00:00+01:00</updated>
     <id>http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty</id>
     <content type="html"><![CDATA[<p>It all started with simple instruction: <code>-t</code> <em>flag assigns a pseudo-tty or terminal inside the new container</em>&hellip; And a few seconds of puzzling thoughts. <em>What is exactly a pseudo TTY?</em> <em>What does it mean to attach or detach a process from it?</em></p>
+
+<p><img class="center" src="/images/linux/gnome-terminal.png"></p>
 
 <p>Beware my friend, cause this article will lead you into the depths of forgotten history and guide you through the arcane of the kernel mechanism, but light of knowledge should shine upon you at the end of this journey.</p>
 
