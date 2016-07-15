@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Yabage]]></title>
   <link href="http://pierre-jean.baraud.fr/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://pierre-jean.baraud.fr/"/>
-  <updated>2016-07-15T16:08:50+01:00</updated>
+  <updated>2016-07-15T17:16:51+01:00</updated>
   <id>http://pierre-jean.baraud.fr/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -62,7 +62,7 @@ Hear me well, I&rsquo;m not talking here about the <em>Personal Computer</em> (P
 
 <h2>Under the hood</h2>
 
-<p>Here is a diagram of how how a Teletype was interacting with a computer:</p>
+<p>Here is a diagram of how a Teletype was interacting with a computer:</p>
 
 <p><img class="center" src="/images/linux/teletype-mainframe-workflow.png"></p>
 
@@ -105,7 +105,7 @@ Hear me well, I&rsquo;m not talking here about the <em>Personal Computer</em> (P
 
 <h2>Conclusion</h2>
 
-<p>We could dig the topic further, speaking about about the function <code>ioctl</code>, detailing how the kernel handle the session, expressing our endless admiration for the great 70s look of the <a href="http://terminals.classiccmp.org/wiki/images/f/fb/DEC_VT05_121708587772-2.jpg">DEC VT05</a> terminal&hellip;
+<p>We could dig the topic further, speaking about the function <code>ioctl</code>, detailing how the kernel handle the session, expressing our endless admiration for the great 70s look of the <a href="http://terminals.classiccmp.org/wiki/images/f/fb/DEC_VT05_121708587772-2.jpg">DEC VT05</a> terminal&hellip;
 But we should keep a bit for further articles, and there are anyway plenty of great resources already available if you are interested. To share a few:</p>
 
 <ul>
