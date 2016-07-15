@@ -47,7 +47,7 @@ Anyway, you must now realize a few things: it would be nice for instance when us
 
 ## Under the hood
 
-Here is a diagram of how how a Teletype was interacting with a computer:
+Here is a diagram of how a Teletype was interacting with a computer:
 
 {% img center /images/linux/teletype-mainframe-workflow.png %}
 
@@ -91,7 +91,7 @@ The processes running in the session will be attached to this file, that will be
 Conclusion
 ----------
 
-We could dig the topic further, speaking about about the function `ioctl`, detailing how the kernel handle the session, expressing our endless admiration for the great 70s look of the [DEC VT05][vt05] terminal...
+We could dig the topic further, speaking about the function `ioctl`, detailing how the kernel handle the session, expressing our endless admiration for the great 70s look of the [DEC VT05][vt05] terminal...
 But we should keep a bit for further articles, and there are anyway plenty of great resources already available if you are interested. To share a few:
 
  * [the TTY demystified, by Linus Åkesson][linusakesson]: Simply _the_ reference on the topic, that will also explain signals, processes, etc.
