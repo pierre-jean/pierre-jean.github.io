@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://pierre-jean.github.io/sitemap.xml 
+Sitemap: http://pierre-jean.baraud.fr/sitemap.xml 

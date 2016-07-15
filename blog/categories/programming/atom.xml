@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Programming | Yabage]]></title>
-  <link href="http://pierre-jean.github.io/blog/categories/programming/atom.xml" rel="self"/>
-  <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-06-05T00:44:59+02:00</updated>
-  <id>http://pierre-jean.github.io/</id>
+  <link href="http://pierre-jean.baraud.fr/blog/categories/programming/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.baraud.fr/"/>
+  <updated>2016-07-15T15:16:01+01:00</updated>
+  <id>http://pierre-jean.baraud.fr/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
     <email><![CDATA[pierre-jean@baraud.fr]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Introduction to AngularJS]]></title>
-    <link href="http://pierre-jean.github.io/blog/2013/08/17/introduction-to-angularjs/"/>
-    <updated>2013-08-17T12:13:23+02:00</updated>
-    <id>http://pierre-jean.github.io/blog/2013/08/17/introduction-to-angularjs</id>
+    <link href="http://pierre-jean.baraud.fr/blog/2013/08/17/introduction-to-angularjs/"/>
+    <updated>2013-08-17T11:13:23+01:00</updated>
+    <id>http://pierre-jean.baraud.fr/blog/2013/08/17/introduction-to-angularjs</id>
     <content type="html"><![CDATA[<p><img src="/images/angularjs/AngularJS.jpg"></p>
 
 <p>I discovered recently this exciting framework, and even if I&rsquo;m still a beginner in it, I presented it to my colleagues to share my enthusiasm.

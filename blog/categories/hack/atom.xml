@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Hack | Yabage]]></title>
-  <link href="http://pierre-jean.github.io/blog/categories/hack/atom.xml" rel="self"/>
-  <link href="http://pierre-jean.github.io/"/>
-  <updated>2014-06-05T00:44:59+02:00</updated>
-  <id>http://pierre-jean.github.io/</id>
+  <link href="http://pierre-jean.baraud.fr/blog/categories/hack/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.baraud.fr/"/>
+  <updated>2016-07-15T15:16:01+01:00</updated>
+  <id>http://pierre-jean.baraud.fr/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
     <email><![CDATA[pierre-jean@baraud.fr]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Update OVH DynHost Address From Linux]]></title>
-    <link href="http://pierre-jean.github.io/blog/2014/05/09/update-ovh-dynhost-address-from-linux/"/>
-    <updated>2014-05-09T21:45:39+02:00</updated>
-    <id>http://pierre-jean.github.io/blog/2014/05/09/update-ovh-dynhost-address-from-linux</id>
+    <link href="http://pierre-jean.baraud.fr/blog/2014/05/09/update-ovh-dynhost-address-from-linux/"/>
+    <updated>2014-05-09T20:45:39+01:00</updated>
+    <id>http://pierre-jean.baraud.fr/blog/2014/05/09/update-ovh-dynhost-address-from-linux</id>
     <content type="html"><![CDATA[<p>I have my domain name registered at <a href="http://www.ovh.com">OVH</a>. To update a DNS address from a machine behind a dynamic IP, they provide a feature called <strong>DynHost</strong>. DynHost uses the same protocol as DynDNS for updating their website.</p>
 
 <!-- More -->
