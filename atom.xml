@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2016-07-17T00:08:16+01:00</updated>
+  <updated>2016-07-17T00:48:00+01:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -29,7 +29,7 @@
 
 <h2>The origin of the myth: the Teletype</h2>
 
-<p>When you act as Neo from Matrix by popping up a fancy green terminal to impress your friends around (what do you mean, <em>&ldquo;nobody does that&rdquo;</em>?), you are actually playing with the legacy of a very old device, that surely not much of you have even seen in your life: the Teletype.</p>
+<p>When you act as Neo from Matrix by popping up a fancy green terminal to impress your friends around (what do you mean, <em>&ldquo;nobody does that&rdquo;</em>?), you are actually playing with the legacy of a very old device, that surely not many of you have even seen in your life: the Teletype.</p>
 
 <h2>A legendary object</h2>
 
@@ -40,9 +40,9 @@
 <p>A teletype is basically a machine that sends the letters you typed on the keyboard through electric signal to another machine or network, and prints (literally prints, on a paper!) letters received through the reception cable. Obviously, the different models evolved with time to offer more features and performances:</p>
 
 <ul>
-<li>Usage of <em>Multiplex signal</em>, in order to allow the usage of one physical cable to send and receive messages</li>
+<li>Use of <em>Multiplex signal</em>, in order to allow the usage of one physical cable to send and receive messages</li>
 <li>Support of <em>punched card</em> to send prepared messages at full speed without the need of typing them</li>
-<li>Usage of video screen (you&rsquo;re welcome, trees!)</li>
+<li>Use of video screen (you&rsquo;re welcome, trees!)</li>
 <li>Increase of speed (from 50 baud to 150000 baud)</li>
 </ul>
 
@@ -51,7 +51,7 @@
 
 <h2>Stop your boring oldish gibberish&hellip; Why the heck are you telling me about this?</h2>
 
-<p>Because instead of building new devices to interact with computers, pragmatic people at the time decided to reuse existing Teletypes to connect to them.
+<p>Because instead of building new devices to interact with computers, pragmatic people at the time decided to reuse existing teletypes to connect to them.
 Hear me well, I&rsquo;m not talking here about the <em>Personal Computer</em> (PC) you are familiar with, I&rsquo;m talking about a big massive machine in its own dedicated room where you had no access if you were not cool enough, and where you had to send commands from the teletype and read the output printed back.</p>
 
 <p><img class="center" src="http://pierre-jean.github.io/images/linux/mainframe2.jpg"></p>
@@ -62,16 +62,16 @@ Hear me well, I&rsquo;m not talking here about the <em>Personal Computer</em> (P
 
 <h2>Under the hood</h2>
 
-<p>Here is a diagram of how a Teletype was interacting with a computer:</p>
+<p>Here is a diagram of how a teletype was interacting with a computer:</p>
 
 <p><img class="center" src="http://pierre-jean.github.io/images/linux/teletype-mainframe-workflow.png"></p>
 
 <ol>
-<li>Each machine is (conceptually or physically) connected to two cables: one to send instruction to the computer and one to receive output from the computer.</li>
-<li>These cables are connected to the computer through a serial cable plugged into an Universal Asynchronous Receiver and Transmitter (<em>UART</em>) that transform the asynchronous flow of data into bytes words.</li>
+<li>Each machine is (conceptually or physically) connected to two cables: one to send instructions to the computer and one to receive output from the computer.</li>
+<li>These cables are connected to the computer through a serial cable plugged into an Universal Asynchronous Receiver and Transmitter (<em>UART</em>) that transforms the asynchronous flow of data into bytes words.</li>
 <li>The computer has an UART driver to read for the hardware device.</li>
-<li>The sequence of characters is passed to the line discipline. The line discipline will be in charge of converting special characters (like <em>end of line</em>, <em>backspaces</em>), and echoing (reprinting) what has been received back to the teletype, so that the user can visual what he/she types.</li>
-<li>The flow of instruction is passed to the TTY driver, that pass them to the <em>foreground</em> processes for the <em>session</em> associated with this TTY. Indeed, as a user, you can execute several processes in parallel, but only interact with one at a time, letting the others working (or waiting) in the background.</li>
+<li>The sequence of characters is passed to the line discipline. The line discipline will be in charge of converting special characters (like <em>end of line</em>, <em>backspaces</em>), and echoing (reprinting) what has been received back to the teletype, so that the user can visualize what he/she types.</li>
+<li>The flow of instruction is passed to the TTY driver, that passes them to the <em>foreground</em> processes for the <em>session</em> associated with this TTY. Indeed, as a user, you can execute several processes in parallel, but only interact with one at a time, letting the others working (or waiting) in the background.</li>
 </ol>
 
 
@@ -83,13 +83,13 @@ Hear me well, I&rsquo;m not talking here about the <em>Personal Computer</em> (P
 
 <p><img class="center" src="http://pierre-jean.github.io/images/linux/terminal_vt100.jpg"></p>
 
-<p>They started to <em>look like</em> your current PC desktop. Beware, though, they are in no way comparable! They are still dummy objects, despite their name. They do not compute things on their own: managing fancy colors and having a fast refresh frequency is far from being even close to a computer. It&rsquo;s the 80s after all, it&rsquo;s hard to call anything smart from that period of History.</p>
+<p>They started to <em>look like</em> your current PC desktop. Beware, though, they are in no way comparable! They are still dummy objects, despite their name. They do not compute things on their own: managing fancy colors and having a fast refresh frequency is far from being even close to a computer. It&rsquo;s the 80s after all, it&rsquo;s hard to call anything smart from that period of time&hellip;</p>
 
-<p>These devices worked the same way as Teletype, but also introduced some new special features that had to be supported by the software to be enabled (colors,special movements, etc).</p>
+<p>These devices worked the same way as teletype, but also introduced some new special features that had to be supported by the software to be managed correctly (colors,special movements, etc).</p>
 
 <h2>Wake up Neo, it is all virtual</h2>
 
-<p>The massive set of wardrobes that used to constitute a computer gradually turns down to a nice little box that you could fit under your desk. And there was no more dozens of terminal connected to it, but only one monitor and one keyboard. Nevertheless, your current Linux machine keeps emulating several (usually 7 by default) terminals connected to your hardware. But to protect you from the effort of getting up and physically going to another chair, the OS allows you to switch from one terminal to another by a simple press of keys (<code>Ctrl</code>+<code>Alt</code>+<code>F1</code> to <code>Ctrl</code>+<code>Alt</code>+<code>F7</code>). This feature is called <em>virtual terminals</em>, and is represented by the files <code>/dev/tty1</code> to <code>/dev/tty7</code>. You can see any of this file as a duplex cable connected to a terminal. If you write to it, you send the information to be print to the terminal, if you read from it, you receive what is typed from the terminal (try it, it works).</p>
+<p>The massive set of wardrobes that used to constitute a computer gradually turned down to a nice little box that you could fit under your desk. And there was no more dozens of terminals connected to it, but only one monitor and one keyboard. Nevertheless, your current Linux machine keeps emulating several (usually 7 by default) terminals connected to your hardware. But to protect you from the effort of getting up and physically going to another chair, the OS allows you to switch from one terminal to another by a simple press of keys (<code>Ctrl</code>+<code>Alt</code>+<code>F1</code> to <code>Ctrl</code>+<code>Alt</code>+<code>F7</code>). This feature is called <em>virtual terminals</em>, and is represented by the files <code>/dev/tty1</code> to <code>/dev/tty7</code>. You can see any of these files as a duplex cable connected to a terminal. If you write to it, you send the information to be printed to the terminal, if you read from it, you receive what is typed from the terminal (try it, it works).</p>
 
 <p><img class="center" src="http://pierre-jean.github.io/images/linux/virtual-terminal-workflow.png"></p>
 
@@ -103,7 +103,7 @@ Hear me well, I&rsquo;m not talking here about the <em>Personal Computer</em> (P
 
 <p>Basically, when you launch a terminal within a graphic environment like this, it will spawn its own equivalent of /dev/ttyX: the terminal emulator will open a special file located in <code>/dev/ptmx</code>, called the <em>master side</em> of the <em>pts</em>, will do some magic with <code>ioctl</code> function, which will create a <em>slave side</em> of the pts in <code>/dev/pts/X</code>.</p>
 
-<p>The processes running in the session will be attached to this file, that will behave like any file from the virtual terminal, except that there is no attachment to a seat: you can open several terminal emulator windows at the same time and display them side by side, having different session running.</p>
+<p>The processes running in the session will be attached to this file, that will behave like any file from the virtual terminal, except that there is no attachment to a seat: you can open several terminal emulator windows at the same time and display them side by side, having different sessions running.</p>
 
 <h2>Conclusion</h2>
 
