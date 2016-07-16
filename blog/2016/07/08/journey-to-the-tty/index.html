@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty">
+  <link rel="canonical" href="http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Yabage" type="application/atom+xml">
@@ -62,7 +62,7 @@
   
 <form action="https://www.google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:pierre-jean.baraud.fr" />
+    <input type="hidden" name="q" value="site:pierre-jean.github.io" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -100,7 +100,7 @@
 <time datetime="2016-07-08T12:00:00+01:00" pubdate data-updated="true">Jul 8<span>th</span>, 2016</time>
         
            | <a href="#disqus_thread"
-             data-disqus-identifier="http://pierre-jean.baraud.fr">Comments</a>
+             data-disqus-identifier="http://pierre-jean.github.io">Comments</a>
         
       </p>
     
@@ -180,6 +180,8 @@ Hear me well, I&rsquo;m not talking here about the <em>Personal Computer</em> (P
 
 <p>The massive set of wardrobes that used to constitute a computer gradually turns down to a nice little box that you could fit under your desk. And there was no more dozens of terminal connected to it, but only one monitor and one keyboard. Nevertheless, your current Linux machine keeps emulating several (usually 7 by default) terminals connected to your hardware. But to protect you from the effort of getting up and physically going to another chair, the OS allows you to switch from one terminal to another by a simple press of keys (<code>Ctrl</code>+<code>Alt</code>+<code>F1</code> to <code>Ctrl</code>+<code>Alt</code>+<code>F7</code>). This feature is called <em>virtual terminals</em>, and is represented by the files <code>/dev/tty1</code> to <code>/dev/tty7</code>. You can see any of this file as a duplex cable connected to a terminal. If you write to it, you send the information to be print to the terminal, if you read from it, you receive what is typed from the terminal (try it, it works).</p>
 
+<p><img class="center" src="/images/linux/virtual-terminal-workflow.png"></p>
+
 <p>When you switch from one virtual terminal to another, the OS detach your <em>seat</em> (a set of input and output devices like monitor, keyboard, mouse, etc. representing the interactive interface with the user) from the virtual terminal, preventing this one to write on the hardware devices, but letting the running processes to read and write to the files (that will buffer the information until you reattach your seat to this terminal), making the switch between sessions transparent for running jobs.</p>
 
 <h2>I know no master</h2>
@@ -239,7 +241,7 @@ But we should keep a bit for further articles, and there are anyway plenty of gr
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty/" data-via="" data-counturl="http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty/" data-via="" data-counturl="http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty/" >Tweet</a>
   
   
   
@@ -315,8 +317,8 @@ But we should keep a bit for further articles, and there are anyway plenty of gr
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty/';
-        var disqus_url = 'http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty/';
+        var disqus_identifier = 'http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty/';
+        var disqus_url = 'http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty/';
         var disqus_script = 'embed.js';
       
     (function () {

@@ -1,73 +1,73 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2013/08/10/be-passionate/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2013/08/10/be-passionate/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2013/08/17/introduction-to-angularjs/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2013/08/17/introduction-to-angularjs/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2013/10/01/i-migrate-to-jekyllrb/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2014/05/07/docker/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2014/05/07/docker/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2014/05/08/code-and-play/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2014/05/08/code-and-play/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
         <loc>
-            http://pierre-jean.baraud.fr/blog/2014/05/09/update-ovh-dynhost-address-from-linux/
+            http://pierre-jean.github.io/blog/2014/05/09/update-ovh-dynhost-address-from-linux/
         </loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2014/05/12/train-your-skills/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2014/05/12/train-your-skills/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2014/05/13/3d-iso-introduction/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2014/05/13/3d-iso-introduction/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2014/05/14/fist-look-dockerfile/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2014/05/14/fist-look-dockerfile/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2014/05/19/deeper-look-dockerfile/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2014/05/19/deeper-look-dockerfile/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2014/06/02/host-docker-containers/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2014/06/02/host-docker-containers/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2014/06/04/linux-boot-process/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty/</loc>
-        <lastmod>2016-07-15T17:14:54+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty/</loc>
+        <lastmod>2016-07-16T12:46:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/about-me/</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/</loc>
+        <lastmod>2016-07-16T12:46:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/blog/archives/</loc>
-        <lastmod>2016-07-15T17:14:54+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/about-me/</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/</loc>
-        <lastmod>2016-07-15T17:14:54+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/blog/archives/</loc>
+        <lastmod>2016-07-16T12:46:44+01:00</lastmod>
     </url>
     <url>
-        <loc>http://pierre-jean.baraud.fr/robots.txt</loc>
-        <lastmod>2016-07-07T11:28:27+01:00</lastmod>
+        <loc>http://pierre-jean.github.io/robots.txt</loc>
+        <lastmod>2016-07-16T11:51:37+01:00</lastmod>
     </url>
 </urlset>

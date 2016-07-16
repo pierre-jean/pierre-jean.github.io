@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Opinion | Yabage]]></title>
-  <link href="http://pierre-jean.baraud.fr/blog/categories/opinion/atom.xml" rel="self"/>
-  <link href="http://pierre-jean.baraud.fr/"/>
-  <updated>2016-07-15T17:16:51+01:00</updated>
-  <id>http://pierre-jean.baraud.fr/</id>
+  <link href="http://pierre-jean.github.io/blog/categories/opinion/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.github.io/"/>
+  <updated>2016-07-17T00:08:16+01:00</updated>
+  <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
     <email><![CDATA[pierre-jean@baraud.fr]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Be Passionate]]></title>
-    <link href="http://pierre-jean.baraud.fr/blog/2013/08/10/be-passionate/"/>
+    <link href="http://pierre-jean.github.io/blog/2013/08/10/be-passionate/"/>
     <updated>2013-08-10T15:46:47+01:00</updated>
-    <id>http://pierre-jean.baraud.fr/blog/2013/08/10/be-passionate</id>
+    <id>http://pierre-jean.github.io/blog/2013/08/10/be-passionate</id>
     <content type="html"><![CDATA[<h2>Live your passion&hellip;now</h2>
 
 <p>I am a cautious person. I like to weigh pros and cons before making a choice. I always prevailed adaptability over personal beliefs. But if I learned one thing in the last few years, it&rsquo;s that being <strong>good is all about passion</strong>.</p>

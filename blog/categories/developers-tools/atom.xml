@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Developers Tools | Yabage]]></title>
-  <link href="http://pierre-jean.baraud.fr/blog/categories/developers-tools/atom.xml" rel="self"/>
-  <link href="http://pierre-jean.baraud.fr/"/>
-  <updated>2016-07-15T17:16:51+01:00</updated>
-  <id>http://pierre-jean.baraud.fr/</id>
+  <link href="http://pierre-jean.github.io/blog/categories/developers-tools/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.github.io/"/>
+  <updated>2016-07-17T00:08:16+01:00</updated>
+  <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
     <email><![CDATA[pierre-jean@baraud.fr]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Docker]]></title>
-    <link href="http://pierre-jean.baraud.fr/blog/2014/05/07/docker/"/>
+    <link href="http://pierre-jean.github.io/blog/2014/05/07/docker/"/>
     <updated>2014-05-07T12:28:05+01:00</updated>
-    <id>http://pierre-jean.baraud.fr/blog/2014/05/07/docker</id>
+    <id>http://pierre-jean.github.io/blog/2014/05/07/docker</id>
     <content type="html"><![CDATA[<p><img src="/images/docker/docker-logo.png"></p>
 
 <h2>What is Docker?</h2>
@@ -93,9 +93,9 @@ If you use containers, you have the guarantee that your code will behave the sam
   
   <entry>
     <title type="html"><![CDATA[I Migrate to Jekyllrb]]></title>
-    <link href="http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb/"/>
+    <link href="http://pierre-jean.github.io/blog/2013/10/01/i-migrate-to-jekyllrb/"/>
     <updated>2013-10-01T11:55:56+01:00</updated>
-    <id>http://pierre-jean.baraud.fr/blog/2013/10/01/i-migrate-to-jekyllrb</id>
+    <id>http://pierre-jean.github.io/blog/2013/10/01/i-migrate-to-jekyllrb</id>
     <content type="html"><![CDATA[<h2>From Wordpress to Jekyll</h2>
 
 <p>I started a blog a few month ago with the framework wordpress, but I was not convinced about the user interface. For instance, here are a few drawbacks that annoyed me:</p>
