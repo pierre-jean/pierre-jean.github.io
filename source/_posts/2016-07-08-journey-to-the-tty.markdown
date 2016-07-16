@@ -75,6 +75,8 @@ Wake up Neo, it is all virtual
 
 The massive set of wardrobes that used to constitute a computer gradually turns down to a nice little box that you could fit under your desk. And there was no more dozens of terminal connected to it, but only one monitor and one keyboard. Nevertheless, your current Linux machine keeps emulating several (usually 7 by default) terminals connected to your hardware. But to protect you from the effort of getting up and physically going to another chair, the OS allows you to switch from one terminal to another by a simple press of keys (`Ctrl`+`Alt`+`F1` to `Ctrl`+`Alt`+`F7`). This feature is called _virtual terminals_, and is represented by the files `/dev/tty1` to `/dev/tty7`. You can see any of this file as a duplex cable connected to a terminal. If you write to it, you send the information to be print to the terminal, if you read from it, you receive what is typed from the terminal (try it, it works).
 
+{% img center /images/linux/virtual-terminal-workflow.png %}
+
 When you switch from one virtual terminal to another, the OS detach your _seat_ (a set of input and output devices like monitor, keyboard, mouse, etc. representing the interactive interface with the user) from the virtual terminal, preventing this one to write on the hardware devices, but letting the running processes to read and write to the files (that will buffer the information until you reattach your seat to this terminal), making the switch between sessions transparent for running jobs.
 
 I know no master
