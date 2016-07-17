@@ -68,7 +68,7 @@ Besides unpredictable haircuts and memorable rythms, the 80s have also brought u
 
 They started to *look like* your current PC desktop. Beware, though, they are in no way comparable! They are still dummy objects, despite their name. They do not compute things on their own: managing fancy colors and having a fast refresh frequency is far from being even close to a computer. It's the 80s after all, it's hard to call anything smart from that period of time...
 
-These devices worked the same way as teletype, but also introduced some new special features that had to be supported by the software to be managed correctly (colors,special movements, etc).
+These devices worked the same way as teletypes, but also introduced some new special features that had to be supported by the software to be managed correctly (colors,special movements, etc).
 
 Wake up Neo, it is all virtual
 ------------------------------
