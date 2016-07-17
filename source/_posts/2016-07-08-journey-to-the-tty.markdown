@@ -62,7 +62,7 @@ The whole stack define below is called a TTY device, and several ones can exist 
 From the Teletype to the Terminal
 ---------------------------------
 
-Besides unpredictable haircuts and memorable rythms, the 80s has also brought us what they called _intelligent terminals_. Slowly, terminals evolved to badass devices, with screen, memory, and even small processors to manage specific features on their side.
+Besides unpredictable haircuts and memorable rythms, the 80s have also brought us what they called _intelligent terminals_. Slowly, terminals evolved to badass devices, with screen, memory, and even small processors to manage specific features on their side.
 
 {% img center /images/linux/terminal_vt100.jpg %}
 
