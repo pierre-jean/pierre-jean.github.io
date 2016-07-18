@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Linux | Yabage]]></title>
-  <link href="http://pierre-jean.github.io/blog/categories/linux/atom.xml" rel="self"/>
-  <link href="http://pierre-jean.github.io/"/>
-  <updated>2016-07-17T21:48:13+01:00</updated>
-  <id>http://pierre-jean.github.io/</id>
+  <link href="http://pierre-jean.baraud.fr/blog/categories/linux/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.baraud.fr/"/>
+  <updated>2016-07-18T09:18:21+01:00</updated>
+  <id>http://pierre-jean.baraud.fr/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
     <email><![CDATA[pierre-jean@baraud.fr]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[TTY: Under the Hood]]></title>
-    <link href="http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty/"/>
+    <link href="http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty/"/>
     <updated>2016-07-08T12:00:00+01:00</updated>
-    <id>http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty</id>
+    <id>http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty</id>
     <content type="html"><![CDATA[<p>It all started with simple instruction: <code>-t</code> <em>flag assigns a pseudo-tty or terminal inside the new container</em>&hellip; and a few seconds of puzzling thoughts&hellip; <em>What is exactly a pseudo TTY?</em> <em>What does it mean to attach or detach a process from it?</em></p>
 
 <p><img class="center" src="/images/linux/gnome-terminal.png"></p>
@@ -52,11 +52,11 @@
 <h2>Stop your boring oldish gibberish&hellip; Why the heck are you telling me about this?</h2>
 
 <p>Because instead of building new devices to interact with computers, pragmatic people at the time decided to reuse existing teletypes to connect to them.
-Hear me well, I&rsquo;m not talking here about the <em>Personal Computer</em> (PC) you are familiar with, I&rsquo;m talking about a big massive machine in its own dedicated room where you had no access if you were not cool enough, and where you had to send commands from the teletype and read the output printed back.</p>
+Hear me well, I&rsquo;m not talking here about the <em>Personal Computer</em> (PC) you are familiar with, I&rsquo;m talking about a big massive machine located in its own dedicated room where you had no access if you were not cool enough, and where you had to send commands from the teletype and read the output printed back from it.</p>
 
 <p><img class="center" src="/images/linux/mainframe2.jpg"></p>
 
-<p>Actually, one terminal was directly connected to the machine within the same room : <em>the console</em>. Man, I can&rsquo;t tell you about the hype on being the lucky one behind the console. Well, I can&rsquo;t because I&rsquo;m not that old, but I&rsquo;m sure that should have been a big thing back then.</p>
+<p>Actually, one terminal was directly connected to the machine within the same room : <em>the console</em>. Man, I can&rsquo;t tell you about the hype on being the lucky one behind the console. Well, I can&rsquo;t because I&rsquo;m not that old, but I&rsquo;m sure that it should have been a big thing back then.</p>
 
 <p>Anyway, you must now realize a few things: it would be nice for instance when using a terminal to see what you are typing. So what about asking the computer to echo back to us what it received, so that it is printed on our teletype? And what about erasing with backspace what have been typed? Yep, the computer at the end of the cable should take care of that for us, we only use a dummy Teletype after all.</p>
 
@@ -127,9 +127,9 @@ But we should keep a bit for further articles, and there are anyway plenty of gr
   
   <entry>
     <title type="html"><![CDATA[Linux Boot Process in a Nutshell]]></title>
-    <link href="http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process/"/>
+    <link href="http://pierre-jean.baraud.fr/blog/2014/06/04/linux-boot-process/"/>
     <updated>2014-06-04T19:41:30+01:00</updated>
-    <id>http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process</id>
+    <id>http://pierre-jean.baraud.fr/blog/2014/06/04/linux-boot-process</id>
     <content type="html"><![CDATA[<p>I&rsquo;m getting more and more interested in how my system works &ldquo;under the hood&rdquo; lately. These fundations are essential to understand some behaviors / technical choices in technologies oriented for end users (such as <a href="http://docker.io">Docker</a>).</p>
 
 <p>That&rsquo;s why I decided to write, mostly as a reminder for myself, a serie of articles explaining some fundamental Linux mechanisms. As I have to start somewhere, I&rsquo;ll start with the boot process.</p>
