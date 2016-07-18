@@ -19,7 +19,7 @@ The origin of the myth: the Teletype
 
 When you act as Neo from Matrix by popping up a fancy green terminal to impress your friends around (what do you mean, _"nobody does that"_?), you are actually playing with the legacy of a very old device, that surely not many of you have ever seen in your life: the Teletype.
 
-## A legendary object
+### A legendary object
 
 {% img center /images/linux/teletype-model-28.jpg %}
 
@@ -34,7 +34,7 @@ A teletype is basically a machine that sends letters you typed on the keyboard t
 
 This type of machine was at the time the best way to transmit data in a reliable and fast way.
 
-## Stop your boring oldish gibberish... Why the heck are you telling me about this?
+### Stop your boring oldish gibberish... Why the heck are you telling me about this?
 
 Because instead of building new devices to interact with computers, pragmatic people at the time decided to reuse existing teletypes to connect to them.
 Hear me well, I'm not talking here about the _Personal Computer_ (PC) you are familiar with, I'm talking about a big massive machine located in its own dedicated room where you had no access if you were not cool enough, and where you had to send commands from the teletype and read the output printed back on the device.
@@ -45,7 +45,7 @@ Actually, one terminal was directly connected to the machine within the same roo
 
 Anyway, you must now realize a few things: it would be nice for instance when using a terminal to see what you are typing. So what about asking the computer to echo back to us what it received, so that it is printed on our teletype? And what about erasing with backspace what have been typed? Yep, the computer at the end of the cable should take care of that for us, we only use a dummy Teletype after all.
 
-## Under the hood
+### Under the hood
 
 Here is a diagram of how a teletype was interacting with a computer:
 
