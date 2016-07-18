@@ -37,7 +37,7 @@ This type of machine was at the time the best way to transmit data in a reliable
 ## Stop your boring oldish gibberish... Why the heck are you telling me about this?
 
 Because instead of building new devices to interact with computers, pragmatic people at the time decided to reuse existing teletypes to connect to them.
-Hear me well, I'm not talking here about the _Personal Computer_ (PC) you are familiar with, I'm talking about a big massive machine located in its own dedicated room where you had no access if you were not cool enough, and where you had to send commands from the teletype and read the output printed back from it.
+Hear me well, I'm not talking here about the _Personal Computer_ (PC) you are familiar with, I'm talking about a big massive machine located in its own dedicated room where you had no access if you were not cool enough, and where you had to send commands from the teletype and read the output printed back on the device.
 
 {% img center /images/linux/mainframe2.jpg %}
 
