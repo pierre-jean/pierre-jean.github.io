@@ -39,7 +39,11 @@ I won't summarize here the content of the books, as there are already many artic
 So which one is the best?
 -------------------------
 
+So if both books speak about the same topic, should you read both? Are they tackling the topic the same way? What are they differences?
+
 ### The common part
+
+As they are both covering a common topic, you will inevitably find similitudes in some parts of the book ("TDD", "Commitment", "How to say No"). Moreover, the narrative of the book follows the same structure: each concept is illustrated with a personal experience from the author.
 
 ### The differences
 
