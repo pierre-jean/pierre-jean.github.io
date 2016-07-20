@@ -36,17 +36,22 @@ Speaking about disciplines: you may expect this book to provide you with a cookb
 
 I won't summarize here the content of the books, as there are already many articles on the Software Craftsmanship movement, and many talks available online from the authors (for instance [here][sandro-talk] and [there][uncle-bob-talk]) covering more or less the same topic. Moreover, the value of these books is not about the concepts they cover, but how they illustrate each idea through examples that speak to each one of us.
 
-So which one is the best?
--------------------------
+So... which one is the best?
+----------------------------
 
-So if both books speak about the same topic, should you read both? Are they tackling the topic the same way? What are they differences?
+So if both books speak about the same topic, should you read both? Are they tackling the topic the same way? What are their differences?
 
-### The common part
+### Kinda the same
 
-As they are both covering a common topic, you will inevitably find similitudes in some parts of the book ("TDD", "Commitment", "How to say No"). Moreover, the narrative of the book follows the same structure: each concept is illustrated with a personal experience from the author.
+As they are both covering a common topic, you will inevitably find similitudes in some parts of the books (_"TDD"_, _"Commitment"_, _"How to say No"_). Moreover, the narrative of the book follows the same structure: each concept is illustrated with a personal experience from the author.
 
-### The differences
+Both books are a path to mastery of your discipline, learning about the author juvenile mistakes and through their extented professional experience. For anyone having work for a few years, their provided examples will resonate with your experience, and you will recognize many situation you were in or from your environment.
 
+Both books are really well written, with an opiniated style that make it interesting.
+
+### But also different
+
+Nevertheless, it would be missing the point saying this books are similar and interchangeable. First, you are not blind: one clearly state in the title "Software Craftsman", the other doesn't mention it, nor in the title neither in the subtile. And let's admit it, I mislead you saying they were both covering 
 
 Conclusion
 ----------
