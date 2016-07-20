@@ -104,7 +104,7 @@ But we should keep a bit for further articles, and there are anyway plenty of gr
  * [Ponyhof's session management][ponyhof1] and [vt-switching][ponyhof2] articles: Great to understand the session and seats concepts.
  * [Unix StackExchange][unix-stackexchange] Stéphane Chazelas' answer, that put a lot of effort to makes things clear when they were a lot confusing for me.
 
-I realize I took a lot of shortcuts in this article and it would be natural that some part appear blurry in your mind. So if you have any question or need precisions, please leave a comment, I will try my best to provide a clear answer!
+I realize I took a lot of shortcuts in this article and it would be natural that some part appear blurry in your mind. So if you have any question or need more details, please leave a comment, I will try my best to provide a clear answer!
 
 [vt05]: http://terminals.classiccmp.org/wiki/images/f/fb/DEC_VT05_121708587772-2.jpg
 [linusakesson]: http://www.linusakesson.net/programming/tty/
