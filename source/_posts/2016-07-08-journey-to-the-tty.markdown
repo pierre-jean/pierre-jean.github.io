@@ -90,7 +90,7 @@ So when you launch your favorite terminal emulator like _xterm_ or _gnome-termin
 
 {% img center /images/linux/ptmx-pts-workflow.png %}
 
-Basically, when you launch a terminal within a graphic environment like this, it will spawn its own equivalent of /dev/ttyX: the terminal emulator will open a special file located in `/dev/ptmx`, called the _master side_ of the _pts_, will do some magic with `ioctl` function, which will create a _slave side_ of the pts in `/dev/pts/X`. 
+Basically, when you launch a terminal within a graphic environment like this, it will spawn its own equivalent of `/dev/ttyX`: the terminal emulator will open a special file located in `/dev/ptmx`, called the _master side_ of the _pts_, will do some magic with `ioctl` function, which will create a _slave side_ of the pts in `/dev/pts/X`. 
 
 The processes running in the session will be attached to this file, that will behave like any file from the virtual terminal, except that there is no attachment to a seat: you can open several terminal emulator windows at the same time and display them side by side, having different sessions running in parallel.
 
