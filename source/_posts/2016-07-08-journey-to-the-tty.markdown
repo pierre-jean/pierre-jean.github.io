@@ -10,7 +10,7 @@ It all started with simple instruction: `-t` _flag assigns a pseudo-tty or termi
 
 {% img center /images/linux/gnome-terminal.png %}
 
-Beware my friend, 'cause this article will lead you into the depths of forgotten history and guide you through the arcane of the kernel mechanism, but light of knowledge should shine upon you at the end of this journey.
+Beware my friend, 'cause this article will lead you into the depths of forgotten history and guide you through arcane kernel mechanisms, but light of knowledge should shine upon you at the end of this journey.
 
 <!-- More -->
 
