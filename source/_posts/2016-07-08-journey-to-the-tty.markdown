@@ -25,7 +25,7 @@ When you act as Neo from Matrix by popping up a fancy green terminal to impress 
 
 Do you see this beauty in the picture? That's a Teletype. A _model 28_ by _Teletype Corporation_ to be precise. And precise should I not be, as there are countless of models, built by many different forgotten companies. The history of teletypes finds its roots in some first experimentations during the late 19th century, but truly began in the 20s and finds an end in the 70s, when fax technology began to be good enough to replace them.
 
-A teletype is basically a machine that sends letters you typed on the keyboard through electric signal to another machine or network, and prints (literally prints, on a paper!) letters received through the reception cable. Obviously, the different models evolved with time to offer more features and performances:
+A teletype is basically a machine that sends letters you typed on the keyboard through electric signals to another machine or network, and prints (literally prints, on a paper!) letters received through the reception cable. Obviously, the different models evolved with time to offer more features and performances:
 
  * Use of _Multiplex signal_, in order to allow the usage of one physical cable to send and receive messages
  * Support of _punched card_ to send prepared messages at full speed without the need of typing them
