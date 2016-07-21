@@ -77,7 +77,7 @@ The massive set of wardrobes that used to constitute a computer gradually shrunk
 
 {% img center /images/linux/virtual-terminal-workflow.png %}
 
-When you switch from one virtual terminal to another, the OS detaches your _seat_ (a set of input and output devices like monitor, keyboard, mouse, etc. representing the hardware interface with the user) from the first virtual terminal and attaches it to the one requested by your shortcut. The processes from the first virtual terminals keep running, writing and reading from their virtual tty file (`dev/tty1` for instance), but this file won't receive any event from the seat and won't be able to send output to the seat. The information will be buffered instead (until your reattach your seat to this terminal), making the switch between sessions transparent for running jobs.
+When you switch from one virtual terminal to another, the OS detaches your _seat_ (a set of input and output devices like monitor, keyboard, mouse, etc. representing the hardware interface with the user) from the first virtual terminal and attaches it to the one requested by your shortcut. The processes from the first virtual terminals keep running, writing and reading from their virtual tty file (`dev/tty1` for instance), but this file won't receive any event from the seat and won't be able to send output to the seat. The information will be buffered instead (until you reattach your seat to this terminal), making the switch between sessions transparent for running jobs.
 
 I know no master
 ----------------
