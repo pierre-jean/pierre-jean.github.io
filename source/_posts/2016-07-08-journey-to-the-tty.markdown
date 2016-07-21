@@ -10,7 +10,7 @@ It all started with simple instruction: `-t` _flag assigns a pseudo-tty or termi
 
 {% img center /images/linux/gnome-terminal.png %}
 
-Beware my friend, cause this article will lead you into the depths of forgotten history and guide you through the arcane of the kernel mechanism, but light of knowledge should shine upon you at the end of this journey.
+Beware my friend, 'cause this article will lead you into the depths of forgotten history and guide you through arcane kernel mechanisms, but light of knowledge should shine upon you at the end of this journey.
 
 <!-- More -->
 
@@ -25,7 +25,7 @@ When you act as Neo from Matrix by popping up a fancy green terminal to impress 
 
 Do you see this beauty in the picture? That's a Teletype. A _model 28_ by _Teletype Corporation_ to be precise. And precise should I not be, as there are countless of models, built by many different forgotten companies. The history of teletypes finds its roots in some first experimentations during the late 19th century, but truly began in the 20s and finds an end in the 70s, when fax technology began to be good enough to replace them.
 
-A teletype is basically a machine that sends letters you typed on the keyboard through electric signal to another machine or network, and prints (literally prints, on a paper!) letters received through the reception cable. Obviously, the different models evolved with time to offer more features and performances:
+A teletype is basically a machine that sends letters you typed on the keyboard through electric signals to another machine or network, and prints (literally prints, on a paper!) letters received through the reception cable. Obviously, the different models evolved with time to offer more features and improved performance:
 
  * Use of _Multiplex signal_, in order to allow the usage of one physical cable to send and receive messages
  * Support of _punched card_ to send prepared messages at full speed without the need of typing them
@@ -57,7 +57,7 @@ Here is a diagram of how a teletype was interacting with a computer:
  4. The sequence of characters is passed to the line discipline. The line discipline will be in charge of converting special characters (like _end of line_, _backspaces_), and echoing (reprinting) what has been received back to the teletype, so that the user can visualize what he/she types.
  5. The flow of instruction is passed to the TTY driver, that passes them to the *foreground* processes for the *session* associated with this TTY. Indeed, as a user, you can execute several processes in parallel, but only interact with one at a time, letting the others working (or waiting) in the background.
 
-The whole stack define below is called a TTY device, and several ones can exist at the same time for a computer. So different line disciplines can be set for different devices, each TTY having its own foreground job, etc.
+The whole stack as defined above is called a *TTY device*, and several ones can exist at the same time for a computer. So different line disciplines can be set for different devices, each TTY having its own foreground job, etc.
 
 From the Teletype to the Terminal
 ---------------------------------
@@ -68,7 +68,7 @@ Besides unpredictable haircuts and memorable rythms, the 80s have also brought u
 
 They started to *look like* your current PC desktop. Beware, though, they are in no way comparable! They are still dummy objects, despite their name. They do not compute things on their own: managing fancy colors and having a fast refresh frequency is far from being even close to a computer. It's the 80s after all, it's hard to call anything smart from that period of time...
 
-These devices worked the same way as teletypes, but also introduced some new special features that had to be supported by the software to be managed correctly (colors,special movements, etc).
+These devices worked the same way as teletypes, but also introduced some new special features that had to be supported by the software to be managed correctly (colors, special movements, etc).
 
 Wake up Neo, it is all virtual
 ------------------------------
@@ -90,7 +90,7 @@ So when you launch your favorite terminal emulator like _xterm_ or _gnome-termin
 
 {% img center /images/linux/ptmx-pts-workflow.png %}
 
-Basically, when you launch a terminal within a graphic environment like this, it will spawn its own equivalent of /dev/ttyX: the terminal emulator will open a special file located in `/dev/ptmx`, called the _master side_ of the _pts_, will do some magic with `ioctl` function, which will create a _slave side_ of the pts in `/dev/pts/X`. 
+Basically, when you launch a terminal within a graphic environment like this, it will spawn its own equivalent of `/dev/ttyX`: the terminal emulator will open a special file located in `/dev/ptmx`, called the _master side_ of the _pts_, will do some magic with `ioctl` function, which will create a _slave side_ of the pts in `/dev/pts/X`. 
 
 The processes running in the session will be attached to this file, that will behave like any file from the virtual terminal, except that there is no attachment to a seat: you can open several terminal emulator windows at the same time and display them side by side, having different sessions running in parallel.
 
@@ -104,7 +104,7 @@ But we should keep a bit for further articles, and there are anyway plenty of gr
  * [Ponyhof's session management][ponyhof1] and [vt-switching][ponyhof2] articles: Great to understand the session and seats concepts.
  * [Unix StackExchange][unix-stackexchange] Stéphane Chazelas' answer, that put a lot of effort to makes things clear when they were a lot confusing for me.
 
-I realize I took a lot of shortcuts in this article and it would be natural that some part appear blurry in your mind. So if you have any question or need precisions, please leave a comment, I will try my best to provide a clear answer!
+I realize I took a lot of shortcuts in this article and it would be natural that some part appear blurry in your mind. So if you have any question or need more details, please leave a comment, I will try my best to provide a clear answer!
 
 [vt05]: http://terminals.classiccmp.org/wiki/images/f/fb/DEC_VT05_121708587772-2.jpg
 [linusakesson]: http://www.linusakesson.net/programming/tty/
