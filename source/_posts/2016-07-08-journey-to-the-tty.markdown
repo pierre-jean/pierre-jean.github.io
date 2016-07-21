@@ -6,11 +6,11 @@ comments: true
 categories: Linux
 ---
 
-It all started with simple instruction: `-t` _flag assigns a pseudo-tty or terminal inside the new container_... and a few seconds of puzzling thoughts... _What is exactly a pseudo TTY?_ _What does it mean to attach or detach a process from it?_
+It all started with the simple instruction: `-t` _flag assigns a pseudo-tty or terminal inside the new container_... and a moment of puzzlement... _What is exactly a pseudo TTY?_ _What does it mean to attach or detach a process from it?_
 
 {% img center /images/linux/gnome-terminal.png %}
 
-Beware my friend, 'cause this article will lead you into the depths of forgotten history and guide you through arcane kernel mechanisms, but light of knowledge should shine upon you at the end of this journey.
+Beware my friend, for this article will lead you into the depths of forgotten history, guiding you through arcane kernel mechanisms. But persevere and the pure light of knowledge will shine upon you by the end of this journey.
 
 <!-- More -->
 
