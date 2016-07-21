@@ -47,15 +47,15 @@ Anyway, by now we've realized a few things: for instance when using a terminal i
 
 ### Under the hood
 
-Here is a diagram of how a teletype was interacting with a computer:
+Here is a diagram of how a teletype interacted with a computer:
 
 {% img center /images/linux/teletype-mainframe-workflow.png %}
 
- 1. Each machine is (conceptually or physically) connected to two cables: one to send instructions to the computer and one to receive output from the computer.
+ 1. Each machine is -conceptually or physically- connected via two cables: one to send instructions to the computer and one to receive output from the computer.
  2. These cables are connected to the computer through a serial cable plugged into an Universal Asynchronous Receiver and Transmitter (_UART_) that transforms the asynchronous flow of data into bytes words.
  3. The computer has an UART driver to read for the hardware device.
  4. The sequence of characters is passed to the line discipline. The line discipline will be in charge of converting special characters (like _end of line_, _backspaces_), and echoing (reprinting) what has been received back to the teletype, so that the user can visualize what he/she types.
- 5. The flow of instruction is passed to the TTY driver, that passes them to the *foreground* processes for the *session* associated with this TTY. Indeed, as a user, you can execute several processes in parallel, but only interact with one at a time, letting the others working (or waiting) in the background.
+ 5. The flow of instruction is passed to the TTY driver, that then passes them to the *foreground* processes for the *session* associated with this TTY. Indeed, as a user, you can execute several processes in parallel, but only interact with one at a time, letting the others working (or waiting) in the background.
 
 The whole stack as defined above is called a *TTY device*, and several ones can exist at the same time for a computer. So different line disciplines can be set for different devices, each TTY having its own foreground job, etc.
 
