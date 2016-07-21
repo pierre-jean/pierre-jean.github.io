@@ -97,14 +97,14 @@ The processes running in the session will be attached to this file, that will be
 Going further
 -------------
 
-We could dig the topic endlessly, speaking about the function `ioctl`, detailing how the kernel handle the session, expressing our endless admiration for the great 70s look of the [DEC VT05][vt05] terminal...
-But we should keep a bit for further articles, and there are anyway plenty of great resources already available if you are interested. To share a few:
+We could dig into the topic endlessly, discussing the function `ioctl`, detailing how the kernel handles the session, expressing our endless admiration for the great 70s look of the [DEC VT05][vt05] terminal...
+But we should keep some for further articles, and there are anyway plenty of great resources already available if you are interested. To share a few:
 
  * [the TTY demystified, by Linus Åkesson][linusakesson]: Simply _the_ reference on the topic, that will also explain signals, processes, etc.
  * [Ponyhof's session management][ponyhof1] and [vt-switching][ponyhof2] articles: Great to understand the session and seats concepts.
- * [Unix StackExchange][unix-stackexchange] Stéphane Chazelas' answer, that put a lot of effort to makes things clear when they were a lot confusing for me.
+ * [Unix StackExchange][unix-stackexchange] Stéphane Chazelas' answer, that makes a lot of effort to clarify what was initially confusing for me.
 
-I realize I took a lot of shortcuts in this article and it would be natural that some part appear blurry in your mind. So if you have any question or need more details, please leave a comment, I will try my best to provide a clear answer!
+I realize I took a lot of shortcuts in this article and it would be natural that some part suggest greater depths to be explored. So if you have any question or need further details, please leave a comment, I will try my best to provide a clear answer!
 
 [vt05]: http://terminals.classiccmp.org/wiki/images/f/fb/DEC_VT05_121708587772-2.jpg
 [linusakesson]: http://www.linusakesson.net/programming/tty/
