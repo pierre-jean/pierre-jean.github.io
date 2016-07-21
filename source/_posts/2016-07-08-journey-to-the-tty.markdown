@@ -34,16 +34,16 @@ A teletype is basically a machine that sends letters you typed on the keyboard t
 
 At the time this type of machine was the best way to transmit data in fast and reliable way.
 
-### Stop your boring oldish gibberish... Why the heck are you telling me about this?
+### Stop your boring old gibberish... Why the heck are you telling me about this?
 
 Because instead of building new devices to interact with computers, pragmatic people at the time decided to reuse existing teletypes to connect to them.
-Hear me well, I'm not talking here about the _Personal Computer_ (PC) you are familiar with, I'm talking about a big massive machine located in its own dedicated room where you had no access if you were not cool enough, and where you had to send commands from the teletype and read the output printed back on the device.
+Listen very carefully, I'm not talking here about the _Personal Computer_ (PC) you are familiar with. I'm talking about a big, massive machine located in its own dedicated room to which you had no access if you were not cool enough, and where you had to send commands from the teletype and read the output printed back on the device.
 
 {% img center /images/linux/mainframe2.jpg %}
 
-Actually, one terminal was directly connected to the machine within the same room : _the console_. Man, I can't tell you about the hype on being the lucky one behind the console. Well, I can't because I'm not that old, but I'm sure that it should have been a big thing back then.
+Actually, one terminal was directly connected to the machine within the same room : _the console_. Man, I can't tell you about the kudos and props at being the lucky one behind the console. Well, I can't because I'm not that old, but I'm sure that it should have been a big deal back then.
 
-Anyway, you must now realize a few things: it would be nice for instance when using a terminal to see what you are typing. So what about asking the computer to echo back to us what it received, so that it is printed on our teletype? And what about erasing with backspace what have been typed? Yep, the computer at the end of the cable should take care of that for us, we only use a dummy Teletype after all.
+Anyway, by now we've realized a few things: for instance when using a terminal it's nice to see what you are typing. So what about asking the computer to echo back to us what it received, so that it is printed from our teletype? And what about erasing with backspace what has been typed? Yep, the computer at the end of the cable should take care of that for us, we're only using a dummy Teletype after all.
 
 ### Under the hood
 
