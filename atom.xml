@@ -4,7 +4,7 @@
   <title><![CDATA[Yabage]]></title>
   <link href="http://pierre-jean.github.io/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2016-07-21T21:06:18+01:00</updated>
+  <updated>2016-07-21T21:10:33+01:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -130,7 +130,9 @@ But we should keep some for further articles, and there are anyway plenty of gre
     <link href="http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process/"/>
     <updated>2014-06-04T19:41:30+01:00</updated>
     <id>http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process</id>
-    <content type="html"><![CDATA[<p>I&rsquo;m getting more and more interested in how my system works &ldquo;under the hood&rdquo; lately. These fundations are essential to understand some behaviors / technical choices in technologies oriented for end users (such as <a href="http://docker.io">Docker</a>).</p>
+    <content type="html"><![CDATA[<p><img class="center" src="http://pierre-jean.github.io/images/linux/power-on-1.jpg"></p>
+
+<p>I&rsquo;m getting more and more interested in how my system works &ldquo;under the hood&rdquo; lately. These fundations are essential to understand some behaviors / technical choices in technologies oriented for end users (such as <a href="http://docker.io">Docker</a>).</p>
 
 <p>That&rsquo;s why I decided to write, mostly as a reminder for myself, a serie of articles explaining some fundamental Linux mechanisms. As I have to start somewhere, I&rsquo;ll start with the boot process.</p>
 
