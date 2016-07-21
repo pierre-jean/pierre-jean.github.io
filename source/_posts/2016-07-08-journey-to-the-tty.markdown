@@ -17,7 +17,7 @@ Beware my friend, for this article will lead you into the depths of forgotten hi
 The origin of the myth: the Teletype
 ------------------------------------
 
-When you act as Neo from Matrix by popping up a fancy green terminal to impress your friends around (what do you mean, _"nobody does that"_?), you are actually playing with the legacy of a very old device, that surely not many of you have ever seen in your life: the Teletype.
+When you go all Neo from Matrix by popping up a fancy green terminal to impress your friends around (what do you mean, _"nobody does that"_?), you are actually playing with the legacy of a very old device that few have ever seen in their lives: the Teletype.
 
 ### A legendary object
 
