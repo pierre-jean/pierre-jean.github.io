@@ -6,6 +6,8 @@ comments: true
 categories: Linux
 ---
 
+{% img center /images/linux/power-on-1.jpg %}
+
 I'm getting more and more interested in how my system works "under the hood" lately. These fundations are essential to understand some behaviors / technical choices in technologies oriented for end users (such as [Docker][docker-site]).
 
 That's why I decided to write, mostly as a reminder for myself, a serie of articles explaining some fundamental Linux mechanisms. As I have to start somewhere, I'll start with the boot process.
