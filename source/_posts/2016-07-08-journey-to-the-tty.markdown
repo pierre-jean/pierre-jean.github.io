@@ -62,13 +62,13 @@ The whole stack as defined above is called a *TTY device*, and several ones can 
 From the Teletype to the Terminal
 ---------------------------------
 
-Besides unpredictable haircuts and memorable rythms, the 80s have also brought us what they called _intelligent terminals_. Slowly, terminals evolved to badass devices, with screen, memory, and even small processors to manage specific features on their side.
+Besides unpredictable haircuts and memorable rythms, the 80s have also brought us what they called _intelligent terminals_. Slowly, terminals evolved to become badass devices, with screen, memory, and even small processors to manage specific features on their side.
 
 {% img center /images/linux/terminal_vt100.jpg %}
 
-They started to *look like* your current PC desktop. Beware, though, they are in no way comparable! They are still dummy objects, despite their name. They do not compute things on their own: managing fancy colors and having a fast refresh frequency is far from being even close to a computer. It's the 80s after all, it's hard to call anything smart from that period of time...
+They started to *look like* your current PC desktop. But Beware they are in no way comparable! They are still dummy objects, despite their name. They do not compute things on their own: managing fancy colors and having a fast refresh frequency is far from being even close to a computer. It's the 80s after all, it's hard to call anything from that period of time smart...
 
-These devices worked the same way as teletypes, but also introduced some new special features that had to be supported by the software to be managed correctly (colors, special movements, etc).
+These devices worked in the same way as teletypes, but also introduced some new features that needed supported from the software to be managed correctly (colors, special movements, etc).
 
 Wake up Neo, it is all virtual
 ------------------------------
