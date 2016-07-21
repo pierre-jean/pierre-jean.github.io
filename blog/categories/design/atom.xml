@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Design | Yabage]]></title>
-  <link href="http://pierre-jean.baraud.fr/blog/categories/design/atom.xml" rel="self"/>
-  <link href="http://pierre-jean.baraud.fr/"/>
-  <updated>2016-07-18T12:56:13+01:00</updated>
-  <id>http://pierre-jean.baraud.fr/</id>
+  <link href="http://pierre-jean.github.io/blog/categories/design/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.github.io/"/>
+  <updated>2016-07-21T21:05:18+01:00</updated>
+  <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
     <email><![CDATA[pierre-jean@baraud.fr]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Introduction to Isometric 3D]]></title>
-    <link href="http://pierre-jean.baraud.fr/blog/2014/05/13/3d-iso-introduction/"/>
+    <link href="http://pierre-jean.github.io/blog/2014/05/13/3d-iso-introduction/"/>
     <updated>2014-05-13T16:09:50+01:00</updated>
-    <id>http://pierre-jean.baraud.fr/blog/2014/05/13/3d-iso-introduction</id>
+    <id>http://pierre-jean.github.io/blog/2014/05/13/3d-iso-introduction</id>
     <content type="html"><![CDATA[<p><img class="center" src="/images/iso/iso-result-mini.png" title="" ></p>
 
 <p>You want to create a nice graphic presentation, but you don&rsquo;t know anything about design? You need to create some game graphic elements, but you&rsquo;re really bad at drawing?</p>

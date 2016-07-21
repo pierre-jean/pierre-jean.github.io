@@ -9,7 +9,7 @@
   <meta name="author" content="Pierre-Jean Baraud">
 
   
-  <meta name="description" content="It all started with simple instruction: -t flag assigns a pseudo-tty or terminal inside the new container&hellip; and a few seconds of puzzling &hellip;">
+  <meta name="description" content="It all started with the simple instruction: -t flag assigns a pseudo-tty or terminal inside the new container&hellip; and a moment of puzzlement& &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty">
+  <link rel="canonical" href="http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Yabage" type="application/atom+xml">
@@ -62,7 +62,7 @@
   
 <form action="https://www.google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:pierre-jean.baraud.fr" />
+    <input type="hidden" name="q" value="site:pierre-jean.github.io" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -100,33 +100,33 @@
 <time datetime="2016-07-08T12:00:00+01:00" pubdate data-updated="true">Jul 8<span>th</span>, 2016</time>
         
            | <a href="#disqus_thread"
-             data-disqus-identifier="http://pierre-jean.baraud.fr">Comments</a>
+             data-disqus-identifier="http://pierre-jean.github.io">Comments</a>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>It all started with simple instruction: <code>-t</code> <em>flag assigns a pseudo-tty or terminal inside the new container</em>&hellip; and a few seconds of puzzling thoughts&hellip; <em>What is exactly a pseudo TTY?</em> <em>What does it mean to attach or detach a process from it?</em></p>
+<div class="entry-content"><p>It all started with the simple instruction: <code>-t</code> <em>flag assigns a pseudo-tty or terminal inside the new container</em>&hellip; and a moment of puzzlement&hellip; <em>What is exactly a pseudo TTY?</em> <em>What does it mean to attach or detach a process from it?</em></p>
 
 <p><img class="center" src="/images/linux/gnome-terminal.png"></p>
 
-<p>Beware my friend, cause this article will lead you into the depths of forgotten history and guide you through the arcane of the kernel mechanism, but light of knowledge should shine upon you at the end of this journey.</p>
+<p>Beware my friend, for this article will lead you into the depths of forgotten history, guiding you through arcane kernel mechanisms. But persevere and the pure light of knowledge will shine upon you by the end of this journey.</p>
 
 <!-- More -->
 
 
 <h2>The origin of the myth: the Teletype</h2>
 
-<p>When you act as Neo from Matrix by popping up a fancy green terminal to impress your friends around (what do you mean, <em>&ldquo;nobody does that&rdquo;</em>?), you are actually playing with the legacy of a very old device, that surely not many of you have ever seen in your life: the Teletype.</p>
+<p>When you go all Neo from Matrix by popping up a fancy green terminal to impress your friends around (what do you mean, <em>&ldquo;nobody does that&rdquo;</em>?), you are actually playing with the legacy of a very old device that few have ever seen in their lives: the Teletype.</p>
 
 <h3>A legendary object</h3>
 
 <p><img class="center" src="/images/linux/teletype-model-28.jpg"></p>
 
-<p>Do you see this beauty in the picture? That&rsquo;s a Teletype. A <em>model 28</em> by <em>Teletype Corporation</em> to be precise. And precise should I not be, as there are countless of models, built by many different forgotten companies. The history of teletypes finds its roots in some first experimentations during the late 19th century, but truly began in the 20s and finds an end in the 70s, when fax technology began to be good enough to replace them.</p>
+<p>Do you see this beauty in the picture? That&rsquo;s a Teletype. A <em>model 28</em> by <em>Teletype Corporation</em> to be precise. However there are countless models built by many different forgotten companies. The history of teletypes finds its roots in initial experimentation during the late 1800s, but truly began in the 1920s approaching an end in the 70s when fax technology began to be good enough to replace them.</p>
 
-<p>A teletype is basically a machine that sends letters you typed on the keyboard through electric signal to another machine or network, and prints (literally prints, on a paper!) letters received through the reception cable. Obviously, the different models evolved with time to offer more features and performances:</p>
+<p>A teletype is basically a machine that sends letters you typed on the keyboard through electric signals to another machine or network, and prints (literally prints, on paper!) letters received through the reception cable. Obviously, the different models evolved with time to offer more features and performance possibilites:</p>
 
 <ul>
 <li>Use of <em>Multiplex signal</em>, in order to allow the usage of one physical cable to send and receive messages</li>
@@ -136,81 +136,81 @@
 </ul>
 
 
-<p>This type of machine was at the time the best way to transmit data in a reliable and fast way.</p>
+<p>At the time this type of machine was the best way to transmit data in fast and reliable way.</p>
 
-<h3>Stop your boring oldish gibberish&hellip; Why the heck are you telling me about this?</h3>
+<h3>Stop your boring old gibberish&hellip; Why the heck are you telling me about this?</h3>
 
 <p>Because instead of building new devices to interact with computers, pragmatic people at the time decided to reuse existing teletypes to connect to them.
-Hear me well, I&rsquo;m not talking here about the <em>Personal Computer</em> (PC) you are familiar with, I&rsquo;m talking about a big massive machine located in its own dedicated room where you had no access if you were not cool enough, and where you had to send commands from the teletype and read the output printed back on the device.</p>
+Listen very carefully, I&rsquo;m not talking here about the <em>Personal Computer</em> (PC) you are familiar with. I&rsquo;m talking about a big, massive machine located in its own dedicated room to which you had no access if you were not cool enough, and where you had to send commands from the teletype and read the output printed back on the device.</p>
 
 <p><img class="center" src="/images/linux/mainframe2.jpg"></p>
 
-<p>Actually, one terminal was directly connected to the machine within the same room : <em>the console</em>. Man, I can&rsquo;t tell you about the hype on being the lucky one behind the console. Well, I can&rsquo;t because I&rsquo;m not that old, but I&rsquo;m sure that it should have been a big thing back then.</p>
+<p>Actually, one terminal was directly connected to the machine within the same room : <em>the console</em>. Man, I can&rsquo;t tell you about the kudos and props at being the lucky one behind the console. Well, I can&rsquo;t because I&rsquo;m not that old, but I&rsquo;m sure that it should have been a big deal back then.</p>
 
-<p>Anyway, you must now realize a few things: it would be nice for instance when using a terminal to see what you are typing. So what about asking the computer to echo back to us what it received, so that it is printed on our teletype? And what about erasing with backspace what have been typed? Yep, the computer at the end of the cable should take care of that for us, we only use a dummy Teletype after all.</p>
+<p>Anyway, by now we&rsquo;ve realized a few things: for instance when using a terminal it&rsquo;s nice to see what you are typing. So what about asking the computer to echo back to us what it received, so that it is printed from our teletype? And what about erasing with backspace what has been typed? Yep, the computer at the end of the cable should take care of that for us, we&rsquo;re only using a dummy Teletype after all.</p>
 
 <h3>Under the hood</h3>
 
-<p>Here is a diagram of how a teletype was interacting with a computer:</p>
+<p>Here is a diagram of how a teletype interacted with a computer:</p>
 
 <p><img class="center" src="/images/linux/teletype-mainframe-workflow.png"></p>
 
 <ol>
-<li>Each machine is (conceptually or physically) connected to two cables: one to send instructions to the computer and one to receive output from the computer.</li>
+<li>Each machine is -conceptually or physically- connected via two cables: one to send instructions to the computer and one to receive output from the computer.</li>
 <li>These cables are connected to the computer through a serial cable plugged into an Universal Asynchronous Receiver and Transmitter (<em>UART</em>) that transforms the asynchronous flow of data into bytes words.</li>
 <li>The computer has an UART driver to read for the hardware device.</li>
 <li>The sequence of characters is passed to the line discipline. The line discipline will be in charge of converting special characters (like <em>end of line</em>, <em>backspaces</em>), and echoing (reprinting) what has been received back to the teletype, so that the user can visualize what he/she types.</li>
-<li>The flow of instruction is passed to the TTY driver, that passes them to the <em>foreground</em> processes for the <em>session</em> associated with this TTY. Indeed, as a user, you can execute several processes in parallel, but only interact with one at a time, letting the others working (or waiting) in the background.</li>
+<li>The flow of instruction is passed to the TTY driver, that then passes them to the <em>foreground</em> processes for the <em>session</em> associated with this TTY. Indeed, as a user, you can execute several processes in parallel, but only interact with one at a time, letting the others working (or waiting) in the background.</li>
 </ol>
 
 
-<p>The whole stack define below is called a TTY device, and several ones can exist at the same time for a computer. So different line disciplines can be set for different devices, each TTY having its own foreground job, etc.</p>
+<p>The whole stack as defined above is called a <em>TTY device</em>, and several ones can exist at the same time for a computer. So different line disciplines can be set for different devices, each TTY having its own foreground job, etc.</p>
 
 <h2>From the Teletype to the Terminal</h2>
 
-<p>Besides unpredictable haircuts and memorable rythms, the 80s have also brought us what they called <em>intelligent terminals</em>. Slowly, terminals evolved to badass devices, with screen, memory, and even small processors to manage specific features on their side.</p>
+<p>Besides unpredictable haircuts and memorable rythms, the 80s have also brought us what they called <em>intelligent terminals</em>. Slowly, terminals evolved to become badass devices, with screen, memory, and even small processors to manage specific features on their side.</p>
 
 <p><img class="center" src="/images/linux/terminal_vt100.jpg"></p>
 
-<p>They started to <em>look like</em> your current PC desktop. Beware, though, they are in no way comparable! They are still dummy objects, despite their name. They do not compute things on their own: managing fancy colors and having a fast refresh frequency is far from being even close to a computer. It&rsquo;s the 80s after all, it&rsquo;s hard to call anything smart from that period of time&hellip;</p>
+<p>They started to <em>look like</em> your current PC desktop. But Beware they are in no way comparable! They are still dummy objects, despite their name. They do not compute things on their own: managing fancy colors and having a fast refresh frequency is far from being even close to a computer. It&rsquo;s the 80s after all, it&rsquo;s hard to call anything from that period of time smart&hellip;</p>
 
-<p>These devices worked the same way as teletypes, but also introduced some new special features that had to be supported by the software to be managed correctly (colors,special movements, etc).</p>
+<p>These devices worked in the same way as teletypes, but also introduced some new features that needed supported from the software to be managed correctly (colors, special movements, etc).</p>
 
 <h2>Wake up Neo, it is all virtual</h2>
 
-<p>The massive set of wardrobes that used to constitute a computer gradually turned down to a nice little box that you could fit under your desk. And there were no more dozens of terminals connected to it, but only one monitor and one keyboard. Nevertheless, your current Linux machine keeps emulating several (usually 7 by default) terminals connected to your hardware. But to protect you from the effort of getting up and physically going to another chair, the OS allows you to switch from one terminal to another by a simple press of keys (<code>Ctrl</code>+<code>Alt</code>+<code>F1</code> to <code>Ctrl</code>+<code>Alt</code>+<code>F7</code>). This feature is called <em>virtual terminals</em>, and is represented by the files <code>/dev/tty1</code> to <code>/dev/tty7</code>. You can see any of these files as a duplex cable connected to a terminal. If you write to it, you send the information to be printed to the terminal, if you read from it, you receive what is typed from the terminal (try it, it works).</p>
+<p>The massive set of wardrobes that used to constitute a computer gradually shrunk in size to a nice little box that you could fit under your desk. And there were no more endless terminals connected to it, only one monitor and one keyboard. Nevertheless, your current Linux machine keeps emulating several (usually 7 by default) terminals connected to your hardware. But to protect you from the effort of getting up and physically going to another chair, the OS allows you to switch from one terminal to another by a simple press of keys (<code>Ctrl</code>+<code>Alt</code>+<code>F1</code> to <code>Ctrl</code>+<code>Alt</code>+<code>F7</code>). This feature is called <em>virtual terminals</em>, and is represented by the files <code>/dev/tty1</code> to <code>/dev/tty7</code>. You can see any of these files as a duplex cable connected to a terminal. If you write to it, you send the information to be printed to the terminal. If you read from it, you receive what is typed from the terminal (try it, it works).</p>
 
 <p><img class="center" src="/images/linux/virtual-terminal-workflow.png"></p>
 
-<p>When you switch from one virtual terminal to another, the OS detach your <em>seat</em> (a set of input and output devices like monitor, keyboard, mouse, etc. representing the hardware interface with the user) from the first virtual terminal and attach it to the one requested by your shortcut. The processes from the first virtual terminals keep running, writing and reading from their virtual tty file (<code>dev/tty1</code> for instance), but this file won&rsquo;t receive any event from the seat and won&rsquo;t be able to send output to the seat. The information will be buffered instead (until your reattach your seat to this terminal), making the switch between sessions transparent for running jobs.</p>
+<p>When you switch from one virtual terminal to another, the OS detaches your <em>seat</em> (a set of input and output devices like monitor, keyboard, mouse, etc. representing the hardware interface with the user) from the first virtual terminal and attaches it to the one requested by your shortcut. The processes from the first virtual terminals keep running, writing and reading from their virtual tty file (<code>dev/tty1</code> for instance), but this file won&rsquo;t receive any event from the seat and won&rsquo;t be able to send output to the seat. The information will be buffered instead (until you reattach your seat to this terminal), making the switch between sessions transparent for running jobs.</p>
 
 <h2>I know no master</h2>
 
 <p><img class="center" src="/images/linux/matrix-operator.jpg"></p>
 
-<p>But I imagine only a few of you are actually using the virtual tty just mentioned. You are usually using a terminal console application launched from a graphic environment that is itself launched from a virtual terminal (yep, breathe and read again).</p>
+<p>Yet I imagine only a few of you are actually using the virtual tty just mentioned. You are usually using a terminal console application launched from a graphic environment that is itself launched from a virtual terminal (yep, take a deep breath and read that again).</p>
 
 <p>So when you launch your favorite terminal emulator like <em>xterm</em> or <em>gnome-terminal</em>, how do the processes know where to write the output, and where to get the input from?</p>
 
 <p><img class="center" src="/images/linux/ptmx-pts-workflow.png"></p>
 
-<p>Basically, when you launch a terminal within a graphic environment like this, it will spawn its own equivalent of /dev/ttyX: the terminal emulator will open a special file located in <code>/dev/ptmx</code>, called the <em>master side</em> of the <em>pts</em>, will do some magic with <code>ioctl</code> function, which will create a <em>slave side</em> of the pts in <code>/dev/pts/X</code>.</p>
+<p>Basically, when you launch a terminal within a graphic environment like this, it will spawn its own equivalent of <code>/dev/ttyX</code>: the terminal emulator will open a special file located in <code>/dev/ptmx</code>, called the <em>master side</em> of the <em>pts</em>, will work some magic with <code>ioctl</code> function, which will create a <em>slave side</em> of the pts in <code>/dev/pts/X</code>.</p>
 
 <p>The processes running in the session will be attached to this file, that will behave like any file from the virtual terminal, except that there is no attachment to a seat: you can open several terminal emulator windows at the same time and display them side by side, having different sessions running in parallel.</p>
 
 <h2>Going further</h2>
 
-<p>We could dig the topic endlessly, speaking about the function <code>ioctl</code>, detailing how the kernel handle the session, expressing our endless admiration for the great 70s look of the <a href="http://terminals.classiccmp.org/wiki/images/f/fb/DEC_VT05_121708587772-2.jpg">DEC VT05</a> terminal&hellip;
-But we should keep a bit for further articles, and there are anyway plenty of great resources already available if you are interested. To share a few:</p>
+<p>We could dig into the topic endlessly, discussing the function <code>ioctl</code>, detailing how the kernel handles the session, expressing our endless admiration for the great 70s look of the <a href="http://terminals.classiccmp.org/wiki/images/f/fb/DEC_VT05_121708587772-2.jpg">DEC VT05</a> terminal&hellip;
+But we should keep some for further articles, and there are anyway plenty of great resources already available if you are interested. To share a few:</p>
 
 <ul>
 <li><a href="http://www.linusakesson.net/programming/tty/">the TTY demystified, by Linus Åkesson</a>: Simply <em>the</em> reference on the topic, that will also explain signals, processes, etc.</li>
 <li><a href="https://dvdhrm.wordpress.com/2013/08/24/session-management-on-linux/">Ponyhof&rsquo;s session management</a> and <a href="https://dvdhrm.wordpress.com/2013/08/24/how-vt-switching-works/">vt-switching</a> articles: Great to understand the session and seats concepts.</li>
-<li><a href="http://unix.stackexchange.com/questions/117981/what-are-the-responsibilities-of-each-pseudo-terminal-pty-component-software">Unix StackExchange</a> Stéphane Chazelas&#8217; answer, that put a lot of effort to makes things clear when they were a lot confusing for me.</li>
+<li><a href="http://unix.stackexchange.com/questions/117981/what-are-the-responsibilities-of-each-pseudo-terminal-pty-component-software">Unix StackExchange</a> Stéphane Chazelas&#8217; answer, that makes a lot of effort to clarify what was initially confusing for me.</li>
 </ul>
 
 
-<p>I realize I took a lot of shortcuts in this article and it would be natural that some part appear blurry in your mind. So if you have any question or need precisions, please leave a comment, I will try my best to provide a clear answer!</p>
+<p>I realize I took a lot of shortcuts in this article and it would be natural that some part suggest greater depths to be explored. So if you have any question or need further details, please leave a comment, I will try my best to provide a clear answer!</p>
 </div>
 
 
@@ -247,7 +247,7 @@ But we should keep a bit for further articles, and there are anyway plenty of gr
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty/" data-via="" data-counturl="http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty/" data-via="" data-counturl="http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty/" >Tweet</a>
   
   
   
@@ -323,8 +323,8 @@ But we should keep a bit for further articles, and there are anyway plenty of gr
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty/';
-        var disqus_url = 'http://pierre-jean.baraud.fr/blog/2016/07/08/journey-to-the-tty/';
+        var disqus_identifier = 'http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty/';
+        var disqus_url = 'http://pierre-jean.github.io/blog/2016/07/08/journey-to-the-tty/';
         var disqus_script = 'embed.js';
       
     (function () {
