@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Two software craftsmanship books review"
+title: "Software Craftsmanship: 2 books review"
 date: 2016-07-18 23:16:54 +0100
 comments: true
 categories: books
@@ -13,28 +13,27 @@ Both books cover the same topic: the **Software Craftsmanship** movement.
 
 <!-- More -->
 
-The Craftsmawhat ?
-------------------
+The Software What ?
+-------------------
 
-Remember my [first blog post about Passion][first-blog-post] ? Well, what I was trying to express in a naive way back then could be restate today as "Be passionate, be a software craftsman". 
+Remember my [first blog post about passion][first-blog-post] ? Well, if I had to rewrite it today I would name it "Be passionate, be a Software Craftsman".
 
-But The Software Craftsmanship is much more than that, and taught me a lot about my own weaknesses.
+Yes, Software Craftsmanship is all about passion. But it also is much more than that, and taught me a lot about my own weaknesses.
 
 ### Professionalism
 
-The Software Craftsmanship is about _Professionalism_: the subtile of the first book is _"A Code of Conduct for **Professional** Programmers"_, and the second one is _"**Professionalism**, Pragmatism, Pride"_. If the message was not clear enough, you will have a reference to professionalism every paragraph, if not sentence.
+The Software Craftsmanship is about _Professionalism_: the subtitle of the first book is _"A Code of Conduct for **Professional** Programmers"_, and the second one is _"**Professionalism**, Pragmatism, Pride"_. If the message was not clear enough, you will have a reference to professionalism every paragraph, if not sentence.
 
-And this is where my vision (partially presented in my first article) fell short, and the first big lesson I learnt. Before reading these books, I was _opposing_ the business world and the true passion. I was in a way suggesting to embrace your hobby and not to care about this corporate guys in suits that would crash your dream trying to make you do "just a job". In a word: I was childish.
-
-I was thinking that success will come if you were motivated enough, and that only startup companies promoting cool tee-shirts dress-code had understood the future of our industry. I was blaming everyone except me for things that may not go well in failing projects, companies or culture environment. I was acting as the opposite of a Software Craftsman, as this movement is all about taking responsability, involvement in the project and the company you are working for, and spreading the culture of passion with new technical disciplines.
+And this is where my previous vision (partially presented in my first blog post) fell short, and the first big lesson I learnt. Before reading these books, I was _opposing_ the business world and the true passion. I was in a way suggesting to embrace your hobby and not to care about this corporate guys in suits that would crash your dream trying to make you do "just a job". In a word: I was childish.
+I was thinking that success will come if you were motivated enough, and that only startup companies promoting cool-t-shirt-dress-code had understood the future of our industry. I was blaming everyone except me for things that may not go well in failing projects, companies or culture environment. I was acting as the opposite of a Software Craftsman, as this movement is all about taking responsability, involvement in the project and in the company you are working for, and spreading the culture of passion with new technical disciplines.
 
 ### Disciplines and Values
 
-Speaking about disciplines: you may expect this book to provide you with a cookbook of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Environment_, _Pair programming_, _SOLID_ principles), these books are _not_ about these disciplines. These books are about values. It's a long term vision about our industry, the mistakes made, and how some current discplines and attitudes can solve these common issues. It is not about having a fanboy attitude for such technology or methodology, but only for the _value_ they bring. When I told you they are spoiling all the fun...
+Speaking about disciplines: you may expect this book to teach you a seat of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Environment_, _Pair programming_, _SOLID_ principles), these books are _not_ about these disciplines. These books are about values. It's a long term vision about our industry, the mistakes made, and how some current discplines and attitudes can solve these common issues. It is not about the implementation of these disciplines. It is also not about having a fanboy attitude for such technology or methodology, but only for the _value_ they bring. Pragmatism over adoration. When I told you these Software Crafters are spoiling all the fun...
 
 ### Tell me more
 
-I won't summarize here the content of the books, as there are already many articles on the Software Craftsmanship movement, and many talks available online from the authors (for instance [here][sandro-talk] and [there][uncle-bob-talk]) covering more or less the same topic. Moreover, the value of these books is not about the concepts they cover, but how they illustrate each idea through examples that speak to each one of us.
+I won't summarize here the content of the books, as there are already many articles on the Software Craftsmanship movement, and many talks available online from the authors (for instance [here][sandro-talk] and [there][uncle-bob-talk]) covering more or less the same topic as the books. Moreover, the value of these books is not about the concepts they cover, but how they illustrate each idea through examples that speak to each one of us.
 
 So which one is the best?
 -------------------------
@@ -43,13 +42,35 @@ So if both books speak about the same topic, should you read both? Are they tack
 
 ### The common part
 
-As they are both covering a common topic, you will inevitably find similitudes in some parts of the book ("TDD", "Commitment", "How to say No"). Moreover, the narrative of the book follows the same structure: each concept is illustrated with a personal experience from the author.
+As they are both covering a common topic, you will inevitably find similarities in some parts of the book ("TDD", "Commitment", "How to say No"). Moreover, the narrative of the book follows the same structure: each concept is illustrated with a personal experience from the author, creating a bridge between the theory and the practice.
 
-### The differences
+Both author are quite opiniated and are amazing public speaker. You can feel that in the book and will never feel bored.
 
+### A tiny detail I forgot to tell you
 
-Conclusion
-----------
+I lied to you. Yes, dear reader, I mislead you from the beginning of this article. _"Both books are about Software Crastsmanship"_ I said. And yet the attentive reader would have noticed: no mention of Software Craftsmanship in the title of _"The clean coder"_, neither in its subtitle. And if you take the initiative to take a peak inside the book, you will realize the terrible truth: _The clean coder_ only mentions the Software Craftsmanship movement in... the last two pages of the book.
+
+Why did I fail you with my wrong introduction? 'Cause _they are_ both talking about Software Craftsmanship, despite appearances. I don't know why Robert C. Martin took the decision to wait the very end of the book to reveal the real topic of his work. Maybe because at the time of the publication (2011), the Software Craftsmanship movement was still a cryptic and not a best-selling subject?
+Hard to believe. The Software Manifesto was released in 2009 and other books covering the topic were already out for a long time in 2011.
+
+Maybe he just wanted me to dedicated a chapter on this in my blog? Who knows.
+
+### A few differences
+
+The fact that Sandro's book is built around the Software Craftsmanship definition and Uncle Bob's one only mentions it at the very end of his book is not the only difference. The second one is the generation of the authors. *Robert C. Martin* has entered the computer industry from the bottom of the ladder (and raised himself to the very top of if), in times where softwares were tightly coupled with hardwares. He has seen the evolution of our industry during his quite extensive career. This experience gives to his speech a nice perspective. His advices are more timeless. In a way, his book is loosely coupled with the temporal context of the reader.
+
+On the other hand, *Sandro Mancuso* has a more "classic" career: he graduated as a software developer and entered the industry as an already talented and high skilled professional. He's also younger and maybe his experience will resonate more with the average developer. But not many of us can pretend to have the same impressive career. Sandro obstinately challenged himself to raise his professional level and reach his main goal. Changing country or quitting job just to pass an interview are some of the many things he went through. He is, like Robert C. Martin, a well-known and respected figure of the Software Craftsmanship community. Nevertheless, despite his versatile professionnal experience, you will find his book more settled in the current period context. His book focused on the fail of Agile movement that is "only" 15 years old and hasn't reached yet all companies. 
+
+Finally, both book have been written at different times: 2011 for *The clean coder* and 2014 for *The Software Craftsman*. This allows the second one to make different references to the first one. It will then seems normal that you may find complementary information between both books.
+
+Unfinished business
+-------------------
+
+Whatever which one of the two books you read, they will certainely achieve the same result: open new perspectives, provide a big shot of motivation and reconciliate yourself with many situations you would have defined as problematic before.
+
+During your reading, you will learn on how to raise yourself as a crafter, a master of your discipline without sacrificing your ethic and your personal life. 
+But this books may also leave you with a strange feeling, they may open doors without you noticing. By questionning your work life, you will also challenge your definition of hapiness, your goals in life and maybe even rediscover your own identity ... It is of course not the purpose of Software Craftsmanship books to answer such philosophical questions, but be prepared to face them.
+
 
 [clean-coder]:http://www.informit.com/store/clean-coder-a-code-of-conduct-for-professional-programmers-9780137081073
 [software-craftsman]:http://www.informit.com/store/software-craftsman-professionalism-pragmatism-pride-9780134052502
