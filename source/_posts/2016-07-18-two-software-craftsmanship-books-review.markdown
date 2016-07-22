@@ -8,7 +8,7 @@ categories: books
 
 {% img center /images/books/cover-battle.png %}
 
-Today I am gonna give you a quick review of the last two books I read: [The clean coder][clean-coder], by _Robert C. Martin_, and [The Software Craftsman][software-craftsman], by _Sandro Mancuso_.
+Today I am gonna give you a quick review of the last two books I read: [The clean coder][clean-coder], by _Robert C. Martin_ (aka _Uncle Bob_), and [The Software Craftsman][software-craftsman], by _Sandro Mancuso_.
 Both books cover the same topic: the **Software Craftsmanship** movement.
 
 <!-- More -->
@@ -29,11 +29,11 @@ I was thinking that success will come if you were motivated enough, and that onl
 
 ### Disciplines and Values
 
-Speaking about disciplines: you may expect this book to teach you a seat of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Environment_, _Pair programming_, _SOLID_ principles), these books are _not_ about these disciplines. These books are about values. It's a long term vision about our industry, the mistakes made, and how some current discplines and attitudes can solve these common issues. It is not about the implementation of these disciplines. It is also not about having a fanboy attitude for such technology or methodology, but only for the _value_ they bring. Pragmatism over adoration. When I told you these Software Crafters are spoiling all the fun...
+Speaking about disciplines: you may expect this book to teach you a seat of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Environment_, _Pair programming_ or _SOLID_ principles), these books are **not** about these disciplines. These books are about **values**. It's a long term vision about our industry, the mistakes made, and how some current discplines and attitudes can solve these common issues. It is not about the implementation of these disciplines. It is also not about having a fanboy attitude for such technology or methodology, but only for the value they bring. It's a pragmatic approach that should prevent irrational adoration of technics and sterile debate with troll. When I told you these Software Crafters are spoiling all the fun...
 
 ### Tell me more
 
-I won't summarize here the content of the books, as there are already many articles on the Software Craftsmanship movement, and many talks available online from the authors (for instance [here][sandro-talk] and [there][uncle-bob-talk]) covering more or less the same topic as the books. Moreover, the value of these books is not about the concepts they cover, but how they illustrate each idea through examples that speak to each one of us.
+I won't summarize here the content of the books. Many resources about Software Craftsmanship are already available online. If you are interested, you can watch one of the public presentations the authors gave (for instance [here][sandro-talk] and [there][uncle-bob-talk]) covering in some ways the same topic as the books. The value of these books is not so much about the topic they cover but how they illustrate each idea through different examples that speak to each one of us.
 
 So which one is the best?
 -------------------------
@@ -42,26 +42,26 @@ So if both books speak about the same topic, should you read both? Are they tack
 
 ### The common part
 
-As they are both covering a common topic, you will inevitably find similarities in some parts of the book ("TDD", "Commitment", "How to say No"). Moreover, the narrative of the book follows the same structure: each concept is illustrated with a personal experience from the author, creating a bridge between the theory and the practice.
+As they are both covering a common topic, you will inevitably find similarities between the two books ("TDD", "Commitment", "How to say No"). Moreover, the narrative of both books follows the same structure: each concept is illustrated with a personal experience from the author, creating a bridge between the theory and the practice.
 
 Both author are quite opiniated and are amazing public speaker. You can feel that in the book and will never feel bored.
 
 ### A tiny detail I forgot to tell you
 
-I lied to you. Yes, dear reader, I mislead you from the beginning of this article. _"Both books are about Software Crastsmanship"_ I said. And yet the attentive reader would have noticed: no mention of Software Craftsmanship in the title of _"The clean coder"_, neither in its subtitle. And if you take the initiative to take a peak inside the book, you will realize the terrible truth: _The clean coder_ only mentions the Software Craftsmanship movement in... the last two pages of the book.
+I admit. I lied to you. Yes, dear reader, I mislead you from the beginning of this article. _"Both books are about Software Crastsmanship"_ I said. And yet the attentive reader would have noticed: no mention of Software Craftsmanship in the title of the clean coder, neither in its subtitle. And if you take a peak inside the book, you will realize the terrible truth: the clean coder only mentions the Software Craftsmanship movement in... the *last two pages* of the book.
 
-Why did I fail you with my wrong introduction? 'Cause _they are_ both talking about Software Craftsmanship, despite appearances. I don't know why Robert C. Martin took the decision to wait the very end of the book to reveal the real topic of his work. Maybe because at the time of the publication (2011), the Software Craftsmanship movement was still a cryptic and not a best-selling subject?
-Hard to believe. The Software Manifesto was released in 2009 and other books covering the topic were already out for a long time in 2011.
+Why did I fail you with my wrong introduction? I didn't: they are both talking about Software Craftsmanship, despite appearances. I don't know why Robert C. Martin took the decision to wait the very end of the book to reveal the real topic of his work. Maybe because at the time of the publication (2011), the Software Craftsmanship movement was still a cryptic and not a best-selling subject?
+Maybe, but hard to believe. The Software Manifesto was released in 2009 and other books covering the topic were already out for a long time in 2011.
 
-Maybe he just wanted me to dedicated a chapter on this in my blog? Who knows.
+Maybe he just wanted me to dedicated a chapter on this question? Who knows.
 
 ### A few differences
 
-The fact that Sandro's book is built around the Software Craftsmanship definition and Uncle Bob's one only mentions it at the very end of his book is not the only difference. The second one is the generation of the authors. *Robert C. Martin* has entered the computer industry from the bottom of the ladder (and raised himself to the very top of if), in times where softwares were tightly coupled with hardwares. He has seen the evolution of our industry during his quite extensive career. This experience gives to his speech a nice perspective. His advices are more timeless. In a way, his book is loosely coupled with the temporal context of the reader.
+The fact that Sandro's book is built around the Software Craftsmanship definition and Uncle Bob's book only mentions it at the very end is not the only difference. The second difference is the generation of the authors. Robert C. Martin has entered the computer industry from the bottom of the ladder (and raised himself to the very top of it), in times where softwares were tightly coupled with hardwares. He has seen the evolution of our industry during his quite extensive career. This experience reflect to his speech and provide him with a interesting perspective on things. His advices are more timeless. In a way, his book is loosely coupled with the temporal context of the reader.
 
-On the other hand, *Sandro Mancuso* has a more "classic" career: he graduated as a software developer and entered the industry as an already talented and high skilled professional. He's also younger and maybe his experience will resonate more with the average developer. But not many of us can pretend to have the same impressive career. Sandro obstinately challenged himself to raise his professional level and reach his main goal. Changing country or quitting job just to pass an interview are some of the many things he went through. He is, like Robert C. Martin, a well-known and respected figure of the Software Craftsmanship community. Nevertheless, despite his versatile professionnal experience, you will find his book more settled in the current period context. His book focused on the fail of Agile movement that is "only" 15 years old and hasn't reached yet all companies. 
+On the other hand, Sandro Mancuso has a more "classic" career: he graduated as a software developer and entered the industry as an already talented and high skilled professional. He's also younger and maybe his experience will resonate more with the average developer. But not many of us can pretend to have the same impressive career. Sandro obstinately challenged himself to raise his level and reach his main goal. Changing country or quitting job just to pass an interview are some of the many things he went through. He is, like Robert C. Martin, a well-known and respected figure of the Software Craftsmanship community. Despite his versatile professionnal experience, you will find his book more settled in the current period context. His book focuses on the failures of Agile movement (a movement born in 2001 and still growing today as some companies are just starting to adopt it).
 
-Finally, both book have been written at different times: 2011 for *The clean coder* and 2014 for *The Software Craftsman*. This allows the second one to make different references to the first one. It will then seems normal that you may find complementary information between both books.
+Finally, both books have been written at different times: 2011 for *The clean coder* and 2014 for *The Software Craftsman*. This allows the second one to make different references to the first one. It will then seems normal that you may find complementary information between both books.
 
 Unfinished business
 -------------------
