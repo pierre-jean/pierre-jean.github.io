@@ -35,29 +35,22 @@ Speaking about disciplines: you may expect this book to teach you a set of disci
 
 I won't summarize here the content of the books. Many resources about Software Craftsmanship are already available online. If you are interested, you can watch one of the public presentations the authors gave (for instance [here][sandro-talk] and [there][uncle-bob-talk]) covering in some ways the same topic as the books. The value of these books is not so much about the topic they cover but how they illustrate each idea through different examples that speak to each one of us.
 
-So... which one is the best?
-----------------------------
+A common subject, two great authors
+-----------------------------------
 
 So if both books speak about the same topic, should you read both? Are they tackling the topic the same way? What are their differences?
 
-### Kinda the same
+### Obviously close
 
 As they are both covering a common topic, you will inevitably find similarities between the two books ("TDD", "Commitment", "How to say No"). Moreover, the narrative of both books follows the same structure: each concept is illustrated with a personal experience from the author, creating a bridge between the theory and the practice.
 
 Both author are quite opiniated and are amazing public speaker. You can feel that in the book and will never feel bored.
 
-### A tiny detail I forgot to tell you
+### But not the same
 
-I admit. I lied to you. Yes, dear reader, I mislead you from the beginning of this article. _"Both books are about Software Crastsmanship"_ I said. And yet the attentive reader would have noticed: no mention of Software Craftsmanship in the title of The Clean Coder, neither in its subtitle. And if you take a peak inside the book, you will realize the terrible truth: The Clean Coder only mentions the Software Craftsmanship movement in... the *last two pages* of the book.
+The first noticeable difference can already be seen in the title: The Clean Coder does not mention the Software Craftsmanship movement. His book actually focuses entirely on the notion of professionalism. Don't throw stones at me yet for comparing the incomparable: once reached the last two pages of the book, the author finally defines what is a Software Craftsman and connects it with the rest of the book. Sandro's book is much more direct and address the topic since the very first chapter. 
 
-Why did I fail you with my wrong introduction? I didn't: they are both talking about Software Craftsmanship, despite appearances. I don't know why Robert C. Martin took the decision to wait the very end of the book to reveal the real topic of his work. Maybe because at the time of the publication (2011), the Software Craftsmanship movement was still a cryptic and not a best-selling subject?
-Maybe, but hard to believe. The Software Manifesto was released in 2009 and other books covering the topic were already out for a long time in 2011.
-
-Maybe he just wanted me to dedicated a chapter on this question? Who knows.
-
-### A few differences
-
-The fact that Sandro's book is built around the Software Craftsmanship definition and Uncle Bob's book only mentions it at the very end is not the only difference. The second difference is the generation of the authors. Robert C. Martin has entered the computer industry from the bottom of the ladder (and raised himself to the very top of it), in times where softwares were tightly coupled with hardwares. He has seen the evolution of our industry during his quite extensive career. This experience reflect to his speech and provide him with a interesting perspective on things. His advices are more timeless. In a way, his book is loosely coupled with the temporal context of the reader.
+The second difference is the generation of the authors. Robert C. Martin has entered the computer industry from the bottom of the ladder (and raised himself to the very top of it), in times where softwares were tightly coupled with hardwares. He has seen the evolution of our industry during his quite extensive career. This experience reflect to his speech and provide him with a interesting perspective on things. His advices are more timeless. In a way, his book is loosely coupled with the temporal context of the reader.
 
 On the other hand, Sandro Mancuso has a more "classic" career: he graduated as a software developer and entered the industry as an already talented and high skilled professional. He's also younger and maybe his experience will resonate more with the average developer. But not many of us can pretend to have the same impressive career. Sandro obstinately challenged himself to raise his level and reach his main goal. Changing country or quitting job just to pass an interview are some of the many things he went through. He is, like Robert C. Martin, a well-known and respected figure of the Software Craftsmanship community. Despite his versatile professionnal experience, you will find his book more settled in the current period context. His book focuses on the failures of Agile movement (a movement born in 2001 and still growing today as some companies are just starting to adopt it).
 
