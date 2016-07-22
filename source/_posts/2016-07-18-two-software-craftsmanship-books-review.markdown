@@ -35,12 +35,12 @@ Speaking about disciplines: you may expect this book to teach you a seat of disc
 
 I won't summarize here the content of the books. Many resources about Software Craftsmanship are already available online. If you are interested, you can watch one of the public presentations the authors gave (for instance [here][sandro-talk] and [there][uncle-bob-talk]) covering in some ways the same topic as the books. The value of these books is not so much about the topic they cover but how they illustrate each idea through different examples that speak to each one of us.
 
-So which one is the best?
--------------------------
+So... which one is the best?
+----------------------------
 
-So if both books speak about the same topic, should you read both? Are they tackling the topic the same way? What are they differences?
+So if both books speak about the same topic, should you read both? Are they tackling the topic the same way? What are their differences?
 
-### The common part
+### Kinda the same
 
 As they are both covering a common topic, you will inevitably find similarities between the two books ("TDD", "Commitment", "How to say No"). Moreover, the narrative of both books follows the same structure: each concept is illustrated with a personal experience from the author, creating a bridge between the theory and the practice.
 
@@ -70,7 +70,6 @@ Whatever which one of the two books you read, they will certainely achieve the s
 
 During your reading, you will learn on how to raise yourself as a crafter, a master of your discipline without sacrificing your ethic and your personal life. 
 But this books may also leave you with a strange feeling, they may open doors without you noticing. By questionning your work life, you will also challenge your definition of hapiness, your goals in life and maybe even rediscover your own identity ... It is of course not the purpose of Software Craftsmanship books to answer such philosophical questions, but be prepared to face them.
-
 
 [clean-coder]:http://www.informit.com/store/clean-coder-a-code-of-conduct-for-professional-programmers-9780137081073
 [software-craftsman]:http://www.informit.com/store/software-craftsman-professionalism-pragmatism-pride-9780134052502
