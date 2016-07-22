@@ -182,7 +182,7 @@ Listen very carefully, I&rsquo;m not talking here about the <em>Personal Compute
 
 <p><img class="center" src="/images/linux/virtual-terminal-workflow.png"></p>
 
-<p>When you switch from one virtual terminal to another, the OS detaches your <em>seat</em> (a set of input and output devices like monitor, keyboard, mouse, etc. representing the hardware interface with the user) from the first virtual terminal and attaches it to the one requested by your shortcut. The processes from the first virtual terminals keep running, writing and reading from their virtual tty file (<code>dev/tty1</code> for instance), but this file won&rsquo;t receive any event from the seat and won&rsquo;t be able to send output to the seat. The information will be buffered instead (until you reattach your seat to this terminal), making the switch between sessions transparent for running jobs.</p>
+<p>When you switch from one virtual terminal to another, the OS detaches your <em>seat</em> (a set of input and output devices like monitor, keyboard, mouse, etc. representing the hardware interface with the user) from the first virtual terminal and attaches it to the one requested by your shortcut. The processes from the first virtual terminals keep running, writing and reading from their virtual tty file (<code>dev/tty1</code> for instance), but this file won&rsquo;t receive any event from the seat and won&rsquo;t be able to send output to the seat. The information will be buffered instead (until your reattach your seat to this terminal), making the switch between sessions transparent for running jobs.</p>
 
 <h2>I know no master</h2>
 
@@ -259,6 +259,8 @@ But we should keep some for further articles, and there are anyway plenty of gre
         <a class="basic-alignment left" href="/blog/2014/06/04/linux-boot-process/" title="Previous Post: Linux boot process in a nutshell">&laquo; Linux boot process in a nutshell</a>
       
       
+        <a class="basic-alignment right" href="/blog/2016/07/18/two-software-craftsmanship-books-review/" title="Next Post: Software Craftsmanship: 2 books review">Software Craftsmanship: 2 books review &raquo;</a>
+      
     </p>
   </footer>
 </article>
@@ -278,6 +280,10 @@ But we should keep some for further articles, and there are anyway plenty of gre
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/07/18/two-software-craftsmanship-books-review/">Software Craftsmanship: 2 Books Review</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2016/07/08/journey-to-the-tty/">TTY: Under the Hood</a>
       </li>
     
@@ -291,10 +297,6 @@ But we should keep some for further articles, and there are anyway plenty of gre
     
       <li class="post">
         <a href="/blog/2014/05/19/deeper-look-dockerfile/">A Deeper Look Into Dockerfiles</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/05/14/fist-look-dockerfile/">A First Look Into Dockerfiles</a>
       </li>
     
   </ul>

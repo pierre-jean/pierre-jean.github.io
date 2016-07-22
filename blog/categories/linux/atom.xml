@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Linux | Yabage]]></title>
   <link href="http://pierre-jean.github.io/blog/categories/linux/atom.xml" rel="self"/>
   <link href="http://pierre-jean.github.io/"/>
-  <updated>2016-07-21T21:10:33+01:00</updated>
+  <updated>2016-07-22T18:41:14+01:00</updated>
   <id>http://pierre-jean.github.io/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
@@ -93,7 +93,7 @@ Listen very carefully, I&rsquo;m not talking here about the <em>Personal Compute
 
 <p><img class="center" src="/images/linux/virtual-terminal-workflow.png"></p>
 
-<p>When you switch from one virtual terminal to another, the OS detaches your <em>seat</em> (a set of input and output devices like monitor, keyboard, mouse, etc. representing the hardware interface with the user) from the first virtual terminal and attaches it to the one requested by your shortcut. The processes from the first virtual terminals keep running, writing and reading from their virtual tty file (<code>dev/tty1</code> for instance), but this file won&rsquo;t receive any event from the seat and won&rsquo;t be able to send output to the seat. The information will be buffered instead (until you reattach your seat to this terminal), making the switch between sessions transparent for running jobs.</p>
+<p>When you switch from one virtual terminal to another, the OS detaches your <em>seat</em> (a set of input and output devices like monitor, keyboard, mouse, etc. representing the hardware interface with the user) from the first virtual terminal and attaches it to the one requested by your shortcut. The processes from the first virtual terminals keep running, writing and reading from their virtual tty file (<code>dev/tty1</code> for instance), but this file won&rsquo;t receive any event from the seat and won&rsquo;t be able to send output to the seat. The information will be buffered instead (until your reattach your seat to this terminal), making the switch between sessions transparent for running jobs.</p>
 
 <h2>I know no master</h2>
 
@@ -130,9 +130,7 @@ But we should keep some for further articles, and there are anyway plenty of gre
     <link href="http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process/"/>
     <updated>2014-06-04T19:41:30+01:00</updated>
     <id>http://pierre-jean.github.io/blog/2014/06/04/linux-boot-process</id>
-    <content type="html"><![CDATA[<p><img class="center" src="/images/linux/power-on-1.jpg"></p>
-
-<p>I&rsquo;m getting more and more interested in how my system works &ldquo;under the hood&rdquo; lately. These fundations are essential to understand some behaviors / technical choices in technologies oriented for end users (such as <a href="http://docker.io">Docker</a>).</p>
+    <content type="html"><![CDATA[<p>I&rsquo;m getting more and more interested in how my system works &ldquo;under the hood&rdquo; lately. These fundations are essential to understand some behaviors / technical choices in technologies oriented for end users (such as <a href="http://docker.io">Docker</a>).</p>
 
 <p>That&rsquo;s why I decided to write, mostly as a reminder for myself, a serie of articles explaining some fundamental Linux mechanisms. As I have to start somewhere, I&rsquo;ll start with the boot process.</p>
 
