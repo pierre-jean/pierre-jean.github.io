@@ -16,7 +16,7 @@ Both books cover the same topic: the **Software Craftsmanship** movement.
 The Software What ?
 -------------------
 
-Remember my [first blog post about passion][first-blog-post] ? Well, if I had to rewrite it today I would name it "Be passionate, be a Software Craftsman".
+Remember my [first blog post about passion][first-blog-post] ? Well, if I had to rewrite it today I would title it "Be passionate, be a Software Craftsman".
 
 Yes, Software Craftsmanship is all about passion. But it also is much more than that, and taught me a lot about my own weaknesses.
 
