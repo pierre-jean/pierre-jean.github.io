@@ -18,7 +18,7 @@ The Software What ?
 
 Remember my [first blog post about passion][first-blog-post] ? Well, if I had to rewrite it today I would title it "Be passionate, be a Software Craftsman".
 
-Yes, Software Craftsmanship is all about passion. But it also is much more than that, and taught me a lot about my own weaknesses.
+Yes, Software Craftsmanship is all about passion. But it is also much more than that, and taught me a lot about my own weaknesses.
 
 ### Professionalism
 
