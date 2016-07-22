@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Software Craftsmanship: 2 books review"
+title: "Review of two Software Craftsmanship books"
 date: 2016-07-18 23:16:54 +0100
 comments: true
 categories: books
@@ -8,7 +8,7 @@ categories: books
 
 {% img center /images/books/cover-battle.png %}
 
-Today I am gonna give you a quick review of the last two books I read: [The clean coder][clean-coder], by _Robert C. Martin_ (aka _Uncle Bob_), and [The Software Craftsman][software-craftsman], by _Sandro Mancuso_.
+Today I am gonna give you a quick review of the last two books I read: [The Clean Coder][clean-coder], by _Robert C. Martin_ (aka _Uncle Bob_), and [The Software Craftsman][software-craftsman], by _Sandro Mancuso_.
 Both books cover the same topic: the **Software Craftsmanship** movement.
 
 <!-- More -->
@@ -16,20 +16,20 @@ Both books cover the same topic: the **Software Craftsmanship** movement.
 The Software What ?
 -------------------
 
-Remember my [first blog post about passion][first-blog-post] ? Well, if I had to rewrite it today I would name it "Be passionate, be a Software Craftsman".
+Remember my [first blog post about passion][first-blog-post] ? Well, if I had to rewrite it today I would title it "Be passionate, be a Software Craftsman".
 
-Yes, Software Craftsmanship is all about passion. But it also is much more than that, and taught me a lot about my own weaknesses.
+Yes, Software Craftsmanship is all about passion. But it is also much more than that, and taught me a lot about my own weaknesses.
 
 ### Professionalism
 
-The Software Craftsmanship is about _Professionalism_: the subtitle of the first book is _"A Code of Conduct for **Professional** Programmers"_, and the second one is _"**Professionalism**, Pragmatism, Pride"_. If the message was not clear enough, you will have a reference to professionalism every paragraph, if not sentence.
+Software Craftsmanship is about _professionalism_: the subtitle of the first book is _"A Code of Conduct for **Professional** Programmers"_, and of the second one is _"**Professionalism**, Pragmatism, Pride"_. If the message was not clear enough, you will find a reference to professionalism in every paragraph, if not sentence.
 
-And this is where my previous vision (partially presented in my first blog post) fell short, and the first big lesson I learnt. Before reading these books, I was _opposing_ the business world and the true passion. I was in a way suggesting to embrace your hobby and not to care about this corporate guys in suits that would crash your dream trying to make you do "just a job". In a word: I was childish.
+And this is where my previous vision fell short, and the first big lesson I learnt. Before reading these books, I figured the business world and true passion as natural opposites. I suggested to embrace your hobby and to not care about this corporate guys in suits that would crash your dream trying to make you do "just a job". In a word: I was childish.
 I was thinking that success will come if you were motivated enough, and that only startup companies promoting cool-t-shirt-dress-code had understood the future of our industry. I was blaming everyone except me for things that may not go well in failing projects, companies or culture environment. I was acting as the opposite of a Software Craftsman, as this movement is all about taking responsability, involvement in the project and in the company you are working for, and spreading the culture of passion with new technical disciplines.
 
 ### Disciplines and Values
 
-Speaking about disciplines: you may expect this book to teach you a seat of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Environment_, _Pair programming_ or _SOLID_ principles), these books are **not** about these disciplines. These books are about **values**. It's a long term vision about our industry, the mistakes made, and how some current discplines and attitudes can solve these common issues. It is not about the implementation of these disciplines. It is also not about having a fanboy attitude for such technology or methodology, but only for the value they bring. It's a pragmatic approach that should prevent irrational adoration of technics and sterile debate with troll. When I told you these Software Crafters are spoiling all the fun...
+Speaking about disciplines: you may expect this book to teach you a set of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Development_, _Pair programming_ or _SOLID principles_), these books are **not** about these disciplines. These books are about **values**. It's a long term vision about our industry, the mistakes made, and how some current discplines and attitudes can solve these common issues. It is not about the implementation of these disciplines. It is also not about having a fanboy attitude for such technology or methodology, but only for the value they bring. It's a pragmatic approach that should prevent irrational adoration of technics and sterile debate with troll. When I told you these Software Crafters are spoiling all the fun...
 
 ### Tell me more
 
@@ -48,7 +48,7 @@ Both author are quite opiniated and are amazing public speaker. You can feel tha
 
 ### A tiny detail I forgot to tell you
 
-I admit. I lied to you. Yes, dear reader, I mislead you from the beginning of this article. _"Both books are about Software Crastsmanship"_ I said. And yet the attentive reader would have noticed: no mention of Software Craftsmanship in the title of the clean coder, neither in its subtitle. And if you take a peak inside the book, you will realize the terrible truth: the clean coder only mentions the Software Craftsmanship movement in... the *last two pages* of the book.
+I admit. I lied to you. Yes, dear reader, I mislead you from the beginning of this article. _"Both books are about Software Crastsmanship"_ I said. And yet the attentive reader would have noticed: no mention of Software Craftsmanship in the title of The Clean Coder, neither in its subtitle. And if you take a peak inside the book, you will realize the terrible truth: The Clean Coder only mentions the Software Craftsmanship movement in... the *last two pages* of the book.
 
 Why did I fail you with my wrong introduction? I didn't: they are both talking about Software Craftsmanship, despite appearances. I don't know why Robert C. Martin took the decision to wait the very end of the book to reveal the real topic of his work. Maybe because at the time of the publication (2011), the Software Craftsmanship movement was still a cryptic and not a best-selling subject?
 Maybe, but hard to believe. The Software Manifesto was released in 2009 and other books covering the topic were already out for a long time in 2011.
@@ -61,7 +61,7 @@ The fact that Sandro's book is built around the Software Craftsmanship definitio
 
 On the other hand, Sandro Mancuso has a more "classic" career: he graduated as a software developer and entered the industry as an already talented and high skilled professional. He's also younger and maybe his experience will resonate more with the average developer. But not many of us can pretend to have the same impressive career. Sandro obstinately challenged himself to raise his level and reach his main goal. Changing country or quitting job just to pass an interview are some of the many things he went through. He is, like Robert C. Martin, a well-known and respected figure of the Software Craftsmanship community. Despite his versatile professionnal experience, you will find his book more settled in the current period context. His book focuses on the failures of Agile movement (a movement born in 2001 and still growing today as some companies are just starting to adopt it).
 
-Finally, both books have been written at different times: 2011 for *The clean coder* and 2014 for *The Software Craftsman*. This allows the second one to make different references to the first one. It will then seems normal that you may find complementary information between both books.
+Finally, both books have been written at different times: 2011 for *The Clean Coder* and 2014 for *The Software Craftsman*. This allows the second one to make different references to the first one. It will then seems normal that you may find complementary information between both books.
 
 Unfinished business
 -------------------
