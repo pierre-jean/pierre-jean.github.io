@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Books | Yabage]]></title>
-  <link href="http://pierre-jean.github.io/blog/categories/books/atom.xml" rel="self"/>
-  <link href="http://pierre-jean.github.io/"/>
-  <updated>2016-07-22T18:41:14+01:00</updated>
-  <id>http://pierre-jean.github.io/</id>
+  <link href="http://pierre-jean.baraud.fr/blog/categories/books/atom.xml" rel="self"/>
+  <link href="http://pierre-jean.baraud.fr/"/>
+  <updated>2016-07-22T19:55:07+01:00</updated>
+  <id>http://pierre-jean.baraud.fr/</id>
   <author>
     <name><![CDATA[Pierre-Jean Baraud]]></name>
     <email><![CDATA[pierre-jean@baraud.fr]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Software Craftsmanship: 2 Books Review]]></title>
-    <link href="http://pierre-jean.github.io/blog/2016/07/18/two-software-craftsmanship-books-review/"/>
+    <link href="http://pierre-jean.baraud.fr/blog/2016/07/18/two-software-craftsmanship-books-review/"/>
     <updated>2016-07-18T23:16:54+01:00</updated>
-    <id>http://pierre-jean.github.io/blog/2016/07/18/two-software-craftsmanship-books-review</id>
+    <id>http://pierre-jean.baraud.fr/blog/2016/07/18/two-software-craftsmanship-books-review</id>
     <content type="html"><![CDATA[<p><img class="center" src="/images/books/cover-battle.png"></p>
 
 <p>Today I am gonna give you a quick review of the last two books I read: <a href="http://www.informit.com/store/clean-coder-a-code-of-conduct-for-professional-programmers-9780137081073">The clean coder</a>, by <em>Robert C. Martin</em> (aka <em>Uncle Bob</em>), and <a href="http://www.informit.com/store/software-craftsman-professionalism-pragmatism-pride-9780134052502">The Software Craftsman</a>, by <em>Sandro Mancuso</em>.
