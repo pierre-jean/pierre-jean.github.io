@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Software Craftsmanship: 2 book reviews"
+title: "Review of two Software Craftsmanship books"
 date: 2016-07-18 23:16:54 +0100
 comments: true
 categories: books
