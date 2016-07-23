@@ -22,7 +22,7 @@ Yes, Software Craftsmanship is all about passion. But it is also much more than 
 
 ### Professionalism
 
-Software Craftsmanship is about _professionalism_: the subtitle of the first book is _"A Code of Conduct for **Professional** Programmers"_, and of the second one is _"**Professionalism**, Pragmatism, Pride"_. If the message was not clear enough, you will find a reference to professionalism in every paragraph, if not sentence.
+Software Craftsmanship is about _professionalism_, as clearly demonstrated by the subtitle of the first book _"A Code of Conduct for Professional Programmers"_, and of the second one _"Professionalism, Pragmatism, Pride"_. If the message was not clear enough, you will find a reference to professionalism in every paragraph, if not sentence.
 
 And this is where my previous vision fell short, and the first big lesson I learnt. Before reading these books, I figured the business world and true passion as natural opposites. I suggested to embrace your hobby and to not care about this corporate guys in suits that would crash your dream trying to make you do "just a job". In a word: I was childish.
 I was thinking that success will come if you were motivated enough, and that only startup companies promoting cool-t-shirt-dress-code had understood the future of our industry. I was blaming everyone except me for things that may not go well in failing projects, companies or culture environment. I was acting as the opposite of a Software Craftsman, as this movement is all about taking responsibility, involvement in the project and in the company you are working for, and spreading the culture of passion with new technical disciplines.
