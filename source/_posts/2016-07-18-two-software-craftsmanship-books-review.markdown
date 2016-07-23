@@ -38,7 +38,8 @@ I won't summarize here the content of the books. Many resources about Software C
 A common subject, two great authors
 -----------------------------------
 
-So if both books speak about the same topic, should you read both? Are they tackling the topic the same way? What are their differences?
+
+So if both books speak about the same topic, are they should you read both? Are they tackling the topic the same way? What are their differences?
 
 ### Obviously close
 
@@ -56,8 +57,8 @@ On the other hand, Sandro Mancuso has a more "classic" career: he graduated as a
 
 Finally, both books have been written at different times: 2011 for *The Clean Coder* and 2014 for *The Software Craftsman*. This allows the second one to make different references to the first one. It will then seems normal that you may find complementary information between both books.
 
-Unfinished business
--------------------
+Food for the mind
+-----------------
 
 Whatever which one of the two books you read, they will certainly achieve the same result: open new perspectives, provide a big shot of motivation and reconcile yourself with many situations you would have defined as problematic before.
 
