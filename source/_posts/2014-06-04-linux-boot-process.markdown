@@ -6,7 +6,7 @@ comments: true
 categories: Linux
 ---
 
-{% img center /images/linux/power-on-1.jpg %}
+{% img center center /images/linux/power-on-1.jpg %}
 
 I'm getting more and more interested in how my system works "under the hood" lately. These fundations are essential to understand some behaviors / technical choices in technologies oriented for end users (such as [Docker][docker-site]).
 
@@ -27,7 +27,7 @@ Indeed, when booting, the processor runs in a mode called **real mode**. In this
 
 The BIOS instructions will then be executed.
 
-{% img /images/linux/boot_00.png %}
+{% img center /images/linux/boot_00.png %}
 
 The first BIOS action is the **POST (Power On Self Test)**. The POST will check the presence and integrity of a set of important hardware devices, and inform you if it detect defects (with a series of *bip* sound).
 
@@ -39,7 +39,7 @@ You cannot modify the BIOS instructions by yourself (without flashing it), but i
 The CMOS will contains for instance an ordered list for the bootable devices.
 The BIOS will check the presence of each device from this list, and also if it contains a bootable media.
 
-{% img /images/linux/boot_01.png %}
+{% img center /images/linux/boot_01.png %}
 
 Let's say that the bootable media is a hard drive for the rest of the explanation.
 
@@ -54,7 +54,7 @@ A hard drive contains a limited space in their first sector called **Master Boot
 
 The fact that the MBR is so small will lead to many difficulties: will the code to load the Linux kernel fit in this 446 Bytes? This limited size is also the reason why you can only have 4 primary partitions (4 descriptions of 16 Bytes), limited to 8GB or 2TB depending on the method they are described (*CHS* vs *LBA*).
 
-{% img /images/linux/boot_02.png %}
+{% img center /images/linux/boot_02.png %}
 
 To solve that, the boot process is done in several steps. The first step will load the instructions from the 446 Bytes length **primary boot loader code** and execute it. This is called the Grub Stage 1. **[GRUB][grub-article]** is what we called a *boot loader*.
 
@@ -65,7 +65,7 @@ The partitions start at sector 63. The MBR is written in sector 0. This area bet
 
 The code in *GRUB stage 1*, doesn't know how to read a Linux partition, and as a consequence load the kernel image that is inside. That's why the *GRUB stage 1* load the content of the *MBR GAP*, which contains instructions for opening a Linux partition. 
 
-{% img /images/linux/boot_03.png %}
+{% img center /images/linux/boot_03.png %}
 
 The execution of the code of the *MBR GAP* is called **Grub stage 1.5**.
 
@@ -74,7 +74,7 @@ Grub stage 2
 
 But a part of the Grub configuration is modified by the user in configuration files located inside the Linux partition. That's why *Grub stage 1.5* needs to open the partition (the one that is called *active*) and read the file `/boot/grub/grub.cnf`.
 
-{% img /images/linux/boot_04.png %}
+{% img center /images/linux/boot_04.png %}
 
 When this is done, the Grub is in *stage 2*, and can prompt an interface to let the user make choices (such as choosing which kernel to load or add boot options parameters).
 
@@ -85,7 +85,7 @@ The Linux kernels are located in the `/boot` folder, and have name such as `vmli
 
 That's why you can also find in the `/boot` folder image called `initrd.img-x.xx.x-xx-[...]`. An *initrd* file is a temporary file-system that will be mounted during the boot process, and that will load the missing modules in the kernel. It allows to keep the kernel images small and to load dynamically only what is needed.
 
-{% img /images/linux/boot_05.png %}
+{% img center /images/linux/boot_05.png %}
 
 The vmlinuz files are executables files, that are actually composed of different chunks (`bootsect.o` + `setup.o` + `misc.o` + `piggy.o`). The `piggy.o` contains the gzipped vmlinux file. The processor is still in *real mode* which mean it can only address a memory area of 1 MB. The problem is that the compressed image is bigger than 1 MB. That's why the property of *bzImage* that allows to split the image in discontinuous area is convenient here. The `piggy.o` chunk is loaded outside the 1MB area zone (by switching the processor to protected mode), and the `bootsect.o`, `setup.o`, and `misc.o` will be load in the *real mode* map area.
 
