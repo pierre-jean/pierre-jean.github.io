@@ -107,7 +107,7 @@
   </header>
 
 
-<div class="entry-content"><p><img class="center" src="/images/linux/power-on-1.jpg"></p>
+<div class="entry-content"><p><img class="center center" src="/images/linux/power-on-1.jpg"></p>
 
 <p>I&rsquo;m getting more and more interested in how my system works &ldquo;under the hood&rdquo; lately. These fundations are essential to understand some behaviors / technical choices in technologies oriented for end users (such as <a href="http://docker.io">Docker</a>).</p>
 
@@ -128,7 +128,7 @@
 
 <p>The BIOS instructions will then be executed.</p>
 
-<p><img src="/images/linux/boot_00.png"></p>
+<p><img class="center" src="/images/linux/boot_00.png"></p>
 
 <p>The first BIOS action is the <strong>POST (Power On Self Test)</strong>. The POST will check the presence and integrity of a set of important hardware devices, and inform you if it detect defects (with a series of <em>bip</em> sound).</p>
 
@@ -139,7 +139,7 @@
 <p>The CMOS will contains for instance an ordered list for the bootable devices.
 The BIOS will check the presence of each device from this list, and also if it contains a bootable media.</p>
 
-<p><img src="/images/linux/boot_01.png"></p>
+<p><img class="center" src="/images/linux/boot_01.png"></p>
 
 <p>Let&rsquo;s say that the bootable media is a hard drive for the rest of the explanation.</p>
 
@@ -156,7 +156,7 @@ The BIOS will check the presence of each device from this list, and also if it c
 
 <p>The fact that the MBR is so small will lead to many difficulties: will the code to load the Linux kernel fit in this 446 Bytes? This limited size is also the reason why you can only have 4 primary partitions (4 descriptions of 16 Bytes), limited to 8GB or 2TB depending on the method they are described (<em>CHS</em> vs <em>LBA</em>).</p>
 
-<p><img src="/images/linux/boot_02.png"></p>
+<p><img class="center" src="/images/linux/boot_02.png"></p>
 
 <p>To solve that, the boot process is done in several steps. The first step will load the instructions from the 446 Bytes length <strong>primary boot loader code</strong> and execute it. This is called the Grub Stage 1. <strong><a href="https://www.gnu.org/software/grub/">GRUB</a></strong> is what we called a <em>boot loader</em>.</p>
 
@@ -166,7 +166,7 @@ The BIOS will check the presence of each device from this list, and also if it c
 
 <p>The code in <em>GRUB stage 1</em>, doesn&rsquo;t know how to read a Linux partition, and as a consequence load the kernel image that is inside. That&rsquo;s why the <em>GRUB stage 1</em> load the content of the <em>MBR GAP</em>, which contains instructions for opening a Linux partition.</p>
 
-<p><img src="/images/linux/boot_03.png"></p>
+<p><img class="center" src="/images/linux/boot_03.png"></p>
 
 <p>The execution of the code of the <em>MBR GAP</em> is called <strong>Grub stage 1.5</strong>.</p>
 
@@ -174,7 +174,7 @@ The BIOS will check the presence of each device from this list, and also if it c
 
 <p>But a part of the Grub configuration is modified by the user in configuration files located inside the Linux partition. That&rsquo;s why <em>Grub stage 1.5</em> needs to open the partition (the one that is called <em>active</em>) and read the file <code>/boot/grub/grub.cnf</code>.</p>
 
-<p><img src="/images/linux/boot_04.png"></p>
+<p><img class="center" src="/images/linux/boot_04.png"></p>
 
 <p>When this is done, the Grub is in <em>stage 2</em>, and can prompt an interface to let the user make choices (such as choosing which kernel to load or add boot options parameters).</p>
 
@@ -184,7 +184,7 @@ The BIOS will check the presence of each device from this list, and also if it c
 
 <p>That&rsquo;s why you can also find in the <code>/boot</code> folder image called <code>initrd.img-x.xx.x-xx-[...]</code>. An <em>initrd</em> file is a temporary file-system that will be mounted during the boot process, and that will load the missing modules in the kernel. It allows to keep the kernel images small and to load dynamically only what is needed.</p>
 
-<p><img src="/images/linux/boot_05.png"></p>
+<p><img class="center" src="/images/linux/boot_05.png"></p>
 
 <p>The vmlinuz files are executables files, that are actually composed of different chunks (<code>bootsect.o</code> + <code>setup.o</code> + <code>misc.o</code> + <code>piggy.o</code>). The <code>piggy.o</code> contains the gzipped vmlinux file. The processor is still in <em>real mode</em> which mean it can only address a memory area of 1 MB. The problem is that the compressed image is bigger than 1 MB. That&rsquo;s why the property of <em>bzImage</em> that allows to split the image in discontinuous area is convenient here. The <code>piggy.o</code> chunk is loaded outside the 1MB area zone (by switching the processor to protected mode), and the <code>bootsect.o</code>, <code>setup.o</code>, and <code>misc.o</code> will be load in the <em>real mode</em> map area.</p>
 
