@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Review of two Software Craftsmanship books"
+title: "Software Craftsmanship: take back control"
 date: 2016-07-18 23:16:54 +0100
 comments: true
 categories: books
@@ -20,41 +20,49 @@ Remember my [first blog post about passion][first-blog-post] ? Well, if I had to
 
 Yes, Software Craftsmanship is all about passion. But it is also much more than that, and taught me a lot about my own weaknesses.
 
+### Passion
+
+I'm gonna be lazy and shamelessly quote Sandro's book:
+
+{% blockquote Sandro Mancuso, The Software Craftsman %}
+Passion. That summarizes it all. Software craftsmen are passionate about software development and their profession. They are passionate about solving problems with simple solutions. They are passionate about learning, teaching and sharing. Software craftsmen are passionate about helping the software industry to evolve; sharing their code; mentoring young developers; sharing their experiences via blogs, books, talks, videos, and conversations; and being active in technical communities.
+{% endblockquote %}
+
+Yes, I know, he just expressed above the exact content of my first blog post, but in a clearer and more efficient way... thank you for pointing that out! But even if I cannot compete with Sandro's writing style, at least we are on the same page regarding the importance of passion!
+
 ### Professionalism
 
-Software Craftsmanship is about _professionalism_, as clearly demonstrated by the subtitle of the first book _"A Code of Conduct for Professional Programmers"_, and of the second one _"Professionalism, Pragmatism, Pride"_. If the message was not clear enough, you will find a reference to professionalism in every paragraph, if not sentence.
+But Software Craftsmanship is also about _professionalism_, as clearly demonstrated by the subtitle of the first book _"A Code of Conduct for Professional Programmers"_, and of the second one _"Professionalism, Pragmatism, Pride"_. If the message was not clear enough, you will find a reference to professionalism in every paragraph, if not sentence.
 
 And this is where my previous vision fell short, and the first big lesson I learnt. Before reading these books, I figured the business world and true passion as natural opposites. I suggested to embrace your hobby and to not care about this corporate guys in suits that would crash your dream trying to make you do "just a job". In a word: I was childish.
 I was thinking that success will come if you were motivated enough, and that only startup companies promoting cool-t-shirt-dress-code had understood the future of our industry. I was blaming everyone except me for things that may not go well in failing projects, companies or culture environment. I was acting as the opposite of a Software Craftsman, as this movement is all about taking responsibility, involvement in the project and in the company you are working for, and spreading the culture of passion with new technical disciplines.
 
 ### Disciplines and Values
 
-Speaking about disciplines: you may expect this book to teach you a set of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Development_, _Pair programming_ or _SOLID principles_), these books are **not** about these disciplines. These books are about **values**. It's a long term vision about our industry, the mistakes made, and how some current disciplines and attitudes can solve these common issues. It is not about the implementation of these disciplines. It is also not about having a fanboy attitude for such technology or methodology, but only for the value they bring. It's a pragmatic approach that should prevent irrational adoration of techniques and sterile debate with troll. When I told you these Software Craftsmen are spoiling all the fun...
+Speaking about disciplines: you may expect this book to teach you a set of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Development_, _Pair programming_ or _SOLID principles_), these books are **not** about these disciplines. These books are about **values**. It's a long term vision about our industry, the mistakes made, and how some current disciplines and attitudes can solve these common issues. It is not about the implementation of these disciplines. It is also not about having a fanboy attitude for such technology or methodology, but only for the value they bring. Software Craftsmen are not interested in these sterile and endless debates about who is coding on the coolest technologies. I know, what a bunch of killjoys...
 
-### Tell me more
+### And many other things
 
 I won't summarize here the content of the books. Many resources about Software Craftsmanship are already available online. If you are interested, you can watch one of the public presentations the authors gave (for instance [here][sandro-talk] and [there][uncle-bob-talk]) covering in some ways the same topic as the books. The value of these books is not so much about the topic they cover but how they illustrate each idea through different examples that speak to each one of us.
 
-A Same topic covered by 2 great authors
----------------------------------------
+Why are these books so important?
+---------------------------------
 
-If both books are talking about the same subject and are in line in term of message, each author brings their personality to their work.
+I hear you dear reader: do you need to go through the hundreds of pages of these books to state such an obvious message as "be passionate and professional" ?
+I wish my answer was no. I wish the values expressed in these books were so obvious that the whole Software Craftsmanship movement could be laugh at.
+But the reality is different. And I'm sure you can see it.
 
-### Obviously close
+### Simple facts
 
-Without surprise, you will inevitably find similarities between the two books. Some chapter are really close in the topics they approaches: "TDD", "Commitment", "How to say No". These are fundamental notions of the Software Craftsmanship movement, and it is logical to find them in both books. Also, the narrative of both publications follows the same structure: each concept is introduced through the author's personal experience. As a result the message feels natural and examples will stick easily in your head.
+Have you ever been slow down in your projects by software evolutions that were waiting to be delivered? Have you ever been appalled by the numbers of regression encountered on releases that should not affect the failing features?
+And as a developer, have you never feel mistrust for a business industry that does not understood you? Have you ever thought that if you were in charge, things would be better?
 
-Both authors are strong personalities and great public speakers: their books is far from a cold set of definition and rules. They infused their work with personal viewings and lively references creating a unique and pleasant result for readers.
+Chances are that the answer is yes. The sickness of the software industry cannot be more visible and truth is our society has no idea on how to recover from it. That's the intention of the Software Craftsmanship to provide a way out.
 
-### But not the same
+### Connecting both worlds
 
-The first noticeable difference can already be seen in the title: The Clean Coder does not mention the Software Craftsmanship movement. His book actually focuses entirely on the notion of professionalism. Don't throw stones at me yet for comparing the incomparable: once reached the last two pages of the book, the author finally defines what is a Software Craftsman and connects it with the rest of the book. Sandro's book is much more direct and addresses the topic since the very first chapter. 
+//TODO
 
-The second difference is the generation of the authors. Robert C. Martin has entered the computer industry from the bottom of the ladder (and raised himself to the very top of it), in times where software was tightly coupled with hardware. He has experienced a deep evolution of our computer industry during his extensive career. This experience reflects to his speech and provides him an interesting perspective on new trends and disciplines. His advices are loosely coupled with the temporal context of the reader and he refers a lot to historical facts.
-
-On the other hand, Sandro Mancuso has a more "classic" career: he graduated as a software developer and entered the industry as an already talented and high skilled professional. He's also younger and his experience should resonate more with the average developer. Forget about the punched cards and the esoteric mainframes "à la Uncle Bob", Sandro started his career coding with Delphi, which should have make many of his colleagues jealous. Why? Delphi was trendy, modern and cool once upon a time! Yep, it was! But not many of us can pretend to have the same impressive career as him. Sandro obstinately challenged himself to raise his level and reach his main goal. His work life is built on mobility, initiatives and risks. He is, like Robert C. Martin, a well-known and respected figure of the Software Craftsmanship community. Despite his versatile professional experience, you will find his book more settled in the current time frame. His book focuses on the failures of Agile movement: a movement born in 2001 that companies are adopting more and more.
-
-Finally, both books have been written at different times: 2011 for *The Clean Coder* and 2014 for *The Software Craftsman*. Sandro makes several references to Uncle Bob's book, expressing sometimes minor disagreements. No worries though, both authors seem to pay each other a lot of respect and Robert C Martin express it in the preface he signed on Sandro's book.
 
 Food for the mind
 -----------------
