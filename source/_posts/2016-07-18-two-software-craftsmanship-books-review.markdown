@@ -45,22 +45,22 @@ Speaking about disciplines: you may expect this book to teach you a set of disci
 
 ### And many other things
 
-I won't summarize here the content of the books. Many resources about Software Craftsmanship are already available online. If you are interested, you can watch one of the public presentations the authors gave (for instance [here][sandro-talk] and [there][uncle-bob-talk]) covering in some ways the same topic as the books. The value of these books is not so much about the topic they cover but how they illustrate each idea through different examples that speak to each one of us.
+You want to know more? Good. Go read the books. Now.
+Robert Cecil Martin and Sandro Mancuso are great writers and you will have real pleasure reading them.
+If you still need convincing, you can watch one of the public presentations the authors gave (for instance [here][sandro-talk] and [there][uncle-bob-talk]) covering in some ways the same topic as the books. The value of these books is not so much about the topic they cover but how they illustrate each idea through different examples that speak to each one of us.
 
 Why are these books so important?
 ---------------------------------
 
-I hear you dear reader: do you need to go through the hundreds of pages of these books to state such an obvious message as "be passionate and professional" ?
-I wish my answer was no. I wish the values expressed in these books were so obvious that the whole Software Craftsmanship movement could be laugh at.
-But the reality is different. And you have certainly see it.
+You may ask: do you need to go through the hundreds of pages of these books to figure out such an obvious message as "be passionate and professional" ?
+Well, I'm afraid the reality demonstrates every day that this is not that obvious.
 
 ### A simple fact
 
-Have you ever been slow down in your projects by software evolutions that were waiting to be delivered? Have you ever been appalled by the numbers of broken features each time a software is released?
+Have you ever been slow down in your projects by software evolutions that were waiting to be delivered? Have you ever been appalled by the numbers of broken features each time a software is released?  
+And as a developer, have you ever feel mistrust for a business industry that does not understood you? 
 
-And as a developer, have you never feel mistrust for a business industry that does not understood you? Have you ever thought that if you were in charge, things would be better?
-
-Chances are that the answer is yes, at least for some of these questions. The sickness of the software industry cannot be more visible than it is now and truth is our society has no clear idea on how to fix it. Millions are waisted by companies because of this situation. And that's the intention of the Software Craftsmanship to provide a way out.
+Chances are that yes, you have. The sickness of the software industry cannot be more visible than it is now and the truth is our society has no clear idea on how to fix it. Millions are waisted by companies because of this situation. And that's the intention of the Software Craftsmanship to provide a way out.
 
 ### A necessary bridge
 
@@ -68,8 +68,9 @@ A cultural gap exists between business managers and software developers. Busines
 
 This split of values also affects the developers profession. Many are divided between choosing over their career (promoting: business, management, architecture, specific-technologies) or over their passion (coding, open-source, choosing new technologies, sharing). Software Craftsmanship is a way to do both. Software craftsmen don't see their activity as a production working line. They see it as a craft. They know that companies who tried to outsource their software department to low-skilled unknown coders failed. Specifications and upstream architectural decisions are not enough. Software craftsmen bring value to companies. They offer the flexibility needed by companies to follow the business evolution. And this requires high skilled developers, passionated and proud by the result they provide.
 
-
 ### A day to day transformation
+
+Who owns your career? Software craftsmanship offers you a chance to take back control on your working environment, on your career and on your passion.
 
 These books will give you a pragmatic approach to change your habits and enhance your working conditions. For instance, by changing the language you use, you will know how to identify the lack of accountability expressed in your daily discussions. You will learn how to take responsibility and communicate it to your colleagues.
 
