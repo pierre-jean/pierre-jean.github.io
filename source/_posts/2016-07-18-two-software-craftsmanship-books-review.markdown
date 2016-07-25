@@ -39,7 +39,7 @@ I was thinking that success will come if you were motivated enough, and that onl
 
 ### Disciplines and Values
 
-Speaking about disciplines: you may expect this book to teach you a set of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Development_, _Pair programming_ or _SOLID principles_), these books are **not** about these disciplines. These books are about **values**. It's a long term vision about our industry, the mistakes made, and how some current disciplines and attitudes can solve these common issues. It is not about the implementation of these disciplines. It is also not about having a fanboy attitude for such technology or methodology, but only for the value they bring. Software Craftsmen are not interested in these sterile and endless debates about who is coding on the coolest technologies. I know, what a bunch of killjoys...
+Speaking about disciplines: you may expect this book to teach you a set of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Development_, _Pair programming_ or _SOLID principles_), these books are *not* about these disciplines. These books are about *values*. It's a long term vision on our industry, the mistakes made, and how some current disciplines and attitudes can solve these common issues. It won't focus on the implementation of these disciplines. Software Craftsmen are also not interested in sterile debates between fanboys about who is coding on the coolest technologies or following the best process. They focused on the value bring by these methodologies. I know, I know, What a bunch of killjoys...
 
 ### And many other things
 
@@ -52,17 +52,28 @@ I hear you dear reader: do you need to go through the hundreds of pages of these
 I wish my answer was no. I wish the values expressed in these books were so obvious that the whole Software Craftsmanship movement could be laugh at.
 But the reality is different. And I'm sure you can see it.
 
-### Simple facts
+### A simple fact
 
-Have you ever been slow down in your projects by software evolutions that were waiting to be delivered? Have you ever been appalled by the numbers of regression encountered on releases that should not affect the failing features?
+Have you ever been slow down in your projects by software evolutions that were waiting to be delivered? Have you ever been appalled by the numbers of broken features each time a software is released?
+
 And as a developer, have you never feel mistrust for a business industry that does not understood you? Have you ever thought that if you were in charge, things would be better?
 
-Chances are that the answer is yes. The sickness of the software industry cannot be more visible and truth is our society has no idea on how to recover from it. That's the intention of the Software Craftsmanship to provide a way out.
+Chances are that the answer is yes, at least for some of these questions. The sickness of the software industry cannot be more visible than it is now and truth is our society has no clear idea on how to fix it. Millions are waisted by companies because of this situation. And that's the intention of the Software Craftsmanship to provide a way out.
 
-### Connecting both worlds
+### A necessary bridge
 
-//TODO
+A cultural gap exists between business managers and software developers. Business see developers as a working line, a technical pipe without much value except providing the expected result. By expected result, I mean the one specified by business managers and software architects, the ones creating value through specifications. That's why in many companies, the only career evolution available is to switch from the _technical position_ of developer to a _management position_ such as business manager, architect, and so on. This illustrates the poor consideration management usually have upon developers. On the other hand, a big distrust exists in software departments towards the management, the clients, and basically anyone that is not a developer. We confine ourselves behind technical considerations that appear out of reach for the common people.
 
+This split of values also affects the developers profession. Many are divided between choosing over their career (promoting: business, management, architecture, specific-technologies) or over their passion (coding, open-source, choosing new technologies, sharing). Software Craftsmanship is a way to do both. Software craftsmen don't see their activity as a production working line. They see it as a craft. They know that companies who tried to outsource their software department to low-skilled unknown coders failed. Specifications and upstream architectural decisions are not enough. Software craftsmen bring value to companies. They offer the flexibility needed by companies to follow the business evolution. And this requires high skilled developers, passionated and proud by the result they provide.
+
+
+### A day to day transformation
+
+These books will give you a pragmatic approach to change your habits and enhance your working conditions. For instance, by changing the language you use, you will know how to identify the lack of accountability expressed in your daily discussions. You will learn how to take responsibility and communicate it to your colleagues.
+
+You will learn how to face pressure without affecting your discipline. You will get insights on how to work efficiently with the different character and singularities you can meet in your team.
+
+Each concept of the book can be applied from day one in your current work and will provide a tremendous value in your interaction with the other. Furthermore, you will find yourself much more happier about your own activity.
 
 Food for the mind
 -----------------
