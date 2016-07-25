@@ -35,11 +35,13 @@ Yes, I know, he just expressed above the exact content of my first blog post, bu
 But Software Craftsmanship is also about _professionalism_, as clearly demonstrated by the subtitle of the first book _"A Code of Conduct for Professional Programmers"_, and of the second one _"Professionalism, Pragmatism, Pride"_. If the message was not clear enough, you will find a reference to professionalism in every paragraph, if not sentence.
 
 And this is where my previous vision fell short, and the first big lesson I learnt. Before reading these books, I figured the business world and true passion as natural opposites. I suggested to embrace your hobby and to not care about this corporate guys in suits that would crash your dream trying to make you do "just a job". In a word: I was childish.
-I was thinking that success will come if you were motivated enough, and that only startup companies promoting cool-t-shirt-dress-code had understood the future of our industry. I was blaming everyone except me for things that may not go well in failing projects, companies or culture environment. I was acting as the opposite of a Software Craftsman, as this movement is all about taking responsibility, involvement in the project and in the company you are working for, and spreading the culture of passion with new technical disciplines.
+I was thinking that success will come if you were motivated enough, and that only startup companies promoting cool-t-shirt-dress-code had understood the future of our industry. I was blaming everyone except me for things that may not go well in failing projects, companies or culture environment. 
+
+I was acting as the opposite of a Software Craftsman, as this movement is all about taking responsibility, involvement in the project and in the company you are working for, and spreading the culture of passion with new technical disciplines.
 
 ### Disciplines and Values
 
-Speaking about disciplines: you may expect this book to teach you a set of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Development_, _Pair programming_ or _SOLID principles_), these books are *not* about these disciplines. These books are about *values*. It's a long term vision on our industry, the mistakes made, and how some current disciplines and attitudes can solve these common issues. It won't focus on the implementation of these disciplines. Software Craftsmen are also not interested in sterile debates between fanboys about who is coding on the coolest technologies or following the best process. They focused on the value bring by these methodologies. I know, I know, What a bunch of killjoys...
+Speaking about disciplines: you may expect this book to teach you a set of disciplines to apply in order to succeed in any situation. And even if it does mention a set of practices (like _Test Driven Development_, _Pair programming_ or _SOLID principles_), these books are *not* about these disciplines. These books are about *values*. It's a long term vision on our industry, the mistakes made, and how some current disciplines and attitudes can solve these common issues. 
 
 ### And many other things
 
@@ -50,7 +52,7 @@ Why are these books so important?
 
 I hear you dear reader: do you need to go through the hundreds of pages of these books to state such an obvious message as "be passionate and professional" ?
 I wish my answer was no. I wish the values expressed in these books were so obvious that the whole Software Craftsmanship movement could be laugh at.
-But the reality is different. And I'm sure you can see it.
+But the reality is different. And you have certainly see it.
 
 ### A simple fact
 
@@ -71,9 +73,9 @@ This split of values also affects the developers profession. Many are divided be
 
 These books will give you a pragmatic approach to change your habits and enhance your working conditions. For instance, by changing the language you use, you will know how to identify the lack of accountability expressed in your daily discussions. You will learn how to take responsibility and communicate it to your colleagues.
 
-You will learn how to face pressure without affecting your discipline. You will get insights on how to work efficiently with the different character and singularities you can meet in your team.
+You will learn how to face pressure without affecting your discipline. You will get insights on how to work efficiently with the different characters and singularities you can meet in your team.
 
-Each concept of the book can be applied from day one in your current work and will provide a tremendous value in your interaction with the other. Furthermore, you will find yourself much more happier about your own activity.
+Each concept of the book can be applied starting today in your current job. The value they will bring will be immediate and visible. Chances are you will find yourself much more happier doing the same job with the same persons.
 
 Food for the mind
 -----------------
